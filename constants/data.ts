@@ -7,7 +7,7 @@ export const Navigations = [
   {
     id: 1,
     name: "Vårt Arbeid",
-    href: "/vårtArbeid",
+    href: "/vartarbeid",
   },
   {
     id: 2,
