@@ -44,10 +44,10 @@ const Navbar = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 bg-white/30 backdrop:blur-sm transition-all duration-300 ${
         isScrolled
-          ? "backdrop-blur-lg shadow-lg "
-          : "bg-white/30 backdrop-blur-sm"
+          ? "bg-white shadow-lg" // Removed backdrop-blur and transparent background
+          : "bg-white" // Solid white background always
       }`}
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -107,12 +107,12 @@ const Navbar = () => {
 
       {/* Mobile Navigation */}
       <div
-        className={`lg:hidden fixed inset-0 bg-white transform transition-transform duration-300 ease-in-out ${
+        className={`lg:hidden fixed inset-0 transform transition-transform duration-300 ease-in-out bg-white ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
         style={{ top: "64px" }}
       >
-        <div className="flex flex-col h-full bg-white border-t border-gray-100">
+        <div className="flex flex-col h-full">
           <nav className="flex flex-col flex-1 px-6 py-8 space-y-6">
             {Navigations.map((item) => {
               const isActive = pathname === item.href;
