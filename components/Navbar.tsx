@@ -11,6 +11,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [isScrolled, setIsScrolled] = useState<boolean>(false);
   const pathname = usePathname();
+  const isHome = pathname === "/";
 
   // Handle scroll effect
   useEffect(() => {
@@ -46,8 +47,10 @@ const Navbar = () => {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300
     ${
-      isScrolled
-        ? "backdrop-blur-md bg-black/30 shadow-lg"
+      isOpen
+        ? "bg-white shadow-md" // mobile when menu is open
+        : isScrolled
+        ? "backdrop-blur-md bg-black/30"
         : "backdrop-blur-sm bg-black/10"
     }
   `}
@@ -79,7 +82,11 @@ const Navbar = () => {
                   className={`relative font-medium transition-all duration-300 py-2 px-1 ${
                     isActive
                       ? "text-[#E73535] font-semibold"
-                      : "text-[#052453] hover:text-[#E73535]"
+                      : isHome
+                      ? isScrolled
+                        ? "text-[#052453]"
+                        : "text-white" // homepage logic
+                      : "text-[#052453]" // all other pages
                   }`}
                 >
                   {nav.name}
@@ -94,7 +101,7 @@ const Navbar = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={toggleBar}
-            className="lg:hidden p-2 rounded-lg transition-colors duration-200 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-[#E73535] focus:ring-opacity-50"
+            className="lg:hidden p-2 rounded-lg border-2 border-red-500 transition-colors duration-200 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-[#E73535] focus:ring-opacity-50"
             aria-label={isOpen ? "Close menu" : "Open menu"}
             aria-expanded={isOpen}
           >
@@ -109,10 +116,9 @@ const Navbar = () => {
 
       {/* Mobile Navigation */}
       <div
-        className={`lg:hidden fixed inset-0 transform transition-transform duration-300 ease-in-out bg-white ${
+        className={`lg:hidden fixed top-16 left-0 right-0 bottom-0 transform transition-transform duration-300 ease-in-out bg-white ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
-        style={{ top: "64px" }}
       >
         <div className="flex flex-col h-full">
           <nav className="flex flex-col flex-1 px-6 py-8 space-y-6">
