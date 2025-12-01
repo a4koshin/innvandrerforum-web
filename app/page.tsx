@@ -21,7 +21,7 @@ export default function Home() {
         {/* Content centered vertically & horizontally */}
         <div className="relative z-10 flex items-center justify-center h-full px-4">
           <div className="max-w-4xl mx-auto text-center text-white">
-            <div className="space-y-6 backdrop-blur-sm bg-black/20 p-8 rounded-2xl">
+            <div className="space-y-6 backdrop-blur-sm bg-black/10 p-8 rounded-2xl">
               {/* Heading, paragraph, buttons etc */}
             </div>
           </div>

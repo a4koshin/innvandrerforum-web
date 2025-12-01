@@ -44,11 +44,13 @@ const Navbar = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 bg-white/30 backdrop:blur-sm transition-all duration-300 ${
-        isScrolled
-          ? "bg-white shadow-lg" // Removed backdrop-blur and transparent background
-          : "bg-white" // Solid white background always
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300
+    ${
+      isScrolled
+        ? "backdrop-blur-md bg-black/30 shadow-lg"
+        : "backdrop-blur-sm bg-black/10"
+    }
+  `}
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16 lg:h-20">
