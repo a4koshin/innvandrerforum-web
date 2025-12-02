@@ -578,7 +578,7 @@ export default function Home() {
 
             {/* Button */}
             <a
-              href={`mailto:innvandrerforumiostfold@gmail.com?subject=Opportunity%20to%20Connect%20–%20Saw%20Your%20Portfolio&body=${encodeURIComponent(
+              href={`mailto:innvandrerforumiostfold@gmail.com?subject=Message%20to%20from%20–%20the%20Your%20Website&body=${encodeURIComponent(
                 emailMessage
               )}`}
               className="inline-flex items-center justify-center px-8 py-3 bg-blue-900 text-white font-semibold rounded-lg shadow-lg hover:bg-blue-800 hover:scale-105 hover:shadow-xl transition-all duration-300 whitespace-nowrap min-w-[140px]"
