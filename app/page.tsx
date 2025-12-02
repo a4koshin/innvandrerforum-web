@@ -539,7 +539,7 @@ export default function Home() {
       </div>
 
       {/* Contact section */}
-      <div className="mx-auto max-w-7xl text-center mb-24 bg-gray-100 px-4 py-16 sm:px-6 lg:px-8 rounded-2xl">
+      <div className="mx-auto max-w-7xl text-center mb-24 bg-gray-100 px-4 py-16 rounded-2xl">
         <div className="">
           {/* Enhanced Header */}
           <div className="inline-flex items-center gap-2 text-blue-900 mb-4">
@@ -572,7 +572,7 @@ export default function Home() {
                   setEmailMessage(e.target.value)
                 }
                 placeholder="Write your message"
-                className="w-full h-full px-4 py-3 bg-white border border-blue-200 rounded-lg text-blue-900 placeholder-blue-400 focus:outline-none focus:ring focus:ring-blue-900 focus:border-blue-900 transition-all duration-300 hover:border-blue-300"
+                className="w-full h-full px-4 py-3 bg-white border border-blue-900 rounded-lg text-blue-900 placeholder-blue-900 focus:outline-none focus:ring focus:ring-blue-900 focus:border-blue-900 transition-all duration-300 hover:border-blue-300"
               />
             </div>
 
