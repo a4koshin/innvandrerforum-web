@@ -80,9 +80,9 @@ const Navbar = () => {
                     }`}
                   >
                     <span>{item.name}</span>
-                    {item.submenu && (
+                    {/* {item.submenu && (
                       <RiArrowDownSLine className="w-4 h-4 transition-transform duration-200 group-hover:rotate-180" />
-                    )}
+                    )} */}
                   </Link>
 
                   {/* Active indicator */}
@@ -137,12 +137,12 @@ const Navbar = () => {
                     href={item.href}
                     className={`flex items-center justify-between px-4 py-3 rounded-lg transition-all duration-200 ${
                       isActive
-                        ? "bg-gradient-to-r from-[#1C427A]/10 to-[#E73535]/10 text-[#E73535] font-semibold border-l-4 border-[#E73535]"
-                        : "text-[#1C427A] hover:bg-gray-100"
+                        ? "bg-red-500/60 text-white font-semibold"
+                        : "text-blue-900 hover:bg-red-50/70"
                     }`}
                   >
                     <span>{item.name}</span>
-                    {item.submenu && <RiArrowDownSLine className="w-5 h-5" />}
+                    {/* {item.submenu && <RiArrowDownSLine className="w-5 h-5" />} */}
                   </Link>
                 );
               })}
