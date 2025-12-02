@@ -68,17 +68,6 @@ export default function Home() {
       </div>
       {/* Stats Section - Optimized spacing */}
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
-        {/* Section header - tighter */}
-        <div className="text-center mb-12">
-          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-3">
-            Making a Difference Every Day
-          </h2>
-          <p className="text-base text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-            Our impact is measured in lives transformed, communities
-            strengthened, and barriers overcome
-          </p>
-        </div>
-
         {/* Stats grid - compact layout */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 md:gap-8">
           {[
@@ -508,26 +497,63 @@ export default function Home() {
           </div>
 
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-            Empowering Communities
+            Youth Empowerment
           </h2>
 
           <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            We are an organization dedicated to supporting and including
-            immigrants in Østfold through targeted initiatives and community
-            programs.
+            We provide meaningful programs that help young people learn, grow,
+            and become active contributors to their community.
           </p>
         </div>
 
         {/* Programs Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <Card
-            img="/infoimg.png"
+            img="/work1.png"
             headline="Empowering Communities"
             description=" We are an organization dedicated to supporting and including
             immigrants in Østfold through targeted initiatives and community
             programs."
-            btnTxt="Les mer"
+            buttonText="Les mer"
           />
+          <Card
+            img="/work2.png"
+            headline="Empowering Communities"
+            description=" We are an organization dedicated to supporting and including
+            immigrants in Østfold through targeted initiatives and community
+            programs."
+            buttonText="Les mer"
+          />
+          <Card
+            img="/work3.png"
+            headline="Empowering Communities"
+            description=" We are an organization dedicated to supporting and including
+            immigrants in Østfold through targeted initiatives and community
+            programs."
+            buttonText="Les mer"
+          />
+        </div>
+      </div>
+
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+        {/* Section Header */}
+        <div className="text-center mb-12">
+          <div className="inline-flex items-center gap-2 text-blue-600 dark:text-blue-400 mb-4">
+            <div className="w-8 h-0.5 bg-blue-600 dark:bg-blue-400"></div>
+            <span className="text-sm font-semibold uppercase tracking-wider">
+              Our Programs
+            </span>
+            <div className="w-8 h-0.5 bg-blue-600 dark:bg-blue-400"></div>
+          </div>
+
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+            Youth Empowerment
+          </h2>
+
+          <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+            We provide meaningful programs that help young people learn, grow,
+            and become active contributors to their community.
+          </p>
         </div>
       </div>
     </>
