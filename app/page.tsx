@@ -539,26 +539,26 @@ export default function Home() {
       </div>
 
       {/* Contact section */}
-      <div className="mx-auto max-w-7xl text-center mb-24 bg-blue-900 px-4 py-16 sm:px-6 lg:px-8 rounded-2xl">
+      <div className="mx-auto max-w-7xl text-center mb-24 bg-gray-100 px-4 py-16 sm:px-6 lg:px-8 rounded-2xl">
         <div className="">
           {/* Enhanced Header */}
-          <div className="inline-flex items-center gap-2 text-white mb-4">
-            <div className="w-8 h-0.5 bg-white"></div>
+          <div className="inline-flex items-center gap-2 text-blue-900 mb-4">
+            <div className="w-8 h-0.5 bg-blue-900"></div>
             <span className="text-sm font-semibold uppercase tracking-wider">
               Join us
             </span>
-            <div className="w-8 h-0.5 bg-white"></div>
+            <div className="w-8 h-0.5 bg-blue-900"></div>
           </div>
 
           {/* Heading */}
-          <h2 className="text-2xl md:text-4xl font-bold text-white mb-4">
-            Ready to Start Your Project?
+          <h2 className="text-2xl md:text-4xl font-bold text-blue-900 mb-4">
+            Join Our Community
           </h2>
 
           {/* Subtext */}
-          <p className="text-lg text-blue-100 mb-8 max-w-2xl mx-auto leading-relaxed">
-            I'm always excited to take on new challenges and collaborate on
-            innovative projects. Let's discuss how we can work together.
+          <p className="text-lg text-blue-900/80 mb-8 max-w-2xl mx-auto leading-relaxed">
+            oin our community and be part of a movement that empowers youth,
+            builds connections, and creates positive change together.”
           </p>
 
           {/* Enhanced Input + Button Container */}
@@ -572,7 +572,7 @@ export default function Home() {
                   setEmailMessage(e.target.value)
                 }
                 placeholder="Write your message"
-                className="w-full h-full px-4 py-3 bg-white/10 border border-white/30 rounded-lg text-white placeholder-blue-200 focus:outline-none focus:ring-2 focus:ring-white focus:bg-white/20 transition-all duration-300 hover:bg-white/15"
+                className="w-full h-full px-4 py-3 bg-white border border-blue-200 rounded-lg text-blue-900 placeholder-blue-400 focus:outline-none focus:ring focus:ring-blue-900 focus:border-blue-900 transition-all duration-300 hover:border-blue-300"
               />
             </div>
 
@@ -581,7 +581,7 @@ export default function Home() {
               href={`mailto:innvandrerforumiostfold@gmail.com?subject=Opportunity%20to%20Connect%20–%20Saw%20Your%20Portfolio&body=${encodeURIComponent(
                 emailMessage
               )}`}
-              className="inline-flex items-center justify-center px-8 py-3 bg-white text-blue-900 font-semibold rounded-lg shadow-lg hover:bg-gray-100 hover:scale-105 hover:shadow-xl transition-all duration-300 whitespace-nowrap min-w-[140px]"
+              className="inline-flex items-center justify-center px-8 py-3 bg-blue-900 text-white font-semibold rounded-lg shadow-lg hover:bg-blue-800 hover:scale-105 hover:shadow-xl transition-all duration-300 whitespace-nowrap min-w-[140px]"
             >
               Join Us
               <svg
