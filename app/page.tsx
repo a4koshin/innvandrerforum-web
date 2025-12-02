@@ -539,13 +539,13 @@ export default function Home() {
       </div>
 
       {/* Contact section */}
-      <div className="mx-auto max-w-7xl text-center mb-16 bg-blue-900 px-4 py-16 sm:px-6 lg:px-8 rounded-2xl mx-4">
+      <div className="mx-auto max-w-7xl text-center mb-24 bg-blue-900 px-4 py-16 sm:px-6 lg:px-8 rounded-2xl">
         <div className="">
           {/* Enhanced Header */}
           <div className="inline-flex items-center gap-2 text-white mb-4">
             <div className="w-8 h-0.5 bg-white"></div>
             <span className="text-sm font-semibold uppercase tracking-wider">
-              Our Programs
+              Join us
             </span>
             <div className="w-8 h-0.5 bg-white"></div>
           </div>
@@ -578,10 +578,10 @@ export default function Home() {
 
             {/* Button */}
             <a
-              href={`mailto:mankajr11@gmail.com?subject=Opportunity%20to%20Connect%20–%20Saw%20Your%20Portfolio&body=${encodeURIComponent(
+              href={`mailto:innvandrerforumiostfold@gmail.com?subject=Opportunity%20to%20Connect%20–%20Saw%20Your%20Portfolio&body=${encodeURIComponent(
                 emailMessage
               )}`}
-              className="inline-flex items-center justify-center px-8 py-3 bg-white text-[#007bff] font-semibold rounded-lg shadow-lg hover:bg-gray-50 hover:scale-105 hover:shadow-xl transition-all duration-300 whitespace-nowrap min-w-[140px]"
+              className="inline-flex items-center justify-center px-8 py-3 bg-white text-blue-900 font-semibold rounded-lg shadow-lg hover:bg-gray-100 hover:scale-105 hover:shadow-xl transition-all duration-300 whitespace-nowrap min-w-[140px]"
             >
               Join Us
               <svg
