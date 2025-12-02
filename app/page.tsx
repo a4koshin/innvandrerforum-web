@@ -1,9 +1,12 @@
+"use client";
+
+import React, { useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import Card from "@/components/Card";
 
 export default function Home() {
+  const [emailMessage, setEmailMessage] = useState<string>("");
   return (
     <>
       <div className="relative h-screen w-full">
@@ -535,25 +538,67 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
-        {/* Section Header */}
-        <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-2 text-blue-600 dark:text-blue-400 mb-4">
-            <div className="w-8 h-0.5 bg-blue-600 dark:bg-blue-400"></div>
+      {/* Contact section */}
+      <div className="mx-auto max-w-7xl text-center mb-16 bg-blue-900 px-4 py-16 sm:px-6 lg:px-8 rounded-2xl mx-4">
+        <div className="">
+          {/* Enhanced Header */}
+          <div className="inline-flex items-center gap-2 text-white mb-4">
+            <div className="w-8 h-0.5 bg-white"></div>
             <span className="text-sm font-semibold uppercase tracking-wider">
               Our Programs
             </span>
-            <div className="w-8 h-0.5 bg-blue-600 dark:bg-blue-400"></div>
+            <div className="w-8 h-0.5 bg-white"></div>
           </div>
 
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-            Youth Empowerment
+          {/* Heading */}
+          <h2 className="text-2xl md:text-4xl font-bold text-white mb-4">
+            Ready to Start Your Project?
           </h2>
 
-          <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            We provide meaningful programs that help young people learn, grow,
-            and become active contributors to their community.
+          {/* Subtext */}
+          <p className="text-lg text-blue-100 mb-8 max-w-2xl mx-auto leading-relaxed">
+            I'm always excited to take on new challenges and collaborate on
+            innovative projects. Let's discuss how we can work together.
           </p>
+
+          {/* Enhanced Input + Button Container */}
+          <div className="flex flex-col sm:flex-row justify-center items-stretch gap-4 max-w-lg mx-auto">
+            {/* Input Field */}
+            <div className="flex-1">
+              <input
+                type="text"
+                value={emailMessage}
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                  setEmailMessage(e.target.value)
+                }
+                placeholder="Write your message"
+                className="w-full h-full px-4 py-3 bg-white/10 border border-white/30 rounded-lg text-white placeholder-blue-200 focus:outline-none focus:ring-2 focus:ring-white focus:bg-white/20 transition-all duration-300 hover:bg-white/15"
+              />
+            </div>
+
+            {/* Button */}
+            <a
+              href={`mailto:mankajr11@gmail.com?subject=Opportunity%20to%20Connect%20–%20Saw%20Your%20Portfolio&body=${encodeURIComponent(
+                emailMessage
+              )}`}
+              className="inline-flex items-center justify-center px-8 py-3 bg-white text-[#007bff] font-semibold rounded-lg shadow-lg hover:bg-gray-50 hover:scale-105 hover:shadow-xl transition-all duration-300 whitespace-nowrap min-w-[140px]"
+            >
+              Join Us
+              <svg
+                className="ml-2 w-4 h-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M14 5l7 7m0 0l-7 7m7-7H3"
+                />
+              </svg>
+            </a>
+          </div>
         </div>
       </div>
     </>
