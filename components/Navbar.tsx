@@ -137,7 +137,7 @@ const Navbar = () => {
                     href={item.href}
                     className={`flex items-center justify-between px-4 py-3 rounded-lg transition-all duration-200 ${
                       isActive
-                        ? "bg-red-500/60 text-white font-semibold"
+                        ? "bg-red-500 text-white font-semibold"
                         : "text-blue-900 hover:bg-red-50/70"
                     }`}
                   >
