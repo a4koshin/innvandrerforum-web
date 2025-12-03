@@ -6,8 +6,6 @@ import { usePathname } from "next/navigation";
 import { Navigations } from "@/constants/data";
 import { RiMenuFill, RiArrowDownSLine } from "react-icons/ri";
 import { IoMdClose } from "react-icons/io";
-import { FiSearch } from "react-icons/fi";
-import { FaUser } from "react-icons/fa";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -80,9 +78,6 @@ const Navbar = () => {
                     }`}
                   >
                     <span>{item.name}</span>
-                    {/* {item.submenu && (
-                      <RiArrowDownSLine className="w-4 h-4 transition-transform duration-200 group-hover:rotate-180" />
-                    )} */}
                   </Link>
 
                   {/* Active indicator */}
@@ -142,7 +137,6 @@ const Navbar = () => {
                     }`}
                   >
                     <span>{item.name}</span>
-                    {/* {item.submenu && <RiArrowDownSLine className="w-5 h-5" />} */}
                   </Link>
                 );
               })}
