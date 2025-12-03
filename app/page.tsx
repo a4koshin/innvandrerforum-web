@@ -539,7 +539,7 @@ export default function Home() {
       </div>
 
       {/* Contact section */}
-      <div className="mx-auto max-w-7xl text-center mb-24 bg-gray-100 px-4 py-16 rounded-2xl">
+      <div className="mx-auto max-w-7xl text-center mb-24 bg-gray-100 px-4 sm:px-6 md:px-8 py-16 rounded-2xl">
         <div className="">
           {/* Enhanced Header */}
           <div className="inline-flex items-center gap-2 text-blue-900 mb-4">
