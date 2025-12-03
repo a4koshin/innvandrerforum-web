@@ -27,6 +27,6 @@ export const Navigations = [
   {
     id: 5,
     name: "Kontakt",
-    href: "/Kontakt",
+    href: "/kontakt",
   },
 ];
