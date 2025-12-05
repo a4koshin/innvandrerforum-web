@@ -156,7 +156,7 @@ const page = () => {
                 alle mulighet til sosial integrering, deltakelse og et aktivt
                 liv.
               </p>
-              <div className="mt-8 pt-6 border-t border-gray-100">
+              <div className="mt-8 pt-6 border-t border-blue-200">
                 <div className="flex flex-wrap gap-3">
                   <span className="px-4 py-2 bg-blue-50 text-blue-700 rounded-full text-sm font-medium">
                     Inkludering
