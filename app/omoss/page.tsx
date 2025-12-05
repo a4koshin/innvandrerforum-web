@@ -21,9 +21,11 @@ const page = () => {
 
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-16 pb-24">
           <div className="text-center mb-16">
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Om <span className="text-blue-600">Innvandrerforum</span> i
-              Østfold
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
+              Om{" "}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-900 to-red-600">
+                Innvandrerforum i Østfold
+              </span>{" "}
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Vi bygger broer mellom kulturer og skaper et inkluderende
