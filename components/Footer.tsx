@@ -100,7 +100,7 @@ const Footer = () => {
             </h3>
             <div className="space-y-4">
               <div className="flex items-start space-x-3">
-                <FaMapMarkerAlt className="w-5 h-5 text-blue-300 mt-1 flex-shrink-0" />
+                <FaMapMarkerAlt className="w-5 h-5 text-gray-100 mt-1 flex-shrink-0" />
                 <span className="text-blue-100 text-sm">
                   123 Community Street
                   <br />
@@ -108,7 +108,7 @@ const Footer = () => {
                 </span>
               </div>
               <div className="flex items-center space-x-3">
-                <FaPhone className="w-5 h-5 text-blue-300 flex-shrink-0" />
+                <FaPhone className="w-5 h-5 text-gray-100 flex-shrink-0" />
                 <a
                   href="tel:+4712345678"
                   className="text-blue-100 hover:text-white transition-colors text-sm"
@@ -117,7 +117,7 @@ const Footer = () => {
                 </a>
               </div>
               <div className="flex items-center space-x-3">
-                <FaEnvelope className="w-5 h-5 text-blue-300 flex-shrink-0" />
+                <FaEnvelope className="w-5 h-5 text-gray-100 flex-shrink-0" />
                 <a
                   href="mailto:innvandrerforumiostfold@gmail.com"
                   className="text-blue-100 hover:text-white transition-colors text-sm break-all"
