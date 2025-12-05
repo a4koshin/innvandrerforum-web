@@ -540,7 +540,7 @@ export default function Home() {
 
       {/* Contact section */}
       <div className="px-4">
-        <div className="mx-auto max-w-7xl md:w-[75rem]">
+        <div className="mx-auto max-w-7xl md:w-[76rem]">
           <div className="text-center mb-24 bg-gradient-to-r from-blue-900 to-red-600 px-4 md:px-8  py-16 rounded-2xl">
             {/* Enhanced Header */}
             <div className="inline-flex items-center gap-2 text-gray-100 mb-4">
