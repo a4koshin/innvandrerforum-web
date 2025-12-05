@@ -21,9 +21,6 @@ const page = () => {
 
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-16 pb-24">
           <div className="text-center mb-16">
-            <div className="inline-flex items-center justify-center p-3 bg-blue-100 rounded-full mb-6">
-              <Users className="w-8 h-8 text-blue-600" />
-            </div>
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
               Om <span className="text-blue-600">Innvandrerforum</span> i
               Østfold
@@ -143,7 +140,7 @@ const page = () => {
 
           {/* Mission & Vision Cards */}
           <div className="grid md:grid-cols-2 gap-8 mb-24">
-            <div className="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-blue-200">
+            <div className="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-blue-100 hover:border-blue-200">
               <div className="flex items-center gap-4 mb-6">
                 <div className="p-3 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl">
                   <Target className="w-8 h-8 text-white" />
@@ -162,19 +159,19 @@ const page = () => {
                   <span className="px-4 py-2 bg-blue-50 text-blue-700 rounded-full text-sm font-medium">
                     Inkludering
                   </span>
-                  <span className="px-4 py-2 bg-purple-50 text-purple-700 rounded-full text-sm font-medium">
+                  <span className="px-4 py-2 bg-purple-50 text-red-600 rounded-full text-sm font-medium">
                     Fellesskap
                   </span>
-                  <span className="px-4 py-2 bg-green-50 text-green-700 rounded-full text-sm font-medium">
+                  <span className="px-4 py-2 bg-green-50 text-green-500 rounded-full text-sm font-medium">
                     Integrering
                   </span>
                 </div>
               </div>
             </div>
 
-            <div className="group bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-blue-100">
+            <div className="group rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-blue-100">
               <div className="flex items-center gap-4 mb-6">
-                <div className="p-3 bg-gradient-to-br from-purple-500 to-indigo-600 rounded-xl">
+                <div className="p-3 bg-red-600 rounded-xl">
                   <Eye className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="text-2xl font-bold text-gray-900">Vår visjon</h3>
