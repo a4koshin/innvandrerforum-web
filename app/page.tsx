@@ -539,64 +539,68 @@ export default function Home() {
       </div>
 
       {/* Contact section */}
-      <div className="mx-auto max-w-7xl px-4 sm:px-2 lg:px-4 text-center mb-24 bg-gradient-to-r from-blue-900 to-red-600  py-16 rounded-2xl">
-        {/* Enhanced Header */}
-        <div className="inline-flex items-center gap-2 text-gray-100 mb-4">
-          <div className="w-8 h-0.5 bg-gray-100"></div>
-          <span className="text-sm font-semibold uppercase tracking-wider">
-            Join us
-          </span>
-          <div className="w-8 h-0.5 bg-gray-100"></div>
-        </div>
+      <div className="px-4">
+        <div className="mx-auto max-w-7xl md:w-[75rem]">
+          <div className="text-center mb-24 bg-gradient-to-r from-blue-900 to-red-600 px-4 md:px-8  py-16 rounded-2xl">
+            {/* Enhanced Header */}
+            <div className="inline-flex items-center gap-2 text-gray-100 mb-4">
+              <div className="w-8 h-0.5 bg-gray-100"></div>
+              <span className="text-sm font-semibold uppercase tracking-wider">
+                Join us
+              </span>
+              <div className="w-8 h-0.5 bg-gray-100"></div>
+            </div>
 
-        {/* Heading */}
-        <h2 className="text-2xl md:text-4xl font-bold text-gray-100 mb-4">
-          Join Our Community
-        </h2>
+            {/* Heading */}
+            <h2 className="text-2xl md:text-4xl font-bold text-gray-100 mb-4">
+              Join Our Community
+            </h2>
 
-        {/* Subtext */}
-        <p className="text-lg text-gray-100 mb-8 max-w-2xl mx-auto leading-relaxed">
-          Join our community and be part of a movement that empowers youth,
-          builds connections, and creates positive change together.”
-        </p>
+            {/* Subtext */}
+            <p className="text-lg text-gray-100 mb-8 max-w-2xl mx-auto leading-relaxed">
+              Join our community and be part of a movement that empowers youth,
+              builds connections, and creates positive change together.”
+            </p>
 
-        {/* Enhanced Input + Button Container */}
-        <div className="flex flex-col sm:flex-row justify-center items-stretch gap-4 max-w-lg mx-auto">
-          {/* Input Field */}
-          <div className="flex-1">
-            <input
-              type="text"
-              value={emailMessage}
-              onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-                setEmailMessage(e.target.value)
-              }
-              placeholder="Write your message"
-              className="w-full h-full px-4 py-3 bg-white/10 border border-white/30 rounded-lg text-white placeholder-gray-100 focus:outline-none focus:ring focus:ring-white focus:bg-white/20 transition-all duration-300 hover:bg-white/15"
-            />
+            {/* Enhanced Input + Button Container */}
+            <div className="flex flex-col sm:flex-row justify-center items-stretch gap-4 max-w-lg mx-auto">
+              {/* Input Field */}
+              <div className="flex-1">
+                <input
+                  type="text"
+                  value={emailMessage}
+                  onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                    setEmailMessage(e.target.value)
+                  }
+                  placeholder="Write your message"
+                  className="w-full h-full px-4 py-3 bg-white/10 border border-white/30 rounded-lg text-white placeholder-gray-100 focus:outline-none focus:ring focus:ring-white focus:bg-white/20 transition-all duration-300 hover:bg-white/15"
+                />
+              </div>
+
+              {/* Button */}
+              <a
+                href={`mailto:innvandrerforumiostfold@gmail.com?subject=Message%20to%20from%20–%20the%20Your%20Website&body=${encodeURIComponent(
+                  emailMessage
+                )}`}
+                className="inline-flex items-center justify-center px-8 py-3 bg-blue-900 text-white font-semibold rounded-lg shadow-lg hover:bg-blue-800 hover:scale-105 hover:shadow-xl transition-all duration-300 whitespace-nowrap min-w-[140px]"
+              >
+                Join Us
+                <svg
+                  className="ml-2 w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M14 5l7 7m0 0l-7 7m7-7H3"
+                  />
+                </svg>
+              </a>
+            </div>
           </div>
-
-          {/* Button */}
-          <a
-            href={`mailto:innvandrerforumiostfold@gmail.com?subject=Message%20to%20from%20–%20the%20Your%20Website&body=${encodeURIComponent(
-              emailMessage
-            )}`}
-            className="inline-flex items-center justify-center px-8 py-3 bg-blue-900 text-white font-semibold rounded-lg shadow-lg hover:bg-blue-800 hover:scale-105 hover:shadow-xl transition-all duration-300 whitespace-nowrap min-w-[140px]"
-          >
-            Join Us
-            <svg
-              className="ml-2 w-4 h-4"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M14 5l7 7m0 0l-7 7m7-7H3"
-              />
-            </svg>
-          </a>
         </div>
       </div>
     </>
