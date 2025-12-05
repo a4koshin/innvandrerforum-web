@@ -12,7 +12,7 @@ import {
   HandHeart,
 } from "lucide-react";
 
-const page = () => {
+const OmossPage = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
@@ -244,4 +244,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default OmossPage;
