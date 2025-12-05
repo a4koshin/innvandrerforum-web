@@ -1,6 +1,16 @@
 import Image from "next/image";
 import React from "react";
-import { Users, Target, Eye, Heart, Globe, Shield } from "lucide-react";
+import {
+  Users,
+  Target,
+  Eye,
+  Heart,
+  Globe,
+  Shield,
+  Sparkles,
+  Award,
+  HandHeart,
+} from "lucide-react";
 
 const page = () => {
   return (
@@ -63,24 +73,69 @@ const page = () => {
                 </div>
               </div>
             </div>
-
+            {/* Enhanced Image Section */}
             <div className="lg:w-1/2">
-              <div className="relative">
-                <div className="absolute -inset-4 bg-gradient-to-r from-blue-400 to-red-400 rounded-3xl blur-xl opacity-20" />
-                <div className="relative overflow-hidden rounded-2xl shadow-2xl">
-                  <Image
-                    src="/infoimg.png"
-                    alt="Innvandrerforum i Østfold - fellesskap og kultur"
-                    width={800}
-                    height={800}
-                    priority
-                    className="w-full h-auto object-cover transform hover:scale-105 transition-transform duration-700"
-                  />
-                  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-6">
-                    <p className="text-white text-lg font-semibold">
-                      Bygger broer • Fremmer fellesskap • Skaper muligheter
-                    </p>
+              <div className="relative group px-8">
+                {/* Floating Elements */}
+                <div className="absolute -top-6 -right-6 w-24 h-24 bg-red-600/10 rounded-2xl rotate-12 group-hover:rotate-0 transition-transform duration-500" />
+                <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-blue-900/10 rounded-2xl -rotate-12 group-hover:rotate-0 transition-transform duration-500" />
+
+                <div className="relative overflow-hidden rounded-3xl shadow-2xl">
+                  <div className="aspect-[4/3] relative">
+                    <Image
+                      src="/infoimg.png"
+                      alt="Innvandrerforum i Østfold - fellesskap og kultur"
+                      fill
+                      priority
+                      className="object-cover group-hover:scale-105 transition-transform duration-700"
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                    />
+
+                    {/* Gradient Overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-blue-900/40 via-transparent to-transparent" />
+
+                    {/* Floating Badge */}
+                    <div className="absolute top-6 right-6 bg-white/90 backdrop-blur-sm px-4 py-3 rounded-xl shadow-lg">
+                      <div className="flex items-center gap-2">
+                        <HandHeart className="w-5 h-5 text-red-600" />
+                        <span className="font-bold text-blue-900">
+                          Frivilligdrevet
+                        </span>
+                      </div>
+                    </div>
                   </div>
+
+                  {/* Image Caption */}
+                  <div className="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-blue-900 to-transparent">
+                    <div className="text-white space-y-2">
+                      <p className="text-xl font-bold">
+                        Vi skaper trygge møteplasser
+                      </p>
+                      <p className="text-blue-100 opacity-90">
+                        For alle aldrer og kulturelle bakgrunner
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Image Support Text */}
+              <div className="mt-8 flex items-center justify-center gap-8 text-center">
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-blue-900">100%</div>
+                  <div className="text-sm text-gray-600">Inkluderende</div>
+                </div>
+                <div className="h-8 w-px bg-gray-300" />
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-red-600">24/7</div>
+                  <div className="text-sm text-gray-600">
+                    Tilgjengelig støtte
+                  </div>
+                </div>
+                <div className="h-8 w-px bg-gray-300" />
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-blue-900">0kr</div>
+                  <div className="text-sm text-gray-600">Medlemskontingent</div>
                 </div>
               </div>
             </div>
@@ -147,7 +202,7 @@ const page = () => {
           </div>
 
           {/* Values Section */}
-          <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-3xl p-8 md:p-12 text-white">
+          <div className="bg-gradient-to-r from-blue-800 to-red-600 rounded-3xl p-8 md:p-12 text-white">
             <h3 className="text-3xl font-bold text-center mb-12">
               Våre verdier
             </h3>
