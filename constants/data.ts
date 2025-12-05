@@ -22,7 +22,7 @@ export const Navigations = [
   {
     id: 4,
     name: "Arrangementer",
-    href: "/Arrangementer",
+    href: "/arrangementer",
   },
   {
     id: 5,
