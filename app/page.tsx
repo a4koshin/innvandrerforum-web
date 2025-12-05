@@ -539,23 +539,23 @@ export default function Home() {
       </div>
 
       {/* Contact section */}
-      <div className="mx-auto max-w-7xl px-4 sm:px-2 lg:px-4 text-center mb-24 bg-gray-100 py-16 rounded-2xl">
+      <div className="mx-auto max-w-7xl px-4 sm:px-2 lg:px-4 text-center mb-24 bg-gradient-to-r from-blue-900 to-red-600  py-16 rounded-2xl">
         {/* Enhanced Header */}
-        <div className="inline-flex items-center gap-2 text-blue-900 mb-4">
-          <div className="w-8 h-0.5 bg-blue-900"></div>
+        <div className="inline-flex items-center gap-2 text-gray-100 mb-4">
+          <div className="w-8 h-0.5 bg-gray-100"></div>
           <span className="text-sm font-semibold uppercase tracking-wider">
             Join us
           </span>
-          <div className="w-8 h-0.5 bg-blue-900"></div>
+          <div className="w-8 h-0.5 bg-gray-100"></div>
         </div>
 
         {/* Heading */}
-        <h2 className="text-2xl md:text-4xl font-bold text-blue-900 mb-4">
+        <h2 className="text-2xl md:text-4xl font-bold text-gray-100 mb-4">
           Join Our Community
         </h2>
 
         {/* Subtext */}
-        <p className="text-lg text-blue-900/80 mb-8 max-w-2xl mx-auto leading-relaxed">
+        <p className="text-lg text-gray-100 mb-8 max-w-2xl mx-auto leading-relaxed">
           Join our community and be part of a movement that empowers youth,
           builds connections, and creates positive change together.”
         </p>
@@ -571,7 +571,7 @@ export default function Home() {
                 setEmailMessage(e.target.value)
               }
               placeholder="Write your message"
-              className="w-full h-full px-4 py-3 bg-white border border-blue-900 rounded-lg text-blue-900 placeholder-blue-900 focus:outline-none focus:ring focus:ring-blue-900 focus:border-blue-900 transition-all duration-300 hover:border-blue-300"
+              className="w-full h-full px-4 py-3 bg-white/10 border border-white/30 rounded-lg text-white placeholder-gray-100 focus:outline-none focus:ring focus:ring-white focus:bg-white/20 transition-all duration-300 hover:bg-white/15"
             />
           </div>
 
