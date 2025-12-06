@@ -9,8 +9,6 @@ import {
   BookOpen,
   Film,
   Music,
-  Football,
-  Swimming,
   Target,
   Coffee,
   Calendar,
