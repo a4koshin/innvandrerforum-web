@@ -10,6 +10,14 @@ import {
   Sparkles,
   Award,
   HandHeart,
+  Calendar,
+  Trophy,
+  Gamepad2,
+  MessageSquare,
+  Music,
+  MapPin,
+  Clock,
+  ArrowRight,
 } from "lucide-react";
 
 const OmossPage = () => {
@@ -18,21 +26,30 @@ const OmossPage = () => {
       {/* Hero Section */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0" />
+        <div className="relative overflow-hidden bg-gradient-to-br from-blue-900/5 via-white to-red-600/5 mb-12">
+          <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-900/10 rounded-full blur-3xl -translate-y-48" />
+          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-red-600/10 rounded-full blur-3xl translate-y-48" />
 
-        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-16 pb-24">
-          <div className="text-center mb-16">
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
-              Om{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-900 to-red-600">
-                Innvandrerforum i Østfold
-              </span>{" "}
-            </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Vi bygger broer mellom kulturer og skaper et inkluderende
-              fellesskap
-            </p>
+          <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-20 pb-16">
+            <div className="text-center mb-20">
+              <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
+                Om{" "}
+                <span className="relative">
+                  <span className="absolute bottom-2 left-0 w-full h-3 bg-red-600/20 -rotate-1 z-0" />
+                </span>{" "}
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-900 to-red-600">
+                  Innvandrerforum i Østfold
+                </span>
+              </h1>
+
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                Vi bygger broer mellom kulturer og skaper et inkluderende
+                fellesskap
+              </p>
+            </div>
           </div>
-
+        </div>
+        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-16 pb-24">
           {/* Main Content */}
           <div className="flex flex-col lg:flex-row items-center gap-12 mb-24">
             <div className="lg:w-1/2">
