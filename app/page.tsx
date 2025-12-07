@@ -1,17 +1,18 @@
 "use client";
-
 import React, { useState } from "react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import Card from "@/components/Card";
+import { useRouter } from "next/navigation";
 
 export default function Home() {
   const [emailMessage, setEmailMessage] = useState<string>("");
+  const router = useRouter();
   return (
     <>
       <div className="relative h-screen w-full">
         {/* Background */}
-        <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 -z-10">
           <Image
             src="/hero.jpg"
             alt="Hero background"
@@ -22,53 +23,42 @@ export default function Home() {
             sizes="100vw"
           />
           <div className="absolute inset-0 bg-black/40" />
-
-          {/* Content centered vertically & horizontally */}
-          <div className="relative z-10 flex items-center justify-center h-full px-4">
-            <div className="max-w-4xl mx-auto text-center text-white">
-              <div className="space-y-6 backdrop-blur-sm bg-black/10 p-8 rounded-2xl">
-                {/* Heading, paragraph, buttons etc */}
-              </div>
-            </div>
-          </div>
         </div>
 
-        {/* Content */}
-        <div className="relative z-10 min-h-screen flex items-center justify-center px-4">
-          <div className="max-w-4xl mx-auto text-center text-white">
-            {/* Text Content */}
-            <div className="space-y-6 backdrop-blur-xs bg-black/20 p-8 rounded-2xl">
-              <h1 className="text-4xl md:text-6xl font-bold tracking-tight">
-                Innvandrerforum I Østfold
-              </h1>
+        {/* Foreground Content */}
+        <div className="flex items-center justify-center h-full px-4">
+          <div className="max-w-4xl mx-auto text-center text-white space-y-6 backdrop-blur-sm bg-black/10 p-8 rounded-2xl">
+            <h1 className="text-4xl md:text-6xl font-bold tracking-tight">
+              Innvandrerforum I Østfold
+            </h1>
 
-              <p className="text-xl md:text-2xl max-w-3xl mx-auto leading-relaxed">
-                Vi arbeider for å støtte og inkludere minoritetsungdom og
-                familier, med særlig fokus på å motvirke sosial ekskludering,
-                ensomhet og utenforskap.
-              </p>
+            <p className="text-xl md:text-2xl max-w-3xl mx-auto leading-relaxed">
+              Vi arbeider for å støtte og inkludere minoritetsungdom …
+            </p>
 
-              {/* Buttons */}
-              <div className="flex flex-col sm:flex-row gap-4 justify-center pt-6">
-                <Button
-                  variant="default"
-                  size="lg"
-                  className="bg-white text-black hover:bg-white/90 hover:scale-105 px-8 py-6 text-lg"
-                >
-                  Les mer
-                </Button>
-                <Button
-                  variant="outline"
-                  size="lg"
-                  className="bg-transparent border-white text-white hover:scale-105 hover:text-white bg-white/10 hover:bg-white/20 px-8 py-6 text-lg border-2"
-                >
-                  Kontakt oss
-                </Button>
-              </div>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center pt-6">
+              <Button
+                variant="default"
+                onClick={() => router.push("/omoss")}
+                size="lg"
+                className="bg-white text-black hover:bg-white/90 hover:scale-105 px-8 py-6 text-lg"
+              >
+                Les mer
+              </Button>
+
+              <Button
+                variant="outline"
+                onClick={() => router.push("/kontakt")}
+                size="lg"
+                className="bg-transparent border-white text-white hover:scale-105 hover:text-white bg-white/10 hover:bg-white/20 px-8 py-6 text-lg border-2"
+              >
+                Kontakt oss
+              </Button>
             </div>
           </div>
         </div>
       </div>
+
       {/* Stats Section - Optimized spacing */}
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
         {/* Stats grid - compact layout */}
