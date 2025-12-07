@@ -126,47 +126,25 @@ const outdoorActivities = [
 // Gaming Activities Data with Images
 const gamingActivities = [
   {
-    id: 1,
+    id: 0,
     name: "Gaming Night",
     description: "Ukentlige gaming-kvelder med konkurranser og fellesskap",
     schedule: "Ukentlig • Torsdager 18:00-22:00",
     ageGroup: "13+ år",
     icon: Gamepad2,
     tags: ["Alle spill", "Priser"],
-    image: "/gaming/gaming-night.jpg",
+    image: "/PCGaming.jpg",
     equipment: "PC & Konsoller",
   },
   {
-    id: 2,
-    name: "E-sport Practice",
-    description: "Trening og coaching for seriøse e-sport-entusiaster",
-    schedule: "Ukentlig • Onsdager 17:00-20:00",
-    ageGroup: "16+ år",
-    icon: "🎮",
-    tags: ["Competitive", "Coaching"],
-    image: "/gaming/esport.jpg",
-    equipment: "Gaming PC",
-  },
-  {
-    id: 3,
-    name: "Retro Gaming",
-    description: "Reis tilbake i tid med klassiske spill og konsoller",
-    schedule: "Månedlig • Lørdager 14:00-18:00",
-    ageGroup: "Alle aldre",
-    icon: "👾",
-    tags: ["Nostalgia", "Klassikere"],
-    image: "/gaming/retro.jpg",
-    equipment: "Retro Konsoller",
-  },
-  {
-    id: 4,
+    id: 1,
     name: "EA Sports FIFA Turnering",
     description: "Årlig mesterskap med premier og ære på spill",
     schedule: "Årlig • Oktober",
     ageGroup: "Alle aldre",
     icon: "🏆",
     tags: ["Turnering", "Premier"],
-    image: "/gaming/fifa.jpg",
+    image: "/EAsports.jpg",
     equipment: "PS5 & Xbox",
   },
 ];
@@ -526,8 +504,15 @@ const ActivityPage = () => {
                 <div className="flex">
                   {/* Image Section */}
                   <div className="w-2/5 relative">
-                    <div className="absolute inset-0 bg-gradient-to-br from-red-600/10 to-red-500/10" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+                    <div>
+                      <Image
+                        src={game.image}
+                        alt="gaming image"
+                        width={800}
+                        height={800}
+                        className="w-full h-[380px]"
+                      />
+                    </div>
                     <div className="absolute top-4 left-4 z-10">
                       <div className="p-2 bg-red-600/90 rounded-lg">
                         {typeof game.icon === "string" ? (
