@@ -37,7 +37,7 @@ export default function Home() {
         <div className="relative z-10 min-h-screen flex items-center justify-center px-4">
           <div className="max-w-4xl mx-auto text-center text-white">
             {/* Text Content */}
-            <div className="space-y-6 backdrop-blur-sm bg-black/20 p-8 rounded-2xl">
+            <div className="space-y-6 backdrop-blur-xs bg-black/20 p-8 rounded-2xl">
               <h1 className="text-4xl md:text-6xl font-bold tracking-tight">
                 Innvandrerforum I Østfold
               </h1>
