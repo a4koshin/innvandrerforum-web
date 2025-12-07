@@ -1,5 +1,6 @@
+"use client";
+import React, { useState } from "react";
 import Image from "next/image";
-import React from "react";
 import {
   Trophy,
   Gamepad2,
@@ -7,421 +8,581 @@ import {
   Users,
   Heart,
   BookOpen,
+  Calendar,
+  MapPin,
+  Clock,
+  ArrowRight,
+  ChevronLeft,
+  ChevronRight,
+  Smartphone,
+  Coffee,
   Film,
   Music,
-  Target,
-  Coffee,
-  Calendar,
-  Star,
   Globe,
-  Shield,
   Sparkles,
-  ArrowRight,
+  Target,
+  Shield,
+  Star,
+  ExternalLink,
 } from "lucide-react";
+import { FaPersonSwimming } from "react-icons/fa6";
+import { FaBowlingBall } from "react-icons/fa";
 import { IoFootball } from "react-icons/io5";
-const activities = [
+import { useRouter } from "next/navigation";
+// Sports Activities Data with Images
+const sportsActivities = [
   {
-    category: "Idrett & Fysisk Aktivitet",
-    icon: Trophy,
-    color: "from-blue-900 to-blue-800",
-    items: [
-      {
-        name: "Fotballturneringer",
-        participants: "120+",
-        frequency: "Månedlig",
-      },
-      {
-        name: "Bowlingkvelder",
-        participants: "40+",
-        frequency: "Annenhver uke",
-      },
-      { name: "Svømmeaktiviteter", participants: "35+", frequency: "Månedlig" },
-      { name: "Paintball", participants: "25+", frequency: "Kvartalsvis" },
-    ],
+    id: 1,
+    name: "Fotball",
     description:
-      "Fysisk aktivitet for alle aldre og ferdighetsnivåer. Fokus på helse, fellesskap og glede.",
-    stat: "Over 200 deltakere årlig",
-  },
-  {
-    category: "Friluftsliv & Turer",
-    icon: Mountain,
-    color: "from-green-700 to-emerald-600",
-    items: [
-      { name: "Organiserte turer", participants: "30+", frequency: "Månedlig" },
-      {
-        name: "Naturopplevelser",
-        participants: "25+",
-        frequency: "Kvartalsvis",
-      },
-      { name: "Fjellturer", participants: "20+", frequency: "Sesongbasert" },
-      { name: "Sykketurer", participants: "15+", frequency: "Annenhver uke" },
-    ],
-    description:
-      "Utforsk Østfolds vakre natur sammen med andre. Perfekt for nyankomne og ungdom.",
-    stat: "15+ turer årlig",
-  },
-  {
-    category: "Gaming & E-sport",
-    icon: Gamepad2,
-    color: "from-red-600 to-red-500",
-    items: [
-      {
-        name: "EA Sports FIFA-turnering",
-        participants: "45+",
-        frequency: "Årlig",
-      },
-      { name: "E-sport kvelder", participants: "30+", frequency: "Ukentlig" },
-      {
-        name: "Gaming-turneringer",
-        participants: "25+",
-        frequency: "Månedlig",
-      },
-      { name: "Retro-gaming", participants: "20+", frequency: "Månedlig" },
-    ],
-    description:
-      "For alle gaming-enthusiaster. Konkurranse, fellesskap og gøy for alle aldre.",
-    stat: "Årlig mesterskap",
-  },
-  {
-    category: "Ungdomshus & Møteplass",
-    icon: Users,
-    color: "from-purple-700 to-purple-600",
-    items: [
-      {
-        name: "Fredrikstad Flerkulturelt Ungdomshus",
-        participants: "100+",
-        frequency: "Daglig",
-      },
-      {
-        name: "Leksehjelp & Studiestøtte",
-        participants: "40+",
-        frequency: "Ukentlig",
-      },
-      {
-        name: "Kurs & Temakvelder",
-        participants: "35+",
-        frequency: "Månedlig",
-      },
-      {
-        name: "Trygt sosialt miljø",
-        participants: "6-24 år",
-        frequency: "Åpent hele året",
-      },
-    ],
-    description:
-      "Et trygt, inkluderende miljø for barn og unge (6-24 år) med varierte tilbud.",
-    stat: "500+ ukentlige besøk",
-  },
-  {
-    category: "Sosiale & Kulturelle Arrangementer",
-    icon: Heart,
-    color: "from-pink-600 to-rose-500",
-    items: [
-      { name: "Kulturkvelder", participants: "60+", frequency: "Månedlig" },
-      {
-        name: "Markeringer og feiringer",
-        participants: "80+",
-        frequency: "Kvartalsvis",
-      },
-      { name: "Filmkvelder", participants: "40+", frequency: "Annenhver uke" },
-      {
-        name: "Musikkarrangementer",
-        participants: "50+",
-        frequency: "Månedlig",
-      },
-    ],
-    description:
-      "Feiring av mangfold og fellesskap gjennom kulturelle og sosiale arrangementer.",
-    stat: "30+ arrangementer årlig",
-  },
-  {
-    category: "Aktivitetsportalen Fredrikstad",
-    icon: Globe,
-    color: "from-cyan-600 to-blue-500",
-    items: [
-      {
-        name: "Digital aktivitetskalender",
-        participants: "500+",
-        frequency: "Løpende",
-      },
-      {
-        name: "Påmelding og informasjon",
-        participants: "Alle",
-        frequency: "24/7",
-      },
-      {
-        name: "Ressursbank",
-        participants: "Samfunnet",
-        frequency: "Alltid tilgjengelig",
-      },
-      {
-        name: "Frivillighetsmuligheter",
-        participants: "50+",
-        frequency: "Kontinuerlig",
-      },
-    ],
-    description:
-      "Din digitale portal for alle aktiviteter og muligheter i Fredrikstad-området.",
-    stat: "1000+ årlige brukere",
-  },
-];
-
-const featuredPrograms = [
-  {
-    title: "Fredrikstad Flerkulturelt Ungdomshus",
-    description:
-      "Et trygt tilfluktssted for ungdom mellom 6-24 år med gaming, biljard, leksehjelp, kurs og mer.",
-    ageGroup: "6-24 år",
-    hours: "Åpent daglig",
-    capacity: "100+ daglige besøk",
-    icon: Shield,
-    color: "bg-purple-100 border-purple-200",
-    iconColor: "text-purple-700",
-  },
-  {
-    title: "EA Sports FIFA Årlig Turnering",
-    description:
-      "Vårt største gaming-event som samler spillere fra hele Østfold for konkurranse og fellesskap.",
-    ageGroup: "Alle aldre",
-    hours: "Årlig arrangement",
-    capacity: "45+ deltakere",
-    icon: Gamepad2,
-    color: "bg-red-100 border-red-200",
-    iconColor: "text-red-700",
-  },
-  {
-    title: "Fotball for Alle",
-    description:
-      "Inkluderende fotballaktiviteter uavhengig av ferdighetsnivå, kjønn eller bakgrunn.",
-    ageGroup: "5-75 år",
-    hours: "Månedlige turneringer",
-    capacity: "120+ deltakere",
+      "Månedlige turneringer og treninger for alle aldre og ferdighetsnivåer",
+    schedule: "Ukentlig • Mandager 18:00-20:00",
+    participants: "120+ deltakere",
+    color: "bg-gradient-to-br from-blue-900 to-blue-800",
     icon: IoFootball,
-    color: "bg-blue-100 border-blue-200",
-    iconColor: "text-blue-900",
+    image: "/football.jpg",
+    location: "Østfold Stadion",
   },
   {
-    title: "Leksehjelp & Karriereveiledning",
+    id: 2,
+    name: "Bowling",
+    description: "Sosiale bowlingkvelder med fokus på glede og fellesskap",
+    schedule: "Annenhver uke • Fredager 19:00-22:00",
+    participants: "40+ deltakere",
+    color: "bg-gradient-to-br from-red-600 to-red-500",
+    icon: FaBowlingBall,
+    image: "/bowling.jpeg",
+    location: "Strike Bowling",
+  },
+  {
+    id: 3,
+    name: "Svømming",
     description:
-      "Gratis studiestøtte og veiledning for unge som trenger ekstra hjelp på skolen.",
-    ageGroup: "10-25 år",
-    hours: "Ukentlige sesjoner",
-    capacity: "40+ deltakere",
-    icon: BookOpen,
-    color: "bg-green-100 border-green-200",
-    iconColor: "text-green-700",
+      "Svømmekurs og fritidssvømming for både nybegynnere og erfarne",
+    schedule: "Månedlig • Lørdager 10:00-12:00",
+    participants: "35+ deltakere",
+    color: "bg-gradient-to-br from-blue-900 to-blue-800",
+    icon: FaPersonSwimming,
+    image: "/swimming.jpeg",
+    location: "Østfold Svømmehall",
+  },
+  {
+    id: 4,
+    name: "Paintball",
+    description: "Spennende paintball-opplevelser i trygge omgivelser",
+    schedule: "Kvartalsvis • Søndager 13:00-16:00",
+    participants: "25+ deltakere",
+    color: "bg-gradient-to-br from-red-600 to-red-500",
+    icon: Target,
+    image: "/football.jpg",
+    location: "Østfold Paintball Park",
   },
 ];
 
-const fritidsaktiviteter = () => {
+// Outdoor Activities Data with Images
+const outdoorActivities = [
+  {
+    id: 1,
+    title: "Fjellturer",
+    description: "Utforsk Østfolds vakre fjellandskap med erfarne guider",
+    image: "/outdoor/mountains.jpg",
+    date: "Neste tur: 15. Juni",
+    difficulty: "Middels",
+    duration: "6 timer",
+    season: "Vår - Høst",
+  },
+  {
+    id: 2,
+    title: "Sykketurer",
+    description: "Oppdag skjulte stier og naturperler på sykkel",
+    image: "/outdoor/cycling.jpg",
+    date: "Neste tur: 22. Juni",
+    difficulty: "Lett",
+    duration: "4 timer",
+    season: "Hele året",
+  },
+  {
+    id: 3,
+    title: "Naturopplevelser",
+    description: "Lær om lokal flora og fauna på våre guidede turer",
+    image: "/outdoor/nature.jpg",
+    date: "Neste tur: 29. Juni",
+    difficulty: "Alle nivåer",
+    duration: "3 timer",
+    season: "Hele året",
+  },
+  {
+    id: 4,
+    title: "Familievennlige turer",
+    description: "Perfekte utflukter for familier med barn",
+    image: "/outdoor/family.jpg",
+    date: "Neste tur: 6. Juli",
+    difficulty: "Lett",
+    duration: "2-3 timer",
+    season: "Vår - Høst",
+  },
+];
+
+// Gaming Activities Data with Images
+const gamingActivities = [
+  {
+    id: 1,
+    name: "Gaming Night",
+    description: "Ukentlige gaming-kvelder med konkurranser og fellesskap",
+    schedule: "Ukentlig • Torsdager 18:00-22:00",
+    ageGroup: "13+ år",
+    icon: Gamepad2,
+    tags: ["Alle spill", "Priser"],
+    image: "/gaming/gaming-night.jpg",
+    equipment: "PC & Konsoller",
+  },
+  {
+    id: 2,
+    name: "E-sport Practice",
+    description: "Trening og coaching for seriøse e-sport-entusiaster",
+    schedule: "Ukentlig • Onsdager 17:00-20:00",
+    ageGroup: "16+ år",
+    icon: "🎮",
+    tags: ["Competitive", "Coaching"],
+    image: "/gaming/esport.jpg",
+    equipment: "Gaming PC",
+  },
+  {
+    id: 3,
+    name: "Retro Gaming",
+    description: "Reis tilbake i tid med klassiske spill og konsoller",
+    schedule: "Månedlig • Lørdager 14:00-18:00",
+    ageGroup: "Alle aldre",
+    icon: "👾",
+    tags: ["Nostalgia", "Klassikere"],
+    image: "/gaming/retro.jpg",
+    equipment: "Retro Konsoller",
+  },
+  {
+    id: 4,
+    name: "EA Sports FIFA Turnering",
+    description: "Årlig mesterskap med premier og ære på spill",
+    schedule: "Årlig • Oktober",
+    ageGroup: "Alle aldre",
+    icon: "🏆",
+    tags: ["Turnering", "Premier"],
+    image: "/gaming/fifa.jpg",
+    equipment: "PS5 & Xbox",
+  },
+];
+
+// Youth House Activities Data with Images
+const youthHouseActivities = [
+  {
+    id: 1,
+    name: "Kulturkvelder",
+    description: "Oppdag og feir mangfoldet gjennom mat, musikk og dans",
+    icon: Heart,
+    schedule: "Månedlig",
+    ageGroup: "Alle aldre",
+    image: "/youth/culture.jpg",
+    time: "18:00-21:00",
+  },
+  {
+    id: 2,
+    name: "Leksehjelp",
+    description: "Gratis studiestøtte og veiledning for skoleelever",
+    icon: BookOpen,
+    schedule: "Ukentlig",
+    ageGroup: "6-18 år",
+    image: "/youth/homework.jpg",
+    time: "16:00-18:00",
+  },
+  {
+    id: 3,
+    name: "Sport på TV",
+    description: "Følg store kamper sammen med andre fans",
+    icon: "📺",
+    schedule: "Ukentlig",
+    ageGroup: "Alle aldre",
+    image: "/youth/sports-tv.jpg",
+    time: "Avhengig av kamp",
+  },
+  {
+    id: 4,
+    name: "Kurs & Temakvelder",
+    description: "Lær nye ferdigheter og delta i spennende workshops",
+    icon: Sparkles,
+    schedule: "Månedlig",
+    ageGroup: "Alle aldre",
+    image: "/youth/workshops.jpg",
+    time: "18:00-20:00",
+  },
+  {
+    id: 5,
+    name: "Sosiale kvelder",
+    description: "Uformelle samlinger med spill, musikk og prat",
+    icon: Coffee,
+    schedule: "Ukentlig",
+    ageGroup: "13-24 år",
+    image: "/youth/social.jpg",
+    time: "17:00-22:00",
+  },
+  {
+    id: 6,
+    name: "Filmkvelder",
+    description: "Visning av filmer fra hele verden med diskusjon etterpå",
+    icon: Film,
+    schedule: "Annenhver uke",
+    ageGroup: "Alle aldre",
+    image: "/youth/movie.jpg",
+    time: "19:00-22:00",
+  },
+  {
+    id: 7,
+    name: "Musikkworkshops",
+    description: "Lær å spille instrumenter eller delta i kor",
+    icon: Music,
+    schedule: "Månedlig",
+    ageGroup: "10+ år",
+    image: "/youth/music.jpg",
+    time: "17:00-19:00",
+  },
+  {
+    id: 8,
+    name: "Gaming Arena",
+    description: "Dedikert gaming-område med moderne utstyr",
+    icon: Gamepad2,
+    schedule: "Daglig",
+    ageGroup: "10+ år",
+    image: "/youth/gaming.jpg",
+    time: "14:00-20:00",
+  },
+];
+
+const ActivityPage = () => {
+  const [currentOutdoorSlide, setCurrentOutdoorSlide] = useState(0);
+  const router = useRouter();
+  const nextSlide = () => {
+    setCurrentOutdoorSlide((prev) =>
+      prev === outdoorActivities.length - 1 ? 0 : prev + 1
+    );
+  };
+
+  const prevSlide = () => {
+    setCurrentOutdoorSlide((prev) =>
+      prev === 0 ? outdoorActivities.length - 1 : prev - 1
+    );
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-blue-900/5 via-white to-red-600/5">
+      <section className="relative overflow-hidden bg-gradient-to-br from-blue-900/5 via-white to-red-600/5 py-20">
         <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-900/10 rounded-full blur-3xl -translate-y-48" />
         <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-red-600/10 rounded-full blur-3xl translate-y-48" />
 
-        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-20 pb-24">
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-3 bg-gradient-to-r from-blue-900/10 to-red-600/10 px-6 py-3 rounded-2xl mb-8">
+        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <div className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-900/10 to-red-600/10 rounded-full mb-8">
               <Sparkles className="w-5 h-5 text-blue-900" />
               <span className="text-blue-900 font-semibold">
-                Tilbud for hele samfunnet
+                Aktiviteter for hele familien
               </span>
-              <Sparkles className="w-5 h-5 text-red-600" />
             </div>
 
             <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-              Våre{" "}
+              Oppdag våre{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-900 to-red-600">
-                aktiviteter
-              </span>{" "}
-              og{" "}
-              <span className="relative">
-                <span className="relative z-10">programmer</span>
-                <span className="absolute bottom-2 left-0 w-full h-3 bg-red-600/20 -rotate-1 z-0" />
+                fritidsaktiviteter
               </span>
             </h1>
 
-            <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed mb-12">
-              Vi tilbyr en bred variasjon av aktiviteter og programmer for alle
-              aldre og interesser. Fra idrett og gaming til kultur og utdanning
-              — alt med fokus på inkludering, fellesskap og personlig utvikling.
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+              Fra idrett og gaming til kultur og natur — vi har noe for alle.
+              Alle aktiviteter er gratis og åpne for hele samfunnet.
             </p>
+          </div>
+        </div>
+      </section>
 
-            {/* Stats Bar */}
-            <div className="flex flex-wrap justify-center gap-8 mb-16">
-              <div className="text-center">
-                <div className="text-4xl font-bold text-blue-900 mb-2">40+</div>
-                <div className="text-gray-600">Aktiviteter årlig</div>
+      {/* Section 1: Sports & Physical Activities */}
+      <section className="py-16">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="mb-12">
+            <div className="flex items-center gap-4 mb-6">
+              <div className="p-3 bg-gradient-to-br from-blue-900 to-blue-800 rounded-xl">
+                <Trophy className="w-8 h-8 text-white" />
               </div>
-              <div className="hidden md:block h-12 w-px bg-gray-300" />
-              <div className="text-center">
-                <div className="text-4xl font-bold text-red-600 mb-2">500+</div>
-                <div className="text-gray-600">Ukentlige deltakere</div>
+              <div>
+                <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+                  Idrett & Fysisk Aktivitet
+                </h2>
+                <p className="text-gray-600 mt-2">
+                  Hold deg aktiv og møt nye venner gjennom våre sportstilbud
+                </p>
               </div>
-              <div className="hidden md:block h-12 w-px bg-gray-300" />
-              <div className="text-center">
-                <div className="text-4xl font-bold text-blue-900 mb-2">
-                  100%
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {sportsActivities.map((sport) => (
+              <div
+                key={sport.id}
+                className="group bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100 hover:-translate-y-2"
+              >
+                <div className="md:flex">
+                  {/* Image Section */}
+                  <div className="md:w-2/5 relative">
+                    <div className="aspect-square md:aspect-auto md:h-full relative">
+                      <div className={``}>
+                        <Image
+                          src={sport.image}
+                          alt="football image"
+                          width={800}
+                          height={800}
+                          priority
+                          className="w-[380px] h-[380px]"
+                        />
+                      </div>
+                      <div className="absolute top-4 left-4 z-30">
+                        <div
+                          className={`p-2 rounded-lg ${sport.color} bg-opacity-90`}
+                        >
+                          {typeof sport.icon === "string" ? (
+                            <span className="text-xl text-white">
+                              {sport.icon}
+                            </span>
+                          ) : (
+                            <sport.icon className="w-6 h-6 text-white" />
+                          )}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Content Section */}
+                  <div className="md:w-3/5 p-6">
+                    <div className="flex items-start justify-between mb-4">
+                      <div>
+                        <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                          {sport.name}
+                        </h3>
+                        <div className="flex items-center gap-2 text-gray-600 text-sm mb-3">
+                          <MapPin className="w-4 h-4" />
+                          <span>{sport.location}</span>
+                        </div>
+                      </div>
+                      <span className="text-sm font-semibold text-blue-900 bg-blue-50 px-3 py-1 rounded-full">
+                        {sport.participants}
+                      </span>
+                    </div>
+
+                    <p className="text-gray-600 mb-6">{sport.description}</p>
+
+                    <div className="space-y-4">
+                      <div className="flex items-center gap-3">
+                        <Calendar className="w-5 h-5 text-blue-900" />
+                        <div>
+                          <div className="text-sm text-gray-500">Tidspunkt</div>
+                          <div className="font-medium text-gray-900">
+                            {sport.schedule}
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="flex items-center justify-between pt-4 border-t border-gray-100">
+                        <div className="text-sm text-gray-500">
+                          Gratis for alle medlemmer
+                        </div>
+                        <button
+                          onClick={() => router.push("/kontakt")}
+                          className="px-6 py-2.5 bg-gradient-to-r from-blue-900 to-blue-800 text-white rounded-lg font-medium hover:opacity-90 transition-opacity duration-300 flex items-center gap-2"
+                        >
+                          <span>Påmelding</span>
+                          <ArrowRight className="w-4 h-4" />
+                        </button>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div className="text-gray-600">Gratis deltakelse</div>
               </div>
-              <div className="hidden md:block h-12 w-px bg-gray-300" />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Section 2: Outdoor & Nature Activities */}
+      <section className="py-16 bg-gradient-to-b from-white to-gray-50">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="mb-12">
+            <div className="flex items-center gap-4 mb-6">
+              <div className="p-3 bg-gradient-to-br from-green-600 to-emerald-500 rounded-xl">
+                <Mountain className="w-8 h-8 text-white" />
+              </div>
+              <div>
+                <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+                  Friluftsliv & Natur
+                </h2>
+                <p className="text-gray-600 mt-2">
+                  Utforsk Østfolds vakre natur sammen med oss
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Image Grid Layout */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {outdoorActivities.map((activity) => (
+              <div
+                key={activity.id}
+                className="group bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100 hover:-translate-y-1"
+              >
+                <div className="aspect-video relative overflow-hidden">
+                  <div className="absolute inset-0 bg-gradient-to-br from-blue-900/10 to-green-600/10" />
+                  <div className="absolute inset-0 group-hover:scale-110 transition-transform duration-700" />
+
+                  {/* Activity Info Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                  <div className="absolute bottom-0 left-0 right-0 p-6">
+                    <div className="flex items-center justify-between mb-3">
+                      <span className="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">
+                        {activity.difficulty}
+                      </span>
+                      <span className="text-sm text-white/90">
+                        {activity.duration}
+                      </span>
+                    </div>
+                    <h3 className="text-xl font-bold text-white mb-2">
+                      {activity.title}
+                    </h3>
+                    <p className="text-white/80 text-sm mb-4 line-clamp-2">
+                      {activity.description}
+                    </p>
+                    <div className="flex items-center justify-between">
+                      <span className="text-green-300 font-medium">
+                        {activity.date}
+                      </span>
+                      <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <ArrowRight className="w-5 h-5 text-white" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Season Info & CTA */}
+          <div className="mt-12 bg-gradient-to-r from-green-50 to-emerald-50 rounded-2xl p-8 border border-green-100">
+            <div className="grid md:grid-cols-2 gap-8 items-center">
+              <div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                  Turer hele året
+                </h3>
+                <div className="grid grid-cols-2 gap-4">
+                  {["Vår", "Sommer", "Høst", "Vinter"].map((season) => (
+                    <div key={season} className="flex items-center gap-3">
+                      <div className="w-3 h-3 bg-green-500 rounded-full" />
+                      <span className="text-gray-700">{season} turer</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
               <div className="text-center">
-                <div className="text-4xl font-bold text-red-600 mb-2">6-75</div>
-                <div className="text-gray-600">Aldersspenn</div>
+                <button className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-green-600 to-emerald-500 text-white rounded-2xl font-bold hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                  <Calendar className="w-5 h-5" />
+                  Bli med på vår neste tur
+                </button>
+                <p className="text-gray-600 text-sm mt-3">
+                  Alle utstyr og veiledning inkludert
+                </p>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Featured Programs */}
+      {/* Section 3: Gaming & E-sport */}
       <section className="py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              <span className="text-blue-900">Flaggskip</span>{" "}
-              <span className="text-red-600">programmer</span>
-            </h2>
-            <p className="text-gray-600 text-lg max-w-3xl mx-auto">
-              Våre mest populære og etablerte tilbud som har positiv påvirkning
-              på samfunnet
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
-            {featuredPrograms.map((program, index) => (
-              <div
-                key={index}
-                className="group bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border-2 hover:-translate-y-2"
-              >
-                <div className="flex items-start gap-4 mb-6">
-                  <div className={`p-3 rounded-xl ${program.color} border`}>
-                    <program.icon className={`w-6 h-6 ${program.iconColor}`} />
-                  </div>
-                  <div>
-                    <span className="inline-block px-3 py-1 bg-gray-100 text-gray-800 rounded-full text-sm font-medium mb-2">
-                      Program
-                    </span>
-                    <h3 className="text-xl font-bold text-gray-900">
-                      {program.title}
-                    </h3>
-                  </div>
-                </div>
-
-                <p className="text-gray-600 mb-6 text-sm leading-relaxed">
-                  {program.description}
+          <div className="mb-12">
+            <div className="flex items-center gap-4 mb-6">
+              <div className="p-3 bg-gradient-to-br from-red-600 to-red-500 rounded-xl">
+                <Gamepad2 className="w-8 h-8 text-white" />
+              </div>
+              <div>
+                <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+                  Gaming & E-sport
+                </h2>
+                <p className="text-gray-600 mt-2">
+                  For alle spillentusiaster – fra casual til competitive
                 </p>
-
-                <div className="space-y-3">
-                  <div className="flex items-center justify-between">
-                    <span className="text-sm text-gray-500">Aldersgruppe:</span>
-                    <span className="font-semibold text-blue-900">
-                      {program.ageGroup}
-                    </span>
-                  </div>
-                  <div className="flex items-center justify-between">
-                    <span className="text-sm text-gray-500">Åpningstider:</span>
-                    <span className="font-semibold text-red-600">
-                      {program.hours}
-                    </span>
-                  </div>
-                  <div className="flex items-center justify-between">
-                    <span className="text-sm text-gray-500">Kapasitet:</span>
-                    <span className="font-semibold text-blue-900">
-                      {program.capacity}
-                    </span>
-                  </div>
-                </div>
-
-                <button className="w-full mt-6 py-3 bg-gradient-to-r from-blue-900 to-blue-800 text-white rounded-xl font-semibold hover:shadow-lg transition-all duration-300 opacity-0 group-hover:opacity-100">
-                  Les mer
-                </button>
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* All Activities Grid */}
-      <section className="py-20 bg-gradient-to-b from-white to-gray-50">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              Utforsk alle <span className="text-blue-900">aktivitetene</span>{" "}
-              våre
-            </h2>
-            <p className="text-gray-600 text-lg max-w-3xl mx-auto">
-              Klikk på hver kategori for å se detaljer og påmeldingsinformasjon
-            </p>
+            </div>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {activities.map((activity, index) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {gamingActivities.map((game) => (
               <div
-                key={index}
-                className="group bg-white rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100 hover:-translate-y-2"
+                key={game.id}
+                className="group bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100 hover:-translate-y-2"
               >
-                {/* Category Header */}
-                <div className={`bg-gradient-to-r ${activity.color} p-8`}>
-                  <div className="flex items-center gap-4">
-                    <div className="p-3 bg-white/20 backdrop-blur-sm rounded-xl">
-                      <activity.icon className="w-8 h-8 text-white" />
+                <div className="flex">
+                  {/* Image Section */}
+                  <div className="w-2/5 relative">
+                    <div className="absolute inset-0 bg-gradient-to-br from-red-600/10 to-red-500/10" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+                    <div className="absolute top-4 left-4 z-10">
+                      <div className="p-2 bg-red-600/90 rounded-lg">
+                        {typeof game.icon === "string" ? (
+                          <span className="text-xl text-white">
+                            {game.icon}
+                          </span>
+                        ) : (
+                          <game.icon className="w-6 h-6 text-white" />
+                        )}
+                      </div>
                     </div>
-                    <h3 className="text-2xl font-bold text-white">
-                      {activity.category}
-                    </h3>
                   </div>
-                  <p className="text-white/90 mt-4 text-sm leading-relaxed">
-                    {activity.description}
-                  </p>
-                </div>
 
-                {/* Activity Details */}
-                <div className="p-8">
-                  <div className="space-y-4 mb-8">
-                    {activity.items.map((item, itemIndex) => (
-                      <div
-                        key={itemIndex}
-                        className="flex items-center justify-between p-4 bg-gray-50 rounded-xl hover:bg-blue-50 transition-colors duration-200"
-                      >
-                        <div>
-                          <div className="font-semibold text-gray-900">
-                            {item.name}
-                          </div>
-                          <div className="flex items-center gap-4 mt-1">
-                            <span className="text-sm text-gray-500">
-                              <Users className="w-3 h-3 inline mr-1" />
-                              {item.participants}
-                            </span>
-                            <span className="text-sm text-gray-500">
-                              <Calendar className="w-3 h-3 inline mr-1" />
-                              {item.frequency}
-                            </span>
-                          </div>
-                        </div>
-                        <div className="w-8 h-8 rounded-full bg-gradient-to-r from-blue-900/10 to-red-600/10 flex items-center justify-center group-hover:bg-gradient-to-r group-hover:from-blue-900/20 group-hover:to-red-600/20 transition-all duration-300">
-                          <ArrowRight className="w-4 h-4 text-blue-900" />
+                  {/* Content Section */}
+                  <div className="w-3/5 p-6">
+                    <div className="flex items-start justify-between mb-4">
+                      <div>
+                        <h3 className="text-xl font-bold text-gray-900 mb-2">
+                          {game.name}
+                        </h3>
+                        <div className="flex items-center gap-2 text-gray-600 text-sm">
+                          <Clock className="w-4 h-4" />
+                          <span>{game.schedule}</span>
                         </div>
                       </div>
-                    ))}
-                  </div>
+                      <span className="text-sm font-semibold text-red-600 bg-red-50 px-3 py-1 rounded-full">
+                        {game.ageGroup}
+                      </span>
+                    </div>
 
-                  {/* Stats */}
-                  <div className="pt-6 border-t border-gray-100">
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-2">
-                        <Star className="w-4 h-4 text-yellow-500" />
-                        <span className="text-sm font-semibold text-gray-900">
-                          {activity.stat}
+                    <p className="text-gray-600 text-sm mb-4">
+                      {game.description}
+                    </p>
+
+                    <div className="mb-4">
+                      <div className="text-sm text-gray-500 mb-2">Utstyr:</div>
+                      <div className="font-medium text-gray-900">
+                        {game.equipment}
+                      </div>
+                    </div>
+
+                    <div className="flex flex-wrap gap-2 mb-6">
+                      {game.tags.map((tag, index) => (
+                        <span
+                          key={index}
+                          className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-medium"
+                        >
+                          {tag}
                         </span>
-                      </div>
-                      <button className="px-4 py-2 bg-gradient-to-r from-blue-900 to-blue-800 text-white rounded-lg text-sm font-semibold hover:shadow-md transition-all duration-300">
-                        Påmelding
-                      </button>
+                      ))}
                     </div>
+
+                    <button className="w-full py-2.5 bg-gradient-to-r from-red-600 to-red-500 text-white rounded-lg font-medium hover:opacity-90 transition-opacity duration-300">
+                      Meld deg på
+                    </button>
                   </div>
                 </div>
               </div>
@@ -430,141 +591,163 @@ const fritidsaktiviteter = () => {
         </div>
       </section>
 
-      {/* Age Groups Section */}
-      <section className="py-20">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              Tilpassede tilbud for{" "}
-              <span className="text-blue-900">alle aldre</span>
-            </h2>
-            <p className="text-gray-600 text-lg max-w-3xl mx-auto">
-              Vi har aktiviteter spesielt designet for ulike aldre og interesser
-            </p>
+      {/* Section 4: Youth House / Social Space */}
+      <section className="py-16 relative bg-gradient-to-br from-blue-900/5 via-purple-50/30 to-red-600/5">
+        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="mb-12">
+            <div className="flex items-center gap-4 mb-6">
+              <div className="p-3 bg-gradient-to-br from-purple-600 to-purple-500 rounded-xl">
+                <Users className="w-8 h-8 text-white" />
+              </div>
+              <div>
+                <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+                  Fredrikstad Flerkulturelt Ungdomshus
+                </h2>
+                <p className="text-gray-600 mt-2">
+                  Et trygt og inkluderende sted for barn og unge (6-24 år)
+                </p>
+              </div>
+            </div>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              {
-                age: "6-12 år",
-                title: "Barn",
-                activities: [
-                  "Gaming",
-                  "Brettspill",
-                  "Svømming",
-                  "Kreative workshops",
-                ],
-                icon: Sparkles,
-                color: "from-blue-900/20 to-blue-900/10",
-              },
-              {
-                age: "13-18 år",
-                title: "Ungdom",
-                activities: [
-                  "E-sport",
-                  "Fotball",
-                  "Leksehjelp",
-                  "Sosiale arrangementer",
-                ],
-                icon: Gamepad2,
-                color: "from-red-600/20 to-red-600/10",
-              },
-              {
-                age: "19-30 år",
-                title: "Ung voksen",
-                activities: [
-                  "Networking",
-                  "Karrierekurs",
-                  "Sport",
-                  "Kulturarrangementer",
-                ],
-                icon: Users,
-                color: "from-blue-900/20 to-blue-900/10",
-              },
-              {
-                age: "31+ år",
-                title: "Voksne & Familier",
-                activities: [
-                  "Familiedager",
-                  "Kulturkvelder",
-                  "Turer",
-                  "Fellesskapsarrangementer",
-                ],
-                icon: Heart,
-                color: "from-red-600/20 to-red-600/10",
-              },
-            ].map((group, index) => (
+          {/* Youth House Image Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+            {youthHouseActivities.map((activity) => (
               <div
-                key={index}
-                className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100"
+                key={activity.id}
+                className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300"
               >
-                <div
-                  className={`w-16 h-16 rounded-xl bg-gradient-to-br ${group.color} flex items-center justify-center mb-6`}
-                >
-                  <group.icon className="w-8 h-8 text-blue-900" />
+                <div className="aspect-square relative">
+                  <div className="absolute inset-0 bg-gradient-to-br from-purple-600/20 to-purple-500/20" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
+
+                  {/* Activity Icon */}
+                  <div className="absolute top-4 left-4 z-10">
+                    <div className="p-2 bg-white/20 backdrop-blur-sm rounded-lg">
+                      {typeof activity.icon === "string" ? (
+                        <span className="text-xl text-white">
+                          {activity.icon}
+                        </span>
+                      ) : (
+                        <activity.icon className="w-6 h-6 text-white" />
+                      )}
+                    </div>
+                  </div>
+
+                  {/* Activity Info */}
+                  <div className="absolute bottom-0 left-0 right-0 p-6">
+                    <h3 className="text-lg font-bold text-white mb-2">
+                      {activity.name}
+                    </h3>
+                    <p className="text-white/80 text-sm mb-3 line-clamp-2">
+                      {activity.description}
+                    </p>
+                    <div className="flex items-center justify-between">
+                      <div className="text-sm text-white/90">
+                        <div>{activity.schedule}</div>
+                        <div>{activity.time}</div>
+                      </div>
+                      <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <ArrowRight className="w-5 h-5 text-white" />
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div className="text-2xl font-bold text-gray-900 mb-2">
-                  {group.age}
-                </div>
-                <div className="text-lg font-semibold text-red-600 mb-4">
-                  {group.title}
-                </div>
-                <ul className="space-y-3">
-                  {group.activities.map((activity, i) => (
-                    <li key={i} className="flex items-center gap-3">
-                      <div className="w-2 h-2 bg-blue-900 rounded-full" />
-                      <span className="text-gray-600">{activity}</span>
-                    </li>
-                  ))}
-                </ul>
               </div>
             ))}
+          </div>
+
+          {/* Youth House Info */}
+          <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-8 border border-gray-100 shadow-lg">
+            <div className="grid md:grid-cols-3 gap-8">
+              <div className="text-center">
+                <div className="inline-flex p-3 bg-gradient-to-br from-purple-600/10 to-purple-500/10 rounded-xl mb-4">
+                  <Calendar className="w-8 h-8 text-purple-600" />
+                </div>
+                <h4 className="font-bold text-gray-900 mb-2">Åpningstider</h4>
+                <p className="text-gray-600">Mandag - Fredag: 14:00-20:00</p>
+                <p className="text-gray-600">Lørdag: 12:00-18:00</p>
+              </div>
+              <div className="text-center">
+                <div className="inline-flex p-3 bg-gradient-to-br from-purple-600/10 to-purple-500/10 rounded-xl mb-4">
+                  <Users className="w-8 h-8 text-purple-600" />
+                </div>
+                <h4 className="font-bold text-gray-900 mb-2">For hvem?</h4>
+                <p className="text-gray-600">Barn og unge mellom 6-24 år</p>
+                <p className="text-gray-600">Alle kulturer og bakgrunner</p>
+              </div>
+              <div className="text-center">
+                <div className="inline-flex p-3 bg-gradient-to-br from-purple-600/10 to-purple-500/10 rounded-xl mb-4">
+                  <Shield className="w-8 h-8 text-purple-600" />
+                </div>
+                <h4 className="font-bold text-gray-900 mb-2">Trygt miljø</h4>
+                <p className="text-gray-600">Profesjonell veiledning</p>
+                <p className="text-gray-600">Krisehåndtering på plass</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
       <section className="py-20">
-        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="bg-gradient-to-br from-blue-900 via-blue-800 to-red-600 rounded-4xl p-12 md:p-16 text-white overflow-hidden relative">
             <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -translate-y-32 translate-x-32" />
             <div className="absolute bottom-0 left-0 w-64 h-64 bg-white/10 rounded-full translate-y-32 -translate-x-32" />
 
             <div className="relative z-10 text-center">
               <div className="inline-flex items-center gap-2 px-6 py-3 bg-white/20 backdrop-blur-sm rounded-full mb-8">
-                <Calendar className="w-5 h-5" />
-                <span className="font-semibold">
-                  Aktivitetsportalen Fredrikstad
-                </span>
+                <Sparkles className="w-5 h-5" />
+                <span className="font-semibold">Bli med i fellesskapet</span>
               </div>
 
               <h2 className="text-4xl md:text-5xl font-bold mb-6">
-                Finn og meld deg på aktiviteter
+                Meld deg på aktiviteter i dag!
               </h2>
 
               <p className="text-xl text-blue-100 max-w-3xl mx-auto mb-10">
-                Besøk vår digitale aktivitetsportal for å se alle tilgjengelige
-                arrangementer, melde deg på, og holde deg oppdatert om kommende
-                aktiviteter.
+                Enten du er ny i området eller har bodd her lenge — våre
+                aktiviteter er en perfekt måte å møte nye mennesker og bli en
+                del av lokalsamfunnet.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <button className="px-8 py-4 bg-white text-blue-900 rounded-2xl font-bold hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-3">
-                  <Globe className="w-5 h-5" />
-                  Gå til Aktivitetsportalen
+                  <Calendar className="w-5 h-5" />
+                  Se alle aktiviteter
                 </button>
                 <button className="px-8 py-4 bg-transparent border-2 border-white text-white rounded-2xl font-bold hover:bg-white/10 transition-all duration-300 flex items-center justify-center gap-3">
-                  <Calendar className="w-5 h-5" />
-                  Last ned kalender
+                  <Users className="w-5 h-5" />
+                  Kontakt oss
                 </button>
               </div>
 
               <div className="mt-12 pt-8 border-t border-white/20">
-                <p className="text-blue-200 text-sm">
-                  📍 Alle aktiviteter finner sted i Østfold • 💰 100% gratis
-                  deltakelse • 🤝 Tolk tilgjengelig ved behov • 🎯 Tilpasset for
-                  alle ferdighetsnivåer
-                </p>
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                  <div>
+                    <div className="text-2xl font-bold">40+</div>
+                    <div className="text-blue-200 text-sm">
+                      Årlige aktiviteter
+                    </div>
+                  </div>
+                  <div>
+                    <div className="text-2xl font-bold">100%</div>
+                    <div className="text-blue-200 text-sm">
+                      Gratis deltakelse
+                    </div>
+                  </div>
+                  <div>
+                    <div className="text-2xl font-bold">500+</div>
+                    <div className="text-blue-200 text-sm">
+                      Årlige deltakere
+                    </div>
+                  </div>
+                  <div>
+                    <div className="text-2xl font-bold">6-75</div>
+                    <div className="text-blue-200 text-sm">Aldersspenn</div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -574,4 +757,4 @@ const fritidsaktiviteter = () => {
   );
 };
 
-export default fritidsaktiviteter;
+export default ActivityPage;
