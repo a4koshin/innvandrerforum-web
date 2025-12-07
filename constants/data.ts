@@ -4,7 +4,6 @@ export const Navigations = [
     name: "Hjem",
     href: "/",
   },
-
   {
     id: 2,
     name: "Om Oss",
