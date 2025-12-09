@@ -31,7 +31,7 @@ import { FaBowlingBall } from "react-icons/fa";
 import { IoFootball } from "react-icons/io5";
 import { useRouter } from "next/navigation";
 
-// Weekly Schedule Activities
+// Weekly Schedule Activities with Images
 const weeklyActivities = [
   {
     id: 1,
@@ -44,6 +44,7 @@ const weeklyActivities = [
         description: "Futsal trening for alle nivåer",
         type: "sport",
         icon: IoFootball,
+        image: "/football.jpg", // Your football image
       },
       {
         name: "Svømming (Kvinner)",
@@ -52,6 +53,7 @@ const weeklyActivities = [
         description: "Svømmetrening for kvinner",
         type: "sport",
         icon: FaPersonSwimming,
+        image: "/swimming.jpeg", // Your swimming image
       },
     ],
   },
@@ -66,6 +68,7 @@ const weeklyActivities = [
         description: "Intensiv futsal trening",
         type: "sport",
         icon: IoFootball,
+        image: "/football.jpg", // Your football image
       },
     ],
   },
@@ -80,12 +83,13 @@ const weeklyActivities = [
         description: "Ukeavslutning med futsal",
         type: "sport",
         icon: IoFootball,
+        image: "/football.jpg", // Your football image
       },
     ],
   },
 ];
 
-// Monthly Activities
+// Monthly Activities with Images
 const monthlyActivities = [
   {
     id: 1,
@@ -105,13 +109,13 @@ const monthlyActivities = [
     schedule: "En gang i måneden",
     participants: "30+ deltakere",
     icon: Film,
-    image: "/PCGaming.jpg",
+    image: "/PCGaming.jpg", // Using PCGaming as placeholder for cinema
     location: "Ungdomshuset",
     registration: "Åpen for alle",
   },
 ];
 
-// Yearly Activities
+// Yearly Activities with Images
 const yearlyActivities = [
   {
     id: 1,
@@ -131,7 +135,7 @@ const yearlyActivities = [
     month: "Juni",
     participants: "40+ deltakere",
     icon: Mountain,
-    image: "/hytte.jpg",
+    image: "/football.jpg", // Placeholder - add actual hytte image
     location: "Østfold skog",
     duration: "Helg",
   },
@@ -153,13 +157,13 @@ const yearlyActivities = [
     month: "August",
     participants: "80+ deltakere",
     icon: Users,
-    image: "/summer.jpg",
+    image: "/football.jpg", // Placeholder - add actual summerfest image
     location: "Fredrikstad sentrum",
     duration: "Hele dagen",
   },
 ];
 
-// Youth House Activities
+// Youth House Activities with Images
 const youthHouseActivities = [
   {
     id: 1,
@@ -168,7 +172,7 @@ const youthHouseActivities = [
     schedule: "Mandag - Fredag: 14:00-20:00",
     ageGroup: "6-24 år",
     icon: Home,
-    image: "/youth-house.jpg",
+    image: "/PCGaming.jpg", // Placeholder - add actual youth house image
   },
   {
     id: 2,
@@ -186,7 +190,7 @@ const youthHouseActivities = [
     schedule: "Ukentlig",
     ageGroup: "6-18 år",
     icon: BookOpen,
-    image: "/homework.jpg",
+    image: "/PCGaming.jpg", // Placeholder - add actual homework image
   },
   {
     id: 4,
@@ -195,7 +199,7 @@ const youthHouseActivities = [
     schedule: "Månedlig",
     ageGroup: "Alle aldre",
     icon: Heart,
-    image: "/culture.jpg",
+    image: "/PCGaming.jpg", // Placeholder - add actual culture image
   },
 ];
 
@@ -240,7 +244,7 @@ const ActivityPage = () => {
         </div>
       </section>
 
-      {/* Section 1: Weekly Schedule */}
+      {/* Section 1: Weekly Schedule with Images */}
       <section className="py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mb-12">
@@ -276,44 +280,88 @@ const ActivityPage = () => {
             ))}
           </div>
 
-          {/* Activities for Selected Day */}
+          {/* Activities for Selected Day - Updated with Images */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {getDayActivities(activeDay).map((activity, index) => (
               <div
                 key={index}
-                className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 p-6"
+                className="group bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100 hover:-translate-y-2"
               >
-                <div className="flex items-start gap-4">
-                  <div className="p-3 bg-gradient-to-br from-blue-900/10 to-blue-800/10 rounded-xl">
-                    {typeof activity.icon === "string" ? (
-                      <span className="text-2xl">{activity.icon}</span>
-                    ) : (
-                      <activity.icon className="w-6 h-6 text-blue-900" />
-                    )}
+                <div className="md:flex">
+                  {/* Image Section */}
+                  <div className="md:w-2/5 relative">
+                    <div className="aspect-square md:aspect-auto md:h-full relative">
+                      <Image
+                        src={activity.image}
+                        alt={activity.name}
+                        width={400}
+                        height={400}
+                        className="w-full h-full object-cover"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+                      <div className="absolute top-4 left-4 z-30">
+                        <div className="p-2 bg-gradient-to-br from-blue-900/90 to-blue-800/90 rounded-lg">
+                          {typeof activity.icon === "string" ? (
+                            <span className="text-xl text-white">
+                              {activity.icon}
+                            </span>
+                          ) : (
+                            <activity.icon className="w-6 h-6 text-white" />
+                          )}
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                  <div className="flex-1">
-                    <div className="flex items-start justify-between mb-2">
-                      <h3 className="text-xl font-bold text-gray-900">
-                        {activity.name}
-                      </h3>
+
+                  {/* Content Section */}
+                  <div className="md:w-3/5 p-6">
+                    <div className="flex items-start justify-between mb-4">
+                      <div>
+                        <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                          {activity.name}
+                        </h3>
+                        <div className="flex items-center gap-2 text-gray-600 text-sm mb-3">
+                          <MapPin className="w-4 h-4" />
+                          <span>{activity.location}</span>
+                        </div>
+                      </div>
                       <span className="text-sm font-semibold text-blue-900 bg-blue-50 px-3 py-1 rounded-full">
                         {activity.time}
                       </span>
                     </div>
 
-                    <div className="flex items-center gap-2 text-gray-600 mb-3">
-                      <MapPin className="w-4 h-4" />
-                      <span className="text-sm">{activity.location}</span>
+                    <p className="text-gray-600 mb-6">{activity.description}</p>
+
+                    <div className="space-y-4">
+                      <div className="flex items-center gap-3">
+                        <Clock className="w-5 h-5 text-blue-900" />
+                        <div>
+                          <div className="text-sm text-gray-500">Tidspunkt</div>
+                          <div className="font-medium text-gray-900">
+                            {activity.time}
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="flex items-center gap-3">
+                        <Calendar className="w-5 h-5 text-blue-900" />
+                        <div>
+                          <div className="text-sm text-gray-500">Dag</div>
+                          <div className="font-medium text-gray-900">
+                            {activeDay}
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="pt-4 border-t border-gray-100">
+                        <button
+                          onClick={() => router.push("/kontakt")}
+                          className="w-full py-2.5 bg-gradient-to-r from-blue-900 to-blue-800 text-white rounded-lg font-medium hover:opacity-90 transition-opacity duration-300"
+                        >
+                          Meld interesse
+                        </button>
+                      </div>
                     </div>
-
-                    <p className="text-gray-600 mb-4">{activity.description}</p>
-
-                    <button
-                      onClick={() => router.push("/kontakt")}
-                      className="w-full py-2.5 bg-gradient-to-r from-blue-900 to-blue-800 text-white rounded-lg font-medium hover:opacity-90 transition-opacity duration-300"
-                    >
-                      Meld interesse
-                    </button>
                   </div>
                 </div>
               </div>
@@ -354,9 +402,9 @@ const ActivityPage = () => {
                       <Image
                         src={activity.image}
                         alt={activity.name}
-                        width={800}
-                        height={800}
-                        className="w-[380px] h-[420px] object-cover"
+                        width={400}
+                        height={400}
+                        className="w-full h-full object-cover"
                       />
                       <div className="absolute top-4 left-4 z-30">
                         <div className="p-2 bg-gradient-to-br from-red-600/90 to-red-500/90 rounded-lg">
@@ -452,14 +500,14 @@ const ActivityPage = () => {
             {yearlyActivities.map((activity) => (
               <div
                 key={activity.id}
-                className="group bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100 hover:-translate-y-2"
+                className="group bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100 hover:-translate-y-2"
               >
-                <div className="aspect-video relative overflow-hidden">
+                <div className="aspect-square relative overflow-hidden">
                   <Image
                     src={activity.image}
                     alt={activity.name}
                     width={400}
-                    height={300}
+                    height={400}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
@@ -523,7 +571,7 @@ const ActivityPage = () => {
             {youthHouseActivities.map((activity) => (
               <div
                 key={activity.id}
-                className="group bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100 hover:-translate-y-1"
+                className="group bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100 hover:-translate-y-2"
               >
                 <div className="aspect-square relative overflow-hidden">
                   <Image
@@ -603,7 +651,7 @@ const ActivityPage = () => {
 
       {/* CTA Section */}
       <section className="py-20">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="bg-gradient-to-br from-blue-900 via-blue-800 to-red-600 rounded-4xl p-12 md:p-16 text-white overflow-hidden relative">
             <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -translate-y-32 translate-x-32" />
             <div className="absolute bottom-0 left-0 w-64 h-64 bg-white/10 rounded-full translate-y-32 -translate-x-32" />
