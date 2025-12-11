@@ -44,7 +44,7 @@ const weeklyActivities = [
         description: "Futsal trening for alle nivåer",
         type: "sport",
 
-        image: "/football.jpg", // Your football image
+        image: "/fotbal2.jpg", // Your football image
       },
       {
         name: "Svømming (Kvinner)",
@@ -68,7 +68,7 @@ const weeklyActivities = [
         description: "Intensiv futsal trening",
         type: "sport",
 
-        image: "/football.jpg", // Your football image
+        image: "/fotbal1.jpg", // Your football image
       },
     ],
   },
@@ -83,7 +83,7 @@ const weeklyActivities = [
         description: "Ukeavslutning med futsal",
         type: "sport",
 
-        image: "/football.jpg", // Your football image
+        image: "/fotbal0.jpg", // Your football image
       },
     ],
   },
