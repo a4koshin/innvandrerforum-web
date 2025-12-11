@@ -96,7 +96,7 @@ const monthlyActivities = [
     name: "EA Sports FIFA Turnering",
     description: "Månedlig FIFA-konkurranse med premier",
     schedule: "Siste lørdag i måneden",
-    participants: "20-40 deltakere",
+
     icon: Gamepad2,
     image: "/EAsports.jpg",
     location: "Fredrikstad Flerkulturelt Ungdomshus",
@@ -107,7 +107,7 @@ const monthlyActivities = [
     name: "Kino Kveld",
     description: "Filmvisning med etterfølgende diskusjon",
     schedule: "En gang i måneden",
-    participants: "30+ deltakere",
+
     icon: Film,
     image: "/fotbal.jpg", // Using PCGaming as placeholder for cinema
     location: "Ungdomshuset",
@@ -392,17 +392,6 @@ const ActivityPage = () => {
                         height={400}
                         className="w-full h-full object-cover"
                       />
-                      <div className="absolute top-4 left-4 z-30">
-                        <div className="p-2 bg-gradient-to-br from-red-600/90 to-red-500/90 rounded-lg">
-                          {typeof activity.icon === "string" ? (
-                            <span className="text-xl text-white">
-                              {activity.icon}
-                            </span>
-                          ) : (
-                            <activity.icon className="w-6 h-6 text-white" />
-                          )}
-                        </div>
-                      </div>
                     </div>
                   </div>
 
