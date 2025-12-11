@@ -43,7 +43,6 @@ const weeklyActivities = [
         location: "Kongstenhallen",
         description: "Futsal trening for alle nivåer",
         type: "sport",
-
         image: "/fotbal2.JPG", // Your football image
       },
       {
@@ -52,7 +51,6 @@ const weeklyActivities = [
         location: "Gressvik ungdomsskole",
         description: "Svømmetrening for kvinner",
         type: "sport",
-
         image: "/swimming.jpeg", // Your swimming image
       },
     ],
@@ -67,7 +65,6 @@ const weeklyActivities = [
         location: "Kongstenhallen",
         description: "Intensiv futsal trening",
         type: "sport",
-
         image: "/fotbal1.JPG", // Your football image
       },
     ],
@@ -82,7 +79,6 @@ const weeklyActivities = [
         location: "Kongstenhallen",
         description: "Ukeavslutning med futsal",
         type: "sport",
-
         image: "/fotbal0.JPG", // Your football image
       },
     ],
@@ -96,7 +92,6 @@ const monthlyActivities = [
     name: "EA Sports FIFA Turnering",
     description: "Månedlig FIFA-konkurranse med premier",
     schedule: "Siste lørdag i måneden",
-
     icon: Gamepad2,
     image: "/EAsports.JPG",
     location: "Fredrikstad Flerkulturelt Ungdomshus",
@@ -107,7 +102,6 @@ const monthlyActivities = [
     name: "Kino Kveld",
     description: "Filmvisning med etterfølgende diskusjon",
     schedule: "En gang i måneden",
-
     icon: Film,
     image: "/PCGaming.jpg", // Using PCGaming as placeholder for cinema
     location: "Ungdomshuset",
@@ -205,12 +199,6 @@ const youthHouseActivities = [
 
 const ActivityPage = () => {
   const router = useRouter();
-  const [activeDay, setActiveDay] = useState("Mandag");
-
-  const getDayActivities = (day: string) => {
-    const dayData = weeklyActivities.find((d) => d.day === day);
-    return dayData ? dayData.activities : [];
-  };
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
@@ -256,92 +244,94 @@ const ActivityPage = () => {
             </div>
           </div>
 
-          {/* Day Selector */}
-          <div className="flex flex-wrap gap-2 mb-8">
+          {/* All days stacked vertically */}
+          <div className="space-y-8">
             {weeklyActivities.map((dayData) => (
-              <button
-                key={dayData.id}
-                onClick={() => setActiveDay(dayData.day)}
-                className={`px-6 py-3 rounded-xl font-semibold transition-all duration-300 ${
-                  activeDay === dayData.day
-                    ? "bg-blue-800 text-white cursor-pointer hover:bg-blue-900"
-                    : "bg-gray-100 text-gray-700 hover:bg-gray-200 cursor-pointer"
-                }`}
-              >
-                {dayData.day}
-              </button>
-            ))}
-          </div>
-
-          {/* Activities for Selected Day - Updated with Images */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {getDayActivities(activeDay).map((activity, index) => (
-              <div
-                key={index}
-                className="group bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100 hover:-translate-y-2"
-              >
-                <div className="md:flex">
-                  {/* Image Section */}
-                  <div className="md:w-3/5 relative">
-                    <div className="aspect-square md:aspect-auto md:h-full relative">
-                      <Image
-                        src={activity.image}
-                        alt={activity.name}
-                        width={400}
-                        height={400}
-                        className="w-full h-full object-cover"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
-                    </div>
+              <div key={dayData.id} className="space-y-4">
+                {/* Day Header */}
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="p-3 bg-blue-900 text-white rounded-xl">
+                    <Calendar className="w-6 h-6" />
                   </div>
+                  <h3 className="text-2xl md:text-3xl font-bold text-gray-900">
+                    {dayData.day}
+                  </h3>
+                </div>
 
-                  {/* Content Section */}
-                  <div className="md:w-3/5 p-6">
-                    <div className="flex items-start justify-between mb-4">
-                      <div>
-                        <h3 className="text-2xl font-bold text-gray-900 mb-2">
-                          {activity.name}
-                        </h3>
-                        <div className="flex items-center gap-2 text-gray-600 text-sm mb-3">
-                          <MapPin className="w-4 h-4" />
-                          <span>{activity.location}</span>
+                {/* Activities for this day */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {dayData.activities.map((activity, index) => (
+                    <div
+                      key={index}
+                      className="group bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100 hover:-translate-y-2"
+                    >
+                      <div className="md:flex">
+                        {/* Image Section */}
+                        <div className="md:w-3/5 relative">
+                          <div className="aspect-square md:aspect-auto md:h-full relative">
+                            <Image
+                              src={activity.image}
+                              alt={activity.name}
+                              width={400}
+                              height={400}
+                              className="w-full h-full object-cover"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+                          </div>
                         </div>
-                      </div>
-                    </div>
 
-                    <p className="text-gray-600 mb-6">{activity.description}</p>
+                        {/* Content Section */}
+                        <div className="md:w-3/5 p-6">
+                          <div className="flex items-start justify-between mb-4">
+                            <div>
+                              <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                                {activity.name}
+                              </h3>
+                              <div className="flex items-center gap-2 text-gray-600 text-sm mb-3">
+                                <MapPin className="w-4 h-4" />
+                                <span>{activity.location}</span>
+                              </div>
+                            </div>
+                          </div>
 
-                    <div className="space-y-4">
-                      <div className="flex items-center gap-3">
-                        <Clock className="w-5 h-5 text-blue-900" />
-                        <div>
-                          <div className="text-sm text-gray-500">Tid</div>
-                          <div className="font-medium text-gray-900">
-                            {activity.time}
+                          <p className="text-gray-600 mb-6">
+                            {activity.description}
+                          </p>
+
+                          <div className="space-y-4">
+                            <div className="flex items-center gap-3">
+                              <Clock className="w-5 h-5 text-blue-900" />
+                              <div>
+                                <div className="text-sm text-gray-500">Tid</div>
+                                <div className="font-medium text-gray-900">
+                                  {activity.time}
+                                </div>
+                              </div>
+                            </div>
+
+                            <div className="flex items-center gap-3">
+                              <Calendar className="w-5 h-5 text-blue-900" />
+                              <div>
+                                <div className="text-sm text-gray-500">Dag</div>
+                                <div className="font-medium text-gray-900">
+                                  {dayData.day}
+                                </div>
+                              </div>
+                            </div>
+
+                            <div className="pt-4 border-t border-gray-100">
+                              <button
+                                onClick={() => router.push("/kontakt")}
+                                className="w-full py-2.5 bg-gradient-to-r from-blue-900 to-blue-800 text-white rounded-lg font-medium hover:opacity-90 transition-opacity duration-300"
+                              >
+                                Meld interesse
+                              </button>
+                            </div>
                           </div>
                         </div>
                       </div>
-
-                      <div className="flex items-center gap-3">
-                        <Calendar className="w-5 h-5 text-blue-900" />
-                        <div>
-                          <div className="text-sm text-gray-500">Dag</div>
-                          <div className="font-medium text-gray-900">
-                            {activeDay}
-                          </div>
-                        </div>
-                      </div>
-
-                      <div className="pt-4 border-t border-gray-100">
-                        <button
-                          onClick={() => router.push("/kontakt")}
-                          className="w-full py-2.5 bg-gradient-to-r from-blue-900 to-blue-800 text-white rounded-lg font-medium hover:opacity-90 transition-opacity duration-300"
-                        >
-                          Meld interesse
-                        </button>
-                      </div>
                     </div>
-                  </div>
+                  ))}
                 </div>
               </div>
             ))}
@@ -443,7 +433,7 @@ const ActivityPage = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20">
+      {/* <section className="py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="bg-gradient-to-br from-blue-900 via-blue-800 to-red-600 rounded-4xl p-12 md:p-16 text-white overflow-hidden relative">
             <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -translate-y-32 translate-x-32" />
@@ -474,7 +464,7 @@ const ActivityPage = () => {
                   Meld deg på aktivitet
                 </button>
                 <button
-                  onClick={() => router.push("/om-oss")}
+                  onClick={() => router.push("/omoss")}
                   className="px-8 py-4 bg-transparent border-2 border-white text-white rounded-2xl font-bold hover:bg-white/10 transition-all duration-300 flex items-center justify-center gap-3"
                 >
                   <Users className="w-5 h-5" />
@@ -511,7 +501,7 @@ const ActivityPage = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
     </div>
   );
 };
