@@ -43,7 +43,7 @@ const weeklyActivities = [
         location: "Kongstenhallen",
         description: "Futsal trening for alle nivåer",
         type: "sport",
-        icon: IoFootball,
+
         image: "/football.jpg", // Your football image
       },
       {
@@ -52,7 +52,7 @@ const weeklyActivities = [
         location: "Gressvik ungdomsskole",
         description: "Svømmetrening for kvinner",
         type: "sport",
-        icon: FaPersonSwimming,
+
         image: "/swimming.jpeg", // Your swimming image
       },
     ],
@@ -67,7 +67,7 @@ const weeklyActivities = [
         location: "Kongstenhallen",
         description: "Intensiv futsal trening",
         type: "sport",
-        icon: IoFootball,
+
         image: "/football.jpg", // Your football image
       },
     ],
@@ -82,7 +82,7 @@ const weeklyActivities = [
         location: "Kongstenhallen",
         description: "Ukeavslutning med futsal",
         type: "sport",
-        icon: IoFootball,
+
         image: "/football.jpg", // Your football image
       },
     ],
@@ -109,7 +109,7 @@ const monthlyActivities = [
     schedule: "En gang i måneden",
     participants: "30+ deltakere",
     icon: Film,
-    image: "/PCGaming.jpg", // Using PCGaming as placeholder for cinema
+    image: "/fotbal.jpg", // Using PCGaming as placeholder for cinema
     location: "Ungdomshuset",
     registration: "Åpen for alle",
   },
@@ -289,7 +289,7 @@ const ActivityPage = () => {
               >
                 <div className="md:flex">
                   {/* Image Section */}
-                  <div className="md:w-2/5 relative">
+                  <div className="md:w-3/5 relative">
                     <div className="aspect-square md:aspect-auto md:h-full relative">
                       <Image
                         src={activity.image}
@@ -299,17 +299,6 @@ const ActivityPage = () => {
                         className="w-full h-full object-cover"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
-                      <div className="absolute top-4 left-4 z-30">
-                        <div className="p-2 bg-gradient-to-br from-blue-900/90 to-blue-800/90 rounded-lg">
-                          {typeof activity.icon === "string" ? (
-                            <span className="text-xl text-white">
-                              {activity.icon}
-                            </span>
-                          ) : (
-                            <activity.icon className="w-6 h-6 text-white" />
-                          )}
-                        </div>
-                      </div>
                     </div>
                   </div>
 
@@ -325,9 +314,6 @@ const ActivityPage = () => {
                           <span>{activity.location}</span>
                         </div>
                       </div>
-                      <span className="text-sm font-semibold text-blue-900 bg-blue-50 px-3 py-1 rounded-full">
-                        {activity.time}
-                      </span>
                     </div>
 
                     <p className="text-gray-600 mb-6">{activity.description}</p>
@@ -336,7 +322,7 @@ const ActivityPage = () => {
                       <div className="flex items-center gap-3">
                         <Clock className="w-5 h-5 text-blue-900" />
                         <div>
-                          <div className="text-sm text-gray-500">Tidspunkt</div>
+                          <div className="text-sm text-gray-500">Tid</div>
                           <div className="font-medium text-gray-900">
                             {activity.time}
                           </div>
