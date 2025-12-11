@@ -98,7 +98,7 @@ const monthlyActivities = [
     schedule: "Siste lørdag i måneden",
 
     icon: Gamepad2,
-    image: "/EAsports.jpg",
+    image: "/EAsports.JPG",
     location: "Fredrikstad Flerkulturelt Ungdomshus",
     registration: "Påmelding via WhatsApp",
   },
