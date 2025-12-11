@@ -109,7 +109,7 @@ const monthlyActivities = [
     schedule: "En gang i måneden",
 
     icon: Film,
-    image: "/fotbal.jpg", // Using PCGaming as placeholder for cinema
+    image: "/PCGaming.jpg", // Using PCGaming as placeholder for cinema
     location: "Ungdomshuset",
     registration: "Åpen for alle",
   },
@@ -383,14 +383,14 @@ const ActivityPage = () => {
               >
                 <div className="md:flex">
                   {/* Image Section */}
-                  <div className="md:w-2/5 relative">
+                  <div className="md:w-3/5 relative">
                     <div className="aspect-square md:aspect-auto md:h-full relative">
                       <Image
                         src={activity.image}
                         alt={activity.name}
                         width={400}
                         height={400}
-                        className="w-full h-full object-cover"
+                        className="w-auto h-[480px] object-cover"
                       />
                     </div>
                   </div>
