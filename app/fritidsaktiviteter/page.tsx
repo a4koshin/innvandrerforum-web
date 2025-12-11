@@ -383,7 +383,7 @@ const ActivityPage = () => {
                         alt={activity.name}
                         width={400}
                         height={400}
-                        className="w-auto h-[480px] object-cover"
+                        className="w-full h-[480px] object-cover"
                       />
                     </div>
                   </div>
