@@ -26,7 +26,7 @@ import {
   ExternalLink,
   Home,
 } from "lucide-react";
-import { FaPersonSwimming, FaSwimmingPool } from "react-icons/fa6";
+import { FaPersonSwimming } from "react-icons/fa6";
 import { FaBowlingBall } from "react-icons/fa";
 import { IoFootball } from "react-icons/io5";
 import { useRouter } from "next/navigation";
