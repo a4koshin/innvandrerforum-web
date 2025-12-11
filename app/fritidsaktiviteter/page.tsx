@@ -407,9 +407,6 @@ const ActivityPage = () => {
                           <span>{activity.location}</span>
                         </div>
                       </div>
-                      <span className="text-sm font-semibold text-red-600 bg-red-50 px-3 py-1 rounded-full">
-                        {activity.participants}
-                      </span>
                     </div>
 
                     <p className="text-gray-600 mb-6">{activity.description}</p>
