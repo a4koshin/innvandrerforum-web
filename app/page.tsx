@@ -28,12 +28,14 @@ export default function Home() {
         {/* Foreground Content */}
         <div className="flex items-center justify-center h-full px-4">
           <div className="max-w-4xl mx-auto text-center text-white space-y-6 backdrop-blur-sm bg-black/10 p-8 rounded-2xl">
-            <h1 className="text-4xl md:text-6xl font-bold tracking-tight">
+            <h1 className="text-4xl md:text-5xl font-bold tracking-tight">
               Innvandrerforum I Østfold
             </h1>
 
-            <p className="text-xl md:text-2xl max-w-3xl mx-auto leading-relaxed">
-              Vi arbeider for å støtte og inkludere minoritetsungdom …
+            <p className="text-xl md:text-md max-w-3xl mx-auto leading-relaxed">
+              Et fellesskap som støtter, samler og inkluderer. Vi jobber hver
+              dag for å motvirke utenforskap og skape positive møteplasser for
+              barn, unge og familier i Østfold.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-6">
