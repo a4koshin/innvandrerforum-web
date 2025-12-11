@@ -271,8 +271,8 @@ const ActivityPage = () => {
                 onClick={() => setActiveDay(dayData.day)}
                 className={`px-6 py-3 rounded-xl font-semibold transition-all duration-300 ${
                   activeDay === dayData.day
-                    ? "bg-gradient-to-r from-blue-900 to-blue-800 text-white"
-                    : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+                    ? "bg-blue-800 text-white cursor-pointer hover:bg-blue-900"
+                    : "bg-gray-100 text-gray-700 hover:bg-gray-200 cursor-pointer"
                 }`}
               >
                 {dayData.day}
