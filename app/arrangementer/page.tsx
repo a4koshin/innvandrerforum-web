@@ -46,18 +46,16 @@ const ArrangementerPage = () => {
           </div>
           {/* Enhanced Image Section */}
           <div className="lg:w-1/2">
-            <div className="relative group px-8">
-              <div className="relative overflow-hidden rounded-3xl shadow-2xl">
-                <div className="aspect-[4/3] relative">
-                  <Image
-                    src="/footballTournament.jpg"
-                    alt="Innvandrerforum i Østfold - fellesskap og kultur"
-                    fill
-                    priority
-                    className="object-cover group-hover:scale-105 transition-transform duration-700"
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                  />
-                </div>
+            <div className="relative overflow-hidden rounded-3xl shadow-2xl">
+              <div className="relative aspect-[4/3] min-h-[300px] sm:min-h-[260px] md:min-h-0">
+                <Image
+                  src="/football.jpg"
+                  alt="Kino"
+                  fill
+                  priority
+                  className="object-cover transition-transform duration-700"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
               </div>
             </div>
           </div>
@@ -65,18 +63,16 @@ const ArrangementerPage = () => {
         <div className="flex flex-col lg:flex-row items-center gap-12 mb-24">
           {/* Enhanced Image Section */}
           <div className="lg:w-1/2">
-            <div className="relative group px-8">
-              <div className="relative overflow-hidden rounded-3xl shadow-2xl">
-                <div className="aspect-[4/3] relative">
-                  <Image
-                    src="/bowling.jpeg"
-                    alt="Innvandrerforum i Østfold - fellesskap og kultur"
-                    fill
-                    priority
-                    className="object-cover group-hover:scale-105 transition-transform duration-700"
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                  />
-                </div>
+            <div className="relative overflow-hidden rounded-3xl shadow-2xl">
+              <div className="relative aspect-[4/3] min-h-[300px] sm:min-h-[260px] md:min-h-0">
+                <Image
+                  src="/bowling.jpeg"
+                  alt="Kino"
+                  fill
+                  priority
+                  className="object-cover transition-transform duration-700"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
               </div>
             </div>
           </div>
@@ -118,18 +114,16 @@ const ArrangementerPage = () => {
           </div>
           {/* Enhanced Image Section */}
           <div className="lg:w-1/2">
-            <div className="relative group px-8">
-              <div className="relative overflow-hidden rounded-3xl shadow-2xl">
-                <div className="aspect-[4/3] relative">
-                  <Image
-                    src="/cabinTour.jpg"
-                    alt="Innvandrerforum i Østfold - fellesskap og kultur"
-                    fill
-                    priority
-                    className="object-cover group-hover:scale-105 transition-transform duration-700"
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                  />
-                </div>
+            <div className="relative overflow-hidden rounded-3xl shadow-2xl">
+              <div className="relative aspect-[4/3] min-h-[300px] sm:min-h-[260px] md:min-h-0">
+                <Image
+                  src="/cabin.jpg"
+                  alt="Kino"
+                  fill
+                  priority
+                  className="object-cover transition-transform duration-700"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
               </div>
             </div>
           </div>
@@ -137,18 +131,16 @@ const ArrangementerPage = () => {
         <div className="flex flex-col lg:flex-row items-center gap-12 mb-24">
           {/* Enhanced Image Section */}
           <div className="lg:w-1/2">
-            <div className="relative group px-8">
-              <div className="relative overflow-hidden rounded-3xl shadow-2xl">
-                <div className="aspect-[4/3] relative">
-                  <Image
-                    src="/cinema.jpeg"
-                    alt="Innvandrerforum i Østfold - fellesskap og kultur"
-                    fill
-                    priority
-                    className="object-cover group-hover:scale-105 transition-transform duration-700"
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                  />
-                </div>
+            <div className="relative overflow-hidden rounded-3xl shadow-2xl">
+              <div className="relative aspect-[4/3] min-h-[300px] sm:min-h-[260px] md:min-h-0">
+                <Image
+                  src="/cinema.jpeg"
+                  alt="Kino"
+                  fill
+                  priority
+                  className="object-cover transition-transform duration-700"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
               </div>
             </div>
           </div>
