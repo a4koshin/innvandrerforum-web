@@ -1,6 +1,6 @@
 // app/annual-event/components/EventCard.tsx
 import React from "react";
-import { Event } from "../types/event";
+import { Event } from "@/constants/event";
 
 interface EventCardProps {
   event: Event;
