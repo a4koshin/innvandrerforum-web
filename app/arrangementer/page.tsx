@@ -3,6 +3,8 @@ import React from "react";
 import EventCard from "@/components/EventCard";
 import { Event } from "@/constants/event";
 import { events } from "@/constants/event";
+import { Button } from "@/components/ui/button";
+
 const ArrangementerPage = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
@@ -28,7 +30,7 @@ const ArrangementerPage = () => {
       </section>
 
       {/* Events Grid Section */}
-      <section className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-20 -mt-12">
+      <section className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-20 mt-24">
         {/* Decorative Elements */}
         <div className="absolute -top-20 left-10 w-72 h-72 bg-gradient-to-r from-blue-200/20 to-purple-200/20 rounded-full blur-3xl" />
         <div className="absolute top-40 right-10 w-96 h-96 bg-gradient-to-r from-red-200/10 to-pink-200/10 rounded-full blur-3xl" />
@@ -50,9 +52,12 @@ const ArrangementerPage = () => {
               Registrer deg for alle arrangementer og få 20% rabatt på
               totalprisen!
             </p>
-            <button className="bg-gradient-to-r from-blue-900 to-red-600 text-white font-semibold py-3 px-8 rounded-full hover:shadow-lg hover:scale-105 transition-all duration-300">
+            <Button
+              variant="default"
+              className="bg-gradient-to-r from-blue-900 to-red-600 text-white font-semibold py-3 px-8 rounded-full hover:shadow-lg hover:scale-105 transition-all duration-300"
+            >
               Registrer for Alle Arrangementer
-            </button>
+            </Button>
           </div>
         </div>
       </section>
