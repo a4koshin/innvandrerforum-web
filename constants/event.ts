@@ -14,7 +14,7 @@ export interface Event {
   featured?: boolean;
 }
 
-const events: Event[] = [
+export const events: Event[] = [
   {
     id: 1,
     title: "Football Tournament",
