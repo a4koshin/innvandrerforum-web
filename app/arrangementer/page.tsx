@@ -69,7 +69,7 @@ const ArrangementerPage = () => {
               <div className="relative overflow-hidden rounded-3xl shadow-2xl">
                 <div className="aspect-[4/3] relative">
                   <Image
-                    src="/infoimg.png"
+                    src="/bowling.jpeg"
                     alt="Innvandrerforum i Østfold - fellesskap og kultur"
                     fill
                     priority
@@ -80,24 +80,6 @@ const ArrangementerPage = () => {
               </div>
             </div>
           </div>
-          <div className="lg:w-1/2">
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">Hyttetur</h2>
-            <div className="space-y-4 text-gray-700 text-lg">
-              <p>
-                Hytteturen er et sosialt arrangement som samler ungdom og
-                familier i Østfold fylke. Gjennom felles opplevelser i naturen
-                ønsker vi å skape trygghet, fellesskap og inkludering, med
-                særlig fokus på samhold, ro og sosial tilhørighet.
-              </p>
-              <p>
-                Turen gir deltakerne mulighet til å møtes på tvers av kulturer,
-                bygge relasjoner og styrke integrering, samtidig som den bidrar
-                til aktiv deltakelse og positive opplevelser i fellesskapet.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div className="flex flex-col lg:flex-row items-center gap-12 mb-24">
           <div className="lg:w-1/2">
             <h2 className="text-3xl font-bold text-gray-900 mb-6">Bowling</h2>
             <div className="space-y-4 text-gray-700 text-lg">
@@ -115,13 +97,32 @@ const ArrangementerPage = () => {
               </p>
             </div>
           </div>
+        </div>
+
+        <div className="flex flex-col lg:flex-row items-center gap-12 mb-24">
+          <div className="lg:w-1/2">
+            <h2 className="text-3xl font-bold text-gray-900 mb-6">Hyttetur</h2>
+            <div className="space-y-4 text-gray-700 text-lg">
+              <p>
+                Hytteturen er et sosialt arrangement som samler ungdom og
+                familier i Østfold fylke. Gjennom felles opplevelser i naturen
+                ønsker vi å skape trygghet, fellesskap og inkludering, med
+                særlig fokus på samhold, ro og sosial tilhørighet.
+              </p>
+              <p>
+                Turen gir deltakerne mulighet til å møtes på tvers av kulturer,
+                bygge relasjoner og styrke integrering, samtidig som den bidrar
+                til aktiv deltakelse og positive opplevelser i fellesskapet.
+              </p>
+            </div>
+          </div>
           {/* Enhanced Image Section */}
           <div className="lg:w-1/2">
             <div className="relative group px-8">
               <div className="relative overflow-hidden rounded-3xl shadow-2xl">
                 <div className="aspect-[4/3] relative">
                   <Image
-                    src="/infoimg.png"
+                    src="/cabinTour.jpg"
                     alt="Innvandrerforum i Østfold - fellesskap og kultur"
                     fill
                     priority
