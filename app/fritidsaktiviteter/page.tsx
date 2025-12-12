@@ -1,34 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import Image from "next/image";
-import {
-  Trophy,
-  Gamepad2,
-  Mountain,
-  Users,
-  Heart,
-  BookOpen,
-  Calendar,
-  MapPin,
-  Clock,
-  ArrowRight,
-  ChevronLeft,
-  ChevronRight,
-  Smartphone,
-  Coffee,
-  Film,
-  Music,
-  Globe,
-  Sparkles,
-  Target,
-  Shield,
-  Star,
-  ExternalLink,
-  Home,
-} from "lucide-react";
-import { FaPersonSwimming } from "react-icons/fa6";
-import { FaBowlingBall } from "react-icons/fa";
-import { IoFootball } from "react-icons/io5";
+import { Gamepad2, Calendar, MapPin, Clock, Film } from "lucide-react";
 import { useRouter } from "next/navigation";
 
 // Weekly Schedule Activities with Images
@@ -43,7 +16,7 @@ const weeklyActivities = [
         location: "Kongstenhallen",
         description: "Futsal trening for alle nivåer",
         type: "sport",
-        image: "/fotbal2.JPG", // Your football image
+        image: "/fotbal3.jpeg", // Your football image
       },
       {
         name: "Svømming (Kvinner)",
@@ -79,7 +52,7 @@ const weeklyActivities = [
         location: "Kongstenhallen",
         description: "Ukeavslutning med futsal",
         type: "sport",
-        image: "/fotbal0.JPG", // Your football image
+        image: "/fotbal4.JPG", // Your football image
       },
     ],
   },
@@ -106,94 +79,6 @@ const monthlyActivities = [
     image: "/PCGaming.jpg", // Using PCGaming as placeholder for cinema
     location: "Ungdomshuset",
     registration: "Åpen for alle",
-  },
-];
-
-// Yearly Activities with Images
-const yearlyActivities = [
-  {
-    id: 1,
-    name: "Fotballturnering",
-    description: "Årlig fotballturnering for hele Østfold",
-    month: "September",
-    participants: "120+ deltakere",
-    icon: Trophy,
-    image: "/football.jpg",
-    location: "Østfold Stadion",
-    duration: "Hele dagen",
-  },
-  {
-    id: 2,
-    name: "Hyttetur",
-    description: "Årlig hytteutflukt i vakre omgivelser",
-    month: "Juni",
-    participants: "40+ deltakere",
-    icon: Mountain,
-    image: "/football.jpg", // Placeholder - add actual hytte image
-    location: "Østfold skog",
-    duration: "Helg",
-  },
-  {
-    id: 3,
-    name: "Bowlingkveld",
-    description: "Årlig bowlingturnering med sosialt samvær",
-    month: "November",
-    participants: "50+ deltakere",
-    icon: FaBowlingBall,
-    image: "/bowling.jpeg",
-    location: "Strike Bowling",
-    duration: "3 timer",
-  },
-  {
-    id: 4,
-    name: "Sommerfest",
-    description: "Årlig sommerfeiring med grill og aktiviteter",
-    month: "August",
-    participants: "80+ deltakere",
-    icon: Users,
-    image: "/football.jpg", // Placeholder - add actual summerfest image
-    location: "Fredrikstad sentrum",
-    duration: "Hele dagen",
-  },
-];
-
-// Youth House Activities with Images
-const youthHouseActivities = [
-  {
-    id: 1,
-    name: "Ungdomshus Åpent",
-    description: "Daglig åpningstid for gaming, leksehjelp og sosialt samvær",
-    schedule: "Mandag - Fredag: 14:00-20:00",
-    ageGroup: "6-24 år",
-    icon: Home,
-    image: "/PCGaming.jpg", // Placeholder - add actual youth house image
-  },
-  {
-    id: 2,
-    name: "Gaming Arena",
-    description: "Dedikert gaming-område med moderne utstyr",
-    schedule: "Daglig",
-    ageGroup: "10+ år",
-    icon: Gamepad2,
-    image: "/PCGaming.jpg",
-  },
-  {
-    id: 3,
-    name: "Leksehjelp",
-    description: "Gratis studiestøtte og veiledning for skoleelever",
-    schedule: "Ukentlig",
-    ageGroup: "6-18 år",
-    icon: BookOpen,
-    image: "/PCGaming.jpg", // Placeholder - add actual homework image
-  },
-  {
-    id: 4,
-    name: "Kulturkvelder",
-    description: "Oppdag og feir mangfoldet gjennom mat, musikk og dans",
-    schedule: "Månedlig",
-    ageGroup: "Alle aldre",
-    icon: Heart,
-    image: "/PCGaming.jpg", // Placeholder - add actual culture image
   },
 ];
 
