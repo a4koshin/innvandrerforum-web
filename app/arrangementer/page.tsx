@@ -141,7 +141,7 @@ const ArrangementerPage = () => {
               <div className="relative overflow-hidden rounded-3xl shadow-2xl">
                 <div className="aspect-[4/3] relative">
                   <Image
-                    src="/infoimg.png"
+                    src="/cinema.jpeg"
                     alt="Innvandrerforum i Østfold - fellesskap og kultur"
                     fill
                     priority
