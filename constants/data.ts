@@ -11,14 +11,15 @@ export const Navigations = [
   },
   {
     id: 3,
-    name: "Fritidsaktiviteter",
-    href: "/fritidsaktiviteter",
-  },
-  {
-    id: 4,
     name: "Arrangementer",
     href: "/arrangementer",
   },
+  {
+    id: 4,
+    name: "Fritidsaktiviteter",
+    href: "/fritidsaktiviteter",
+  },
+
   {
     id: 5,
     name: "Kontakt",
