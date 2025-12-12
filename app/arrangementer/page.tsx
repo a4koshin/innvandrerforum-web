@@ -24,8 +24,9 @@ const ArrangementerPage = () => {
       </div>
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mt-24">
+        {/* First section - Fotballturnering */}
         <div className="flex flex-col lg:flex-row items-center gap-12 mb-24">
-          <div className="lg:w-1/2">
+          <div className="lg:w-1/2 order-2 lg:order-none">
             <h2 className="text-3xl font-bold text-gray-900 mb-6">
               Fotballturnering
             </h2>
@@ -44,8 +45,7 @@ const ArrangementerPage = () => {
               </p>
             </div>
           </div>
-          {/* Enhanced Image Section */}
-          <div className="lg:w-1/2">
+          <div className="lg:w-1/2 order-1 lg:order-none">
             <div className="relative overflow-hidden rounded-3xl shadow-2xl">
               <div className="relative aspect-[4/3] min-h-[300px] sm:min-h-[260px] md:min-h-0">
                 <Image
@@ -60,14 +60,15 @@ const ArrangementerPage = () => {
             </div>
           </div>
         </div>
+
+        {/* Second section - Bowling */}
         <div className="flex flex-col lg:flex-row items-center gap-12 mb-24">
-          {/* Enhanced Image Section */}
-          <div className="lg:w-1/2">
+          <div className="lg:w-1/2 order-1 lg:order-none">
             <div className="relative overflow-hidden rounded-3xl shadow-2xl">
               <div className="relative aspect-[4/3] min-h-[300px] sm:min-h-[260px] md:min-h-0">
                 <Image
                   src="/bowling.jpeg"
-                  alt="Kino"
+                  alt="Bowling"
                   fill
                   priority
                   className="object-cover transition-transform duration-700"
@@ -76,7 +77,7 @@ const ArrangementerPage = () => {
               </div>
             </div>
           </div>
-          <div className="lg:w-1/2">
+          <div className="lg:w-1/2 order-2 lg:order-none">
             <h2 className="text-3xl font-bold text-gray-900 mb-6">Bowling</h2>
             <div className="space-y-4 text-gray-700 text-lg">
               <p>
@@ -95,8 +96,9 @@ const ArrangementerPage = () => {
           </div>
         </div>
 
+        {/* Third section - Hyttetur */}
         <div className="flex flex-col lg:flex-row items-center gap-12 mb-24">
-          <div className="lg:w-1/2">
+          <div className="lg:w-1/2 order-2 lg:order-none">
             <h2 className="text-3xl font-bold text-gray-900 mb-6">Hyttetur</h2>
             <div className="space-y-4 text-gray-700 text-lg">
               <p>
@@ -112,13 +114,12 @@ const ArrangementerPage = () => {
               </p>
             </div>
           </div>
-          {/* Enhanced Image Section */}
-          <div className="lg:w-1/2">
+          <div className="lg:w-1/2 order-1 lg:order-none">
             <div className="relative overflow-hidden rounded-3xl shadow-2xl">
               <div className="relative aspect-[4/3] min-h-[300px] sm:min-h-[260px] md:min-h-0">
                 <Image
                   src="/cabin.jpg"
-                  alt="Kino"
+                  alt="Hyttetur"
                   fill
                   priority
                   className="object-cover transition-transform duration-700"
@@ -128,9 +129,10 @@ const ArrangementerPage = () => {
             </div>
           </div>
         </div>
+
+        {/* Fourth section - Kino */}
         <div className="flex flex-col lg:flex-row items-center gap-12 mb-24">
-          {/* Enhanced Image Section */}
-          <div className="lg:w-1/2">
+          <div className="lg:w-1/2 order-1 lg:order-none">
             <div className="relative overflow-hidden rounded-3xl shadow-2xl">
               <div className="relative aspect-[4/3] min-h-[300px] sm:min-h-[260px] md:min-h-0">
                 <Image
@@ -144,7 +146,7 @@ const ArrangementerPage = () => {
               </div>
             </div>
           </div>
-          <div className="lg:w-1/2">
+          <div className="lg:w-1/2 order-2 lg:order-none">
             <h2 className="text-3xl font-bold text-gray-900 mb-6">Kino</h2>
             <div className="space-y-4 text-gray-700 text-lg">
               <p>
