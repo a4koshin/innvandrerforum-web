@@ -90,7 +90,7 @@ const OmossPage = () => {
 
           {/* Mission & Vision Cards */}
           <div className="grid md:grid-cols-2 gap-8 mb-24">
-            <div className="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-blue-200 hover:border-blue-300">
+            <div className="group bg-white rounded-2xl p-8 transition-all duration-300 border border-blue-200 hover:border-blue-300">
               <div className="flex items-center gap-4 mb-6">
                 <div className="p-3 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl">
                   <Target className="w-8 h-8 text-white" />
@@ -119,7 +119,7 @@ const OmossPage = () => {
               </div>
             </div>
 
-            <div className="group rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-blue-200 hover:border-blue-300">
+            <div className="group rounded-2xl p-8 transition-all duration-300 border border-blue-200 hover:border-blue-300">
               <div className="flex items-center gap-4 mb-6">
                 <div className="p-3 bg-red-600 rounded-xl">
                   <Eye className="w-8 h-8 text-white" />
