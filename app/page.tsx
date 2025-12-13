@@ -107,13 +107,13 @@ export default function Home() {
 
       {/* Information Section - Compact layout */}
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           {/* Section header - compact */}
           <div className="text-center mb-12">
             <div className="inline-flex items-center gap-2 text-blue-600 dark:text-blue-400 mb-4">
               <div className="w-8 h-0.5 bg-blue-600 dark:bg-blue-400"></div>
               <span className="text-sm font-semibold uppercase tracking-wider">
-                Our Information Work
+                Vårt informasjonsarbeid
               </span>
               <div className="w-8 h-0.5 bg-blue-600 dark:bg-blue-400"></div>
             </div>
@@ -151,7 +151,7 @@ export default function Home() {
             <div className="lg:w-7/12 space-y-6">
               <div>
                 <h3 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-4 leading-snug">
-                  Empowering Immigrant Communities Through Essential Information
+                  Styrking av innvandrerfellesskap gjennom viktig informasjon
                 </h3>
 
                 <div className="space-y-3 text-gray-600 dark:text-gray-300">
@@ -159,21 +159,26 @@ export default function Home() {
                     <span className="font-semibold text-gray-900 dark:text-white">
                       Immigrant Forum in Østfold
                     </span>{" "}
-                    provides continuous information and awareness activities for
-                    immigrant communities across the region.
+                    tilbyr kontinuerlig informasjon og veiledning til
+                    innvandrergrupper i regionen.
                   </p>
 
                   <p className="leading-relaxed">
-                    We ensure communities receive essential guidance on health
-                    matters, legal rights, employment opportunities, education
-                    pathways, and integration processes.
+                    Vi arbeider for å sikre tilgang til rett informasjon om
+                    helse, juridiske, arbeid, utdanning og integrering i det
+                    norske samfunnet.
                   </p>
                 </div>
               </div>
               {/* CTA - compact */}
               <div className="pt-4">
-                <Button className="inline-flex items-center gap-2 px-5 py-2.5 bg-blue-900 text-white font-semibold rounded-lg hover:bg-blue-800 transition-all duration-300 shadow-md hover:shadow-lg text-sm">
-                  Discover Our Programs
+                <Button
+                  onClick={() => {
+                    router.push("/omoss");
+                  }}
+                  className="inline-flex items-center gap-2 px-5 py-2.5 bg-blue-900 text-white font-semibold rounded-lg hover:bg-blue-800 transition-all duration-300 shadow-md hover:shadow-lg text-sm"
+                >
+                  Oppdag våre programmerer
                   <svg
                     className="w-4 h-4"
                     fill="none"
@@ -225,8 +230,87 @@ export default function Home() {
       </div>
 
       {/* {"Office section"} */}
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+        <div className="max-w-7xl mx-auto">
+          {/* Section header - compact */}
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center gap-2 text-blue-600 dark:text-blue-400 mb-4">
+              <div className="w-8 h-0.5 bg-blue-600 dark:bg-blue-400"></div>
+              <span className="text-sm font-semibold uppercase tracking-wider">
+                Kontoret vårt
+              </span>
+              <div className="w-8 h-0.5 bg-blue-600 dark:bg-blue-400"></div>
+            </div>
+          </div>
 
-      <div></div>
+          {/* Content - tighter spacing */}
+          <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-10">
+            {/* Text content - denser */}
+            <div className="lg:w-7/12 space-y-6">
+              <div>
+                <h3 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-4 leading-snug">
+                  Styrking av innvandrerfellesskap gjennom viktig informasjon
+                </h3>
+
+                <div className="space-y-3 text-gray-600 dark:text-gray-300">
+                  <p className="leading-rqelaxed">
+                    <span className="font-semibold text-gray-900 dark:text-white">
+                      Immigrant Forum in Østfold
+                    </span>{" "}
+                    tilbyr kontinuerlig informasjon og veiledning til
+                    innvandrergrupper i regionen.
+                  </p>
+
+                  <p className="leading-relaxed">
+                    Vi arbeider for å sikre tilgang til rett informasjon om
+                    helse, juridiske, arbeid, utdanning og integrering i det
+                    norske samfunnet.
+                  </p>
+                </div>
+              </div>
+              {/* CTA - compact */}
+              <div className="pt-4">
+                <Button
+                  onClick={() => {
+                    router.push("/omoss");
+                  }}
+                  className="inline-flex items-center gap-2 px-5 py-2.5 bg-blue-900 text-white font-semibold rounded-lg hover:bg-blue-800 transition-all duration-300 shadow-md hover:shadow-lg text-sm"
+                >
+                  Oppdag våre programmerer
+                  <svg
+                    className="w-4 h-4"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M14 5l7 7m0 0l-7 7m7-7H3"
+                    />
+                  </svg>
+                </Button>
+              </div>
+            </div>
+            {/* Image - more compact */}
+            <div className="lg:w-5/12">
+              <div className="relative">
+                <div className="overflow-hidden rounded-xl shadow-lg">
+                  <Image
+                    src="/office.jpg"
+                    width={600}
+                    height={600}
+                    alt="Information work helping immigrant communities in Østfold"
+                    className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+                    priority
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
       {/* Programs Section */}
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
