@@ -36,7 +36,7 @@ const ActivityCard = ({
     accent === "blue" ? "from-blue-900 to-blue-800" : "from-red-600 to-red-500";
 
   return (
-    <div className="group w-[600px] bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100 hover:-translate-y-2">
+    <div className="group w-[600px] bg-white rounded-2xl shadow-xl transition-all duration-300 overflow-hidden border border-gray-100">
       <div className="md:flex">
         {/* Image Section */}
         <div className="md:w-3/5 relative">
