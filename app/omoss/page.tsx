@@ -100,26 +100,6 @@ const OmossPage = () => {
                   </div>
                 </div>
               </div>
-
-              {/* Image Support Text */}
-              <div className="mt-8 flex items-center justify-center gap-8 text-center">
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-blue-900">100%</div>
-                  <div className="text-sm text-gray-600">Inkluderende</div>
-                </div>
-                <div className="h-8 w-px bg-gray-300" />
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-red-600">24/7</div>
-                  <div className="text-sm text-gray-600">
-                    Tilgjengelig støtte
-                  </div>
-                </div>
-                <div className="h-8 w-px bg-gray-300" />
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-blue-900">0kr</div>
-                  <div className="text-sm text-gray-600">Medlemskontingent</div>
-                </div>
-              </div>
             </div>
           </div>
 
