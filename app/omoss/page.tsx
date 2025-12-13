@@ -70,7 +70,7 @@ const OmossPage = () => {
                 <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-blue-900/10 rounded-2xl -rotate-12 group-hover:rotate-0 transition-transform duration-500" />
 
                 <div className="relative overflow-hidden rounded-3xl shadow-2xl">
-                  <div className="aspect-[4/3] relative">
+                  <div className="relative w-full aspect-[4/3] min-h-[220px] sm:min-h-0">
                     <Image
                       src="/infoimg.png"
                       alt="Innvandrerforum i Østfold - fellesskap og kultur"
