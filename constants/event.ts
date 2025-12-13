@@ -28,11 +28,11 @@ export const events: Event[] = [
       "Friendly team bowling with cosmic lights and music. Prizes for highest scores and most creative team outfits!",
     image: "/fotbal1.JPG",
   },
-  {
-    id: 4,
-    title: "Cinema Night",
-    description:
-      "Exclusive private screening of a blockbuster premiere. Enjoy gourmet popcorn, drinks, and luxury seating.",
-    image: "/fotbal1.JPG",
-  },
+  // {
+  //   id: 4,
+  //   title: "Cinema Night",
+  //   description:
+  //     "Exclusive private screening of a blockbuster premiere. Enjoy gourmet popcorn, drinks, and luxury seating.",
+  //   image: "/fotbal1.JPG",
+  // },
 ];
