@@ -1,11 +1,17 @@
 "use client";
-import React, { useState } from "react";
+import React, { act, useState } from "react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import Card from "@/components/Card";
 import { useRouter } from "next/navigation";
 import EventCard from "@/components/EventCard";
 import { events } from "@/constants/event";
+import ActivityCard from "@/components/ActivityCard";
+// import { weeklyActivities, monthlyActivities } from "@/constants/activities";
+import {
+  weeklyActivities,
+  monthlyActivities,
+} from "@/constants/HeroActivities";
+import HeroActivityCard from "@/components/HeroActivityCard";
 export default function Home() {
   const [emailMessage, setEmailMessage] = useState<string>("");
   const router = useRouter();
@@ -222,7 +228,7 @@ export default function Home() {
         </div>
 
         {/* Event Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-32">
+        <div className="grid grid-cols-1 place-items-center sm:place-items-stretch sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-2">
           {events.map((event) => (
             <EventCard key={event.id} event={event} />
           ))}
@@ -317,11 +323,11 @@ export default function Home() {
         {/* Section Header */}
         <div className="text-center mb-12">
           <div className="inline-flex items-center gap-2 text-blue-600 dark:text-blue-400 mb-4">
-            <div className="w-8 h-0.5 bg-blue-600 dark:bg-blue-400"></div>
+            <div className="w-8 h-0.5 bg-blue-600 dark:bg-blue-400" />
             <span className="text-sm font-semibold uppercase tracking-wider">
-              Our Programs
+              Vårt aktivitetsprogram
             </span>
-            <div className="w-8 h-0.5 bg-blue-600 dark:bg-blue-400"></div>
+            <div className="w-8 h-0.5 bg-blue-600 dark:bg-blue-400" />
           </div>
 
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
@@ -334,32 +340,46 @@ export default function Home() {
           </p>
         </div>
 
-        {/* Programs Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <Card
-            img="/work1.png"
-            headline="Empowering Communities"
-            description=" We are an organization dedicated to supporting and including
-            immigrants in Østfold through targeted initiatives and community
-            programs."
-            buttonText="Les mer"
-          />
-          <Card
-            img="/work2.png"
-            headline="Empowering Communities"
-            description=" We are an organization dedicated to supporting and including
-            immigrants in Østfold through targeted initiatives and community
-            programs."
-            buttonText="Les mer"
-          />
-          <Card
-            img="/work3.png"
-            headline="Empowering Communities"
-            description=" We are an organization dedicated to supporting and including
-            immigrants in Østfold through targeted initiatives and community
-            programs."
-            buttonText="Les mer"
-          />
+        {/* FLEX CONTENT */}
+        <div className="flex flex-col lg:flex-row gap-12">
+          {/* Weekly Activities */}
+          <div className="flex-1">
+            <div className="grid grid-cols-1 gap-8 justify-items-center">
+              {weeklyActivities.map((activity) => (
+                <HeroActivityCard
+                  key={activity.id}
+                  image={activity.image}
+                  title={activity.name}
+                  description={activity.description}
+                  location={activity.location}
+                  time={activity.time}
+                  day={activity.day}
+                  buttonText="Meld interesse"
+                  accent="red"
+                  icon={activity.icon}
+                />
+              ))}
+            </div>
+          </div>
+
+          {/* Monthly Activities */}
+          <div className="flex-1">
+            <div className="grid grid-cols-1 gap-8 justify-items-center">
+              {monthlyActivities.map((activity) => (
+                <HeroActivityCard
+                  key={activity.id}
+                  image={activity.image}
+                  title={activity.name}
+                  description={activity.description}
+                  location={activity.location}
+                  time={activity.schedule}
+                  buttonText="Meld deg på"
+                  accent="blue"
+                  icon={activity.icon}
+                />
+              ))}
+            </div>
+          </div>
         </div>
       </div>
 
