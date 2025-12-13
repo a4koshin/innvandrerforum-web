@@ -2,14 +2,17 @@
 import React from "react";
 import { Event } from "@/constants/event";
 import Image from "next/image";
+import { Button } from "./ui/button";
+import { useRouter } from "next/navigation";
 
 interface EventCardProps {
   event: Event;
 }
 
 const EventCard: React.FC<EventCardProps> = ({ event }) => {
+  const router = useRouter();
   return (
-    <div className="group relative rounded-xl overflow-hidden w-78 bg-white shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100">
+    <div className="group relative rounded-xl overflow-hidden w-72 bg-white shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100">
       {/* Image Section */}
       <div className="relative h-48 w-full overflow-hidden">
         <Image
@@ -31,9 +34,14 @@ const EventCard: React.FC<EventCardProps> = ({ event }) => {
         <p className="text-gray-600 mb-6 line-clamp-3">{event.description}</p>
 
         {/* Button */}
-        <button className="w-full bg-gray-900 text-white py-3 px-4 rounded-lg font-medium hover:bg-gray-800 transition-colors duration-200">
+        <Button
+          onClick={() => {
+            router.push("/arrangementer");
+          }}
+          className="w-full bg-gray-900 text-white py-3 px-4 rounded-lg font-medium hover:bg-gray-800 transition-colors duration-200"
+        >
           Learn More
-        </button>
+        </Button>
       </div>
     </div>
   );
