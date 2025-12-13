@@ -12,7 +12,7 @@ const ArrangementerPage = () => {
           <div className="text-center mb-12">
             <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
               Årlige{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-900 via-blue-700 to-red-600 animate-gradient bg-300%">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-900 to-red-600 animate-gradient bg-300%">
                 Arrangementer
               </span>
             </h1>
