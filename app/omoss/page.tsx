@@ -61,21 +61,6 @@ const OmossPage = () => {
                   til aktiv deltagelse i lokalsamfunnet.
                 </p>
               </div>
-
-              <div className="mt-8 flex flex-wrap gap-4">
-                <div className="flex items-center gap-2">
-                  <Heart className="w-5 h-5 text-red-500" />
-                  <span className="font-medium">Frivillig organisasjon</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Globe className="w-5 h-5 text-green-500" />
-                  <span className="font-medium">Østfold fylke</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Shield className="w-5 h-5 text-blue-500" />
-                  <span className="font-medium">Støtte og inkludering</span>
-                </div>
-              </div>
             </div>
             {/* Enhanced Image Section */}
             <div className="lg:w-1/2">
