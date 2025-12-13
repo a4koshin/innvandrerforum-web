@@ -34,6 +34,6 @@ export const events: Event[] = [
     title: "Cinema Night",
     description:
       "Exclusive private screening of a blockbuster premiere. Enjoy gourmet popcorn, drinks, and luxury seating.",
-    image: "/fotbal1.JPG",
+    image: "/cinema.jpeg",
   },
 ];
