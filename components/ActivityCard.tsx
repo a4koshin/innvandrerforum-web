@@ -38,21 +38,21 @@ const ActivityCard = ({
   return (
     <div className="group w-[600px] bg-white rounded-2xl shadow-xl transition-all duration-300 overflow-hidden border border-gray-100">
       <div className="md:flex">
-        {/* Image Section */}
-        <div className="md:w-3/5 relative">
+        {/* Image Section - ONLY CHANGED THIS PART */}
+        <div className="md:w-3/5 relative overflow-hidden">
           <div className="aspect-square md:aspect-auto md:h-full relative">
             <Image
               src={image}
               alt={title}
               width={400}
               height={400}
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover  group-hover:scale-105 transition-transform duration-500"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
           </div>
         </div>
 
-        {/* Content Section */}
+        {/* Content Section - NO CHANGES HERE */}
         <div className="md:w-3/5 p-6">
           <div className="mb-4">
             <div className="flex items-center gap-2 mb-2">
