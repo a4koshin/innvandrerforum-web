@@ -112,7 +112,7 @@ const ActivityPage = () => {
                 description={activity.description}
                 location={activity.location}
                 time={activity.schedule}
-                buttonText="Send WhatsApp for påmelding"
+                buttonText="Meld interesse"
                 accent="red"
                 icon={activity.icon}
               />
