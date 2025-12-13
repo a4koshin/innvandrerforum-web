@@ -72,8 +72,8 @@ const monthlyActivities = [
   },
   {
     id: 2,
-    name: "Kino Kveld",
-    description: "Filmvisning med etterfølgende diskusjon",
+    name: "FIFA Tournament",
+    description: "Månedlig FIFA-konkurranse med premier",
     schedule: "En gang i måneden",
     icon: Film,
     image: "/PCGaming.jpg", // Using PCGaming as placeholder for cinema
