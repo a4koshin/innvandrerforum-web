@@ -94,7 +94,7 @@ const ActivityCard = ({
             <div className="pt-4 border-t border-gray-100">
               <Button
                 onClick={() => router.push("/kontakt")}
-                className={`w-full py-2.5 bg-gradient-to-r ${accentButton} text-white rounded-lg font-medium hover:opacity-90 transition-opacity duration-300`}
+                className={`w-full py-2.5 bg-gradient-to-r ${accentButton} text-white rounded-lg font-medium hover:opacity-90 transition-opacity duration-300 cursor-pointer`}
               >
                 {buttonText}
               </Button>
