@@ -36,10 +36,10 @@ const ActivityCard = ({
     accent === "blue" ? "from-blue-900 to-blue-800" : "from-red-600 to-red-500";
 
   return (
-    <div className="group w-[600px] bg-white rounded-2xl shadow-xl transition-all duration-300 overflow-hidden border border-gray-100">
+    <div className="w-full max-w-[600px] sm:max-w-[700px] lg:max-w-[900px] bg-white rounded-2xl shadow-xl transition-all duration-300 overflow-hidden border border-gray-100">
       <div className="md:flex">
         {/* Image Section - ONLY CHANGED THIS PART */}
-        <div className="md:w-3/5 relative overflow-hidden">
+        <div className="group md:w-3/5 relative overflow-hidden">
           <div className="aspect-square md:aspect-auto md:h-full relative">
             <Image
               src={image}
