@@ -1,5 +1,4 @@
 import Image from "next/image";
-import React from "react";
 import {
   Users,
   Target,
@@ -7,17 +6,7 @@ import {
   Heart,
   Globe,
   Shield,
-  Sparkles,
-  Award,
   HandHeart,
-  Calendar,
-  Trophy,
-  Gamepad2,
-  MessageSquare,
-  Music,
-  MapPin,
-  Clock,
-  ArrowRight,
 } from "lucide-react";
 
 const OmossPage = () => {
@@ -108,28 +97,6 @@ const OmossPage = () => {
 
                     {/* Gradient Overlay */}
                     <div className="absolute inset-0 bg-gradient-to-t from-blue-900/40 via-transparent to-transparent" />
-
-                    {/* Floating Badge */}
-                    <div className="absolute top-6 right-6 bg-white/90 backdrop-blur-sm px-4 py-3 rounded-xl shadow-lg">
-                      <div className="flex items-center gap-2">
-                        <HandHeart className="w-5 h-5 text-red-600" />
-                        <span className="font-bold text-blue-900">
-                          Frivilligdrevet
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Image Caption */}
-                  <div className="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-blue-900 to-transparent">
-                    <div className="text-white space-y-2">
-                      <p className="text-xl font-bold">
-                        Vi skaper trygge møteplasser
-                      </p>
-                      <p className="text-blue-100 opacity-90">
-                        For alle aldrer og kulturelle bakgrunner
-                      </p>
-                    </div>
                   </div>
                 </div>
               </div>
