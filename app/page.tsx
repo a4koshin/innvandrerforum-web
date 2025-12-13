@@ -75,17 +75,17 @@ export default function Home() {
           {[
             {
               value: "2,000+",
-              label: "People Helped Annually",
+              label: "Antall mennesker hjulpet årlig",
               color: "text-blue-900 dark:text-blue-400",
             },
             {
               value: "15+",
-              label: "Languages Spoken",
+              label: "Språk som snakkes",
               color: "text-green-500 dark:text-emerald-400",
             },
             {
               value: "10+",
-              label: "Years of Experience",
+              label: "Års erfaring",
               color: "text-red-500 dark:text-red-400",
             },
           ].map((stat, index) => (
@@ -331,12 +331,12 @@ export default function Home() {
           </div>
 
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-            Youth Empowerment
+            Ungdomsstyrking
           </h2>
 
           <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            We provide meaningful programs that help young people learn, grow,
-            and become active contributors to their community.
+            Vi tilbyr meningsfulle programmer som hjelper unge mennesker med å
+            lære, vokse og bli aktive bidragsytere i lokalsamfunnet sitt.
           </p>
         </div>
 
