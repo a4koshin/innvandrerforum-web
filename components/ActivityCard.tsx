@@ -27,6 +27,7 @@ const ActivityCard = ({
   day,
   buttonText,
   accent,
+
   icon: Icon,
 }: ActivityCardProps) => {
   const router = useRouter();
