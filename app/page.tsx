@@ -4,7 +4,8 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import Card from "@/components/Card";
 import { useRouter } from "next/navigation";
-
+import EventCard from "@/components/EventCard";
+import { events } from "@/constants/event";
 export default function Home() {
   const [emailMessage, setEmailMessage] = useState<string>("");
   const router = useRouter();
@@ -198,284 +199,28 @@ export default function Home() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
         {/* Section Header */}
         <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-2 text-blue-600 dark:text-blue-400 mb-4">
-            <div className="w-8 h-0.5 bg-blue-600 dark:bg-blue-400"></div>
+          <div className="inline-flex items-center gap-2 text-blue-600 mb-4">
+            <div className="w-8 h-0.5 bg-blue-600" />
             <span className="text-sm font-semibold uppercase tracking-wider">
-              Our Mission
+              Årlige Arrangementer
             </span>
-            <div className="w-8 h-0.5 bg-blue-600 dark:bg-blue-400"></div>
+            <div className="w-8 h-0.5 bg-blue-600" />
           </div>
 
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-            Empowering Communities
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            Inspirerende årlige begivenheter
           </h2>
 
-          <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            We are an organization dedicated to supporting and including
-            immigrants in Østfold through targeted initiatives and community
-            programs.
+          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+            Samler mennesker gjennom meningsfulle aktiviteter hele året.
           </p>
         </div>
 
-        {/* Mission Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
-          {/* Card 1: Youth Empowerment */}
-          <div className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-white to-gray-50 dark:from-gray-800 dark:to-gray-900 p-6 lg:p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-gray-100 dark:border-gray-700">
-            {/* Background pattern */}
-            <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-100/30 to-transparent dark:from-blue-900/10 rounded-full -translate-y-16 translate-x-16"></div>
-
-            {/* Icon */}
-            <div className="relative z-10 inline-flex items-center justify-center w-14 h-14 rounded-xl bg-blue-900 text-white mb-6">
-              <svg
-                className="w-7 h-7"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5 3.75v-3.375c0-.621-.504-1.125-1.125-1.125h-8.25c-.621 0-1.125.504-1.125 1.125v3.375m0 0h4.5m-4.5 0v-6m0 6h4.5"
-                />
-              </svg>
-            </div>
-
-            {/* Title */}
-            <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4 group-hover:text-blue-900 dark:group-hover:text-blue-400 transition-colors">
-              Youth Empowerment
-            </h3>
-
-            {/* Description */}
-            <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
-              Equipping young immigrants with skills, education, and
-              opportunities to become leaders in their communities and active
-              participants in Norwegian society.
-            </p>
-
-            {/* Features List */}
-            <ul className="space-y-2 mb-8">
-              {[
-                "Leadership Programs",
-                "Educational Support",
-                "Career Guidance",
-                "Cultural Exchange",
-              ].map((item, index) => (
-                <li
-                  key={index}
-                  className="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400"
-                >
-                  <svg
-                    className="w-4 h-4 text-blue-900"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-
-            {/* Bottom Link */}
-            <div className="pt-4 border-t border-gray-100 dark:border-gray-700">
-              <a
-                href="#"
-                className="inline-flex items-center gap-2 text-blue-900 dark:text-blue-400 font-semibold text-sm group-hover:gap-3 transition-all"
-              >
-                Learn more about our youth programs
-                <svg
-                  className="w-4 h-4"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M14 5l7 7m0 0l-7 7m7-7H3"
-                  />
-                </svg>
-              </a>
-            </div>
-          </div>
-
-          {/* Card 2: Cultural Development */}
-          <div className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-white to-gray-50 dark:from-gray-800 dark:to-gray-900 p-6 lg:p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-gray-100 dark:border-gray-700">
-            {/* Background pattern */}
-            <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-emerald-100/30 to-transparent dark:from-emerald-900/10 rounded-full -translate-y-16 translate-x-16"></div>
-
-            {/* Icon */}
-            <div className="relative z-10 inline-flex items-center justify-center w-14 h-14 rounded-xl bg-green-600 text-white mb-6">
-              <svg
-                className="w-7 h-7"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"
-                />
-              </svg>
-            </div>
-
-            {/* Title */}
-            <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
-              Cultural Development
-            </h3>
-
-            {/* Description */}
-            <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
-              Fostering cultural understanding and preserving heritage while
-              promoting integration and mutual respect between diverse
-              communities in Østfold.
-            </p>
-
-            {/* Features List */}
-            <ul className="space-y-2 mb-8">
-              {[
-                "Cultural Events",
-                "Language Programs",
-                "Heritage Preservation",
-                "Cross-cultural Dialogues",
-              ].map((item, index) => (
-                <li
-                  key={index}
-                  className="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400"
-                >
-                  <svg
-                    className="w-4 h-4 text-green-500"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-
-            {/* Bottom Link */}
-            <div className="pt-4 border-t border-gray-100 dark:border-gray-700">
-              <a
-                href="#"
-                className="inline-flex items-center gap-2 text-green-600 dark:text-emerald-400 font-semibold text-sm group-hover:gap-3 transition-all"
-              >
-                Explore cultural initiatives
-                <svg
-                  className="w-4 h-4"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M14 5l7 7m0 0l-7 7m7-7H3"
-                  />
-                </svg>
-              </a>
-            </div>
-          </div>
-
-          {/* Card 3: Community Engagement */}
-          <div className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-white to-gray-50 dark:from-gray-800 dark:to-gray-900 p-6 lg:p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-gray-100 dark:border-gray-700">
-            {/* Background pattern */}
-            <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-violet-100/30 to-transparent dark:from-violet-900/10 rounded-full -translate-y-16 translate-x-16"></div>
-
-            {/* Icon */}
-            <div className="relative z-10 inline-flex items-center justify-center w-14 h-14 rounded-xl bg-red-400 text-white mb-6">
-              <svg
-                className="w-7 h-7"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
-                />
-              </svg>
-            </div>
-
-            {/* Title */}
-            <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4 group-hover:text-red-600 dark:group-hover:text-violet-400 transition-colors">
-              Community Engagement
-            </h3>
-
-            {/* Description */}
-            <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
-              Building strong, inclusive communities through active
-              participation, volunteer opportunities, and collaborative projects
-              that bring people together.
-            </p>
-
-            {/* Features List */}
-            <ul className="space-y-2 mb-8">
-              {[
-                "Volunteer Programs",
-                "Community Projects",
-                "Social Integration",
-                "Network Building",
-              ].map((item, index) => (
-                <li
-                  key={index}
-                  className="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400"
-                >
-                  <svg
-                    className="w-4 h-4 text-red-500"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-
-            {/* Bottom Link */}
-            <div className="pt-4 border-t border-gray-100 dark:border-gray-700">
-              <a
-                href="#"
-                className="inline-flex items-center gap-2 text-red-600 dark:text--400 font-semibold text-sm group-hover:gap-3 transition-all"
-              >
-                Get involved today
-                <svg
-                  className="w-4 h-4"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M14 5l7 7m0 0l-7 7m7-7H3"
-                  />
-                </svg>
-              </a>
-            </div>
-          </div>
+        {/* Event Cards Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3  gap-x-0">
+          {events.map((event) => (
+            <EventCard key={event.id} event={event} />
+          ))}
         </div>
       </div>
 
