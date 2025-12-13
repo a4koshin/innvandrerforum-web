@@ -217,12 +217,16 @@ export default function Home() {
         </div>
 
         {/* Event Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-32">
           {events.map((event) => (
             <EventCard key={event.id} event={event} />
           ))}
         </div>
       </div>
+
+      {/* {"Office section"} */}
+
+      <div></div>
 
       {/* Programs Section */}
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
