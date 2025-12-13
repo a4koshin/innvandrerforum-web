@@ -4,6 +4,7 @@ import Image from "next/image";
 import { Calendar, Clock, MapPin } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import { useRouter } from "next/navigation";
+import { Button } from "@/components/ui/button";
 
 type ActivityCardProps = {
   image: string;
@@ -91,12 +92,12 @@ const ActivityCard = ({
 
             {/* Button */}
             <div className="pt-4 border-t border-gray-100">
-              <button
+              <Button
                 onClick={() => router.push("/kontakt")}
                 className={`w-full py-2.5 bg-gradient-to-r ${accentButton} text-white rounded-lg font-medium hover:opacity-90 transition-opacity duration-300`}
               >
                 {buttonText}
-              </button>
+              </Button>
             </div>
           </div>
         </div>
