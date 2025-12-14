@@ -267,21 +267,36 @@ export default function Home() {
                   Et tilgjengelig møtested for innvandrermiljøet
                 </h3>
 
-                <div className="space-y-3 text-gray-600 dark:text-gray-300">
-                  <p className="leading-rqelaxed">
+                <div className="space-y-4 text-gray-600 dark:text-gray-300">
+                  <p className="leading-relaxed">
                     <span className="font-semibold text-gray-900 dark:text-white">
                       Immigrant Forum in Østfold
                     </span>{" "}
-                    Kontoret vårt fungerer som et innbydende og tilgjengelig
-                    sted hvor medlemmer av innvandrermiljøet kan motta
-                    veiledning, støtte og informasjon.
+                    operates an open, welcoming, and accessible office where
+                    members of the immigrant community can receive guidance,
+                    support, and reliable information.
                   </p>
 
                   <p className="leading-relaxed">
-                    Det fungerer som et fysisk kontaktpunkt for møter,
-                    konsultasjoner og samfunnsaktiviteter, noe som bidrar til å
-                    styrke dialog, inkludering og aktiv deltakelse i samfunnet.
+                    The office serves as a physical meeting point for
+                    consultations, dialogue, and community activities,
+                    contributing to stronger inclusion, meaningful engagement,
+                    and active participation in society.
                   </p>
+
+                  <div className="pt-2">
+                    <h2 className="font-semibold text-lg text-gray-900 dark:text-white mb-1">
+                      Opening Hours
+                    </h2>
+
+                    <p className="font-medium">
+                      Tuesday & Wednesday: 18:00 – 22:30
+                    </p>
+                    <p className="font-medium">Friday: 17:00 – 21:00</p>
+                    <p className="font-medium">
+                      Saturday & Sunday: 15:00 – 23:00
+                    </p>
+                  </div>
                 </div>
               </div>
               {/* CTA - compact */}
@@ -292,7 +307,7 @@ export default function Home() {
                   }}
                   className="inline-flex items-center gap-2 px-5 py-2.5 bg-blue-900 text-white font-semibold rounded-lg hover:bg-blue-800 transition-all duration-300 shadow-md hover:shadow-lg text-sm"
                 >
-                  Oppdag våre programmerer
+                  besøk oss
                   <svg
                     className="w-4 h-4"
                     fill="none"
