@@ -95,15 +95,14 @@ export default function Home() {
               className="relative bg-white dark:bg-gray-800/50 rounded-xl p-6  hover:bg-gray-50 transition-shadow duration-300"
             >
               <div className="flex flex-col items-center">
-                {/* Number - slightly smaller */}
                 <div
-                  className={`text-4xl md:text-5xl font-bold mb-3 ${stat.color} leading-tight`}
+                  className={`flex text-2xl md:text-4xl font-bold mb-3 ${stat.color} leading-tight`}
                 >
                   {stat.value}
                 </div>
 
                 {/* Label */}
-                <p className="text-base font-semibold text-gray-900 dark:text-white text-center">
+                <p className="text-sm font-semibold text-gray-900 dark:text-white text-center">
                   {stat.label}
                 </p>
               </div>
