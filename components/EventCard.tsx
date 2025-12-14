@@ -12,7 +12,7 @@ interface EventCardProps {
 const EventCard: React.FC<EventCardProps> = ({ event }) => {
   const router = useRouter();
   return (
-    <div className="group relative rounded-xl overflow-hidden w-72 bg-white shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100">
+    <div className="group relative rounded-xl overflow-hidden w-full bg-white shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100">
       {/* Image Section */}
       <div className="relative h-48 w-full overflow-hidden">
         <Image
@@ -40,7 +40,7 @@ const EventCard: React.FC<EventCardProps> = ({ event }) => {
           }}
           className="w-full bg-gray-900 text-white py-3 px-4 rounded-lg font-medium hover:bg-gray-800 transition-colors duration-200"
         >
-          Learn More
+          Les mer
         </Button>
       </div>
     </div>
