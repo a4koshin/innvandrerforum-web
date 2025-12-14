@@ -9,7 +9,7 @@ const Contact = () => {
   const [error, setError] = useState<string>("");
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
   const [isSuccess, setIsSuccess] = useState<boolean>(false);
-  const phoneNumber = "+252626666276";
+  const phoneNumber = "+47 484 60 886";
 
   const handleMessage = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
