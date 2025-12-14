@@ -401,20 +401,21 @@ export default function Home() {
             <div className="inline-flex items-center gap-2 text-gray-100 mb-4">
               <div className="w-8 h-0.5 bg-gray-100"></div>
               <span className="text-sm font-semibold uppercase tracking-wider">
-                Join us
+                Bli med oss
               </span>
               <div className="w-8 h-0.5 bg-gray-100"></div>
             </div>
 
             {/* Heading */}
             <h2 className="text-2xl md:text-4xl font-bold text-gray-100 mb-4">
-              Join Our Community
+              Bli med i fellesskapet vårt
             </h2>
 
             {/* Subtext */}
             <p className="text-lg text-gray-100 mb-8 max-w-2xl mx-auto leading-relaxed">
-              Join our community and be part of a movement that empowers youth,
-              builds connections, and creates positive change together.”
+              Bli med i fellesskapet vårt og bli en del av en bevegelse som
+              styrker ungdom, bygger forbindelser og skaper positiv endring
+              sammen.»
             </p>
 
             {/* Enhanced Input + Button Container */}
@@ -427,7 +428,7 @@ export default function Home() {
                   onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
                     setEmailMessage(e.target.value)
                   }
-                  placeholder="Write your message"
+                  placeholder="skriv meldingen din"
                   className="w-full h-full px-4 py-3 bg-white/10 border border-white/30 rounded-lg text-white placeholder-gray-100 focus:outline-none focus:ring focus:ring-white focus:bg-white/20 transition-all duration-300 hover:bg-white/15"
                 />
               </div>
@@ -439,7 +440,7 @@ export default function Home() {
                 )}`}
                 className="inline-flex items-center justify-center px-8 py-3 bg-blue-900 text-white font-semibold rounded-lg shadow-lg hover:bg-blue-800 hover:scale-105 hover:shadow-xl transition-all duration-300 whitespace-nowrap min-w-[140px]"
               >
-                Join Us
+                Bli med oss
                 <svg
                   className="ml-2 w-4 h-4"
                   fill="none"
