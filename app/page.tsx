@@ -12,6 +12,7 @@ import {
   monthlyActivities,
 } from "@/constants/HeroActivities";
 import HeroActivityCard from "@/components/HeroActivityCard";
+
 export default function Home() {
   const [emailMessage, setEmailMessage] = useState<string>("");
   const router = useRouter();
@@ -240,13 +241,21 @@ export default function Home() {
         <div className="max-w-7xl mx-auto">
           {/* Section header - compact */}
           <div className="text-center mb-12">
-            <div className="inline-flex items-center gap-2 text-blue-600 dark:text-blue-400 mb-4">
-              <div className="w-8 h-0.5 bg-blue-600 dark:bg-blue-400"></div>
+            <div className="inline-flex items-center gap-2 text-blue-600 mb-4">
+              <div className="w-8 h-0.5 bg-blue-600" />
               <span className="text-sm font-semibold uppercase tracking-wider">
                 Kontoret vårt
               </span>
-              <div className="w-8 h-0.5 bg-blue-600 dark:bg-blue-400"></div>
+              <div className="w-8 h-0.5 bg-blue-600" />
             </div>
+
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Et knutepunkt for tilknytning og inkludering
+            </h2>
+
+            {/* <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              Samler mennesker gjennom meningsfulle aktiviteter hele året.
+            </p> */}
           </div>
 
           {/* Content - tighter spacing */}
@@ -255,7 +264,7 @@ export default function Home() {
             <div className="lg:w-7/12 space-y-6">
               <div>
                 <h3 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-4 leading-snug">
-                  Styrking av innvandrerfellesskap gjennom viktig informasjon
+                  Et tilgjengelig møtested for innvandrermiljøet
                 </h3>
 
                 <div className="space-y-3 text-gray-600 dark:text-gray-300">
@@ -263,14 +272,15 @@ export default function Home() {
                     <span className="font-semibold text-gray-900 dark:text-white">
                       Immigrant Forum in Østfold
                     </span>{" "}
-                    tilbyr kontinuerlig informasjon og veiledning til
-                    innvandrergrupper i regionen.
+                    Kontoret vårt fungerer som et innbydende og tilgjengelig
+                    sted hvor medlemmer av innvandrermiljøet kan motta
+                    veiledning, støtte og informasjon.
                   </p>
 
                   <p className="leading-relaxed">
-                    Vi arbeider for å sikre tilgang til rett informasjon om
-                    helse, juridiske, arbeid, utdanning og integrering i det
-                    norske samfunnet.
+                    Det fungerer som et fysisk kontaktpunkt for møter,
+                    konsultasjoner og samfunnsaktiviteter, noe som bidrar til å
+                    styrke dialog, inkludering og aktiv deltakelse i samfunnet.
                   </p>
                 </div>
               </div>
@@ -304,7 +314,7 @@ export default function Home() {
               <div className="relative">
                 <div className="overflow-hidden rounded-xl shadow-lg">
                   <Image
-                    src="/office.jpg"
+                    src="/ourOffice.jpg"
                     width={600}
                     height={600}
                     alt="Information work helping immigrant communities in Østfold"
