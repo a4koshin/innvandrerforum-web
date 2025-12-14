@@ -9,31 +9,31 @@ export interface Event {
 export const events: Event[] = [
   {
     id: 1,
-    title: "Football Tournament",
+    title: "Fotballturnering",
     description:
-      "Join our annual 5-a-side knockout championship. Trophies await the winning team! Perfect for competitive spirits and team building.",
+      "Bli med på vårt årlige 5-manns knockout-mesterskap. Trofeer venter på vinnerlaget! Perfekt",
     image: "/fotbal1.JPG",
   },
   {
     id: 2,
-    title: "Bowling Championship",
+    title: "Bowlingmesterskap",
     description:
-      "Friendly team bowling with cosmic lights and music. Prizes for highest scores and most creative team outfits!",
+      "Vennlig lagbowling med kosmiske lys og musikk. Premier for høyeste poengsum og flest",
     image: "/bowling.jpeg",
   },
   {
     id: 3,
-    title: "Cabin Tour",
+    title: "Hytteomvisning",
     description:
-      "Explore scenic mountain cabins with guided nature walks. Experience tranquility and breathtaking views in the wilderness.",
+      "Utforsk naturskjønne fjellhytter med guidede turer i naturen. Opplev ro og fantastisk utsikt i villmarken.",
     image: "/cabin.jpg",
   },
 
   {
     id: 4,
-    title: "Cinema Night",
+    title: "Kinokveld",
     description:
-      "Exclusive private screening of a blockbuster premiere. Enjoy gourmet popcorn, drinks, and luxury seating.",
+      "Eksklusiv privatvisning av en storfilmpremiere. Nyt gourmetpopcorn, drikke og luksuriøse sitteplasser.",
     image: "/cinema.jpeg",
   },
 ];
