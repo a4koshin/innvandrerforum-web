@@ -1,5 +1,6 @@
 import { Gamepad2, Film } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
+import { IoFootball } from "react-icons/io5";
 
 export interface WeeklyActivity {
   id: number;
