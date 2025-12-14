@@ -12,7 +12,7 @@ interface EventCardProps {
 const EventCard: React.FC<EventCardProps> = ({ event }) => {
   const router = useRouter();
   return (
-    <div className="group relative rounded-xl overflow-hidden w-full bg-white shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100">
+    <div className="group relative rounded-xl overflow-hidden w-[310px] h-[430px] bg-white shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100">
       {/* Image Section */}
       <div className="relative h-48 w-full overflow-hidden">
         <Image
