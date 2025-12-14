@@ -102,9 +102,8 @@ const Footer = () => {
               <div className="flex items-start space-x-3">
                 <FaMapMarkerAlt className="w-5 h-5 text-gray-100 mt-1 flex-shrink-0" />
                 <span className="text-blue-100 text-sm">
-                  123 Community Street
-                  <br />
-                  Østfold, Norway 1678
+                  Underhaugsgata
+                  {/* <br /> */} 3, 1607 Fredrikstad
                 </span>
               </div>
               <div className="flex items-center space-x-3">
@@ -113,7 +112,7 @@ const Footer = () => {
                   href="tel:+4712345678"
                   className="text-blue-100 hover:text-white transition-colors text-sm"
                 >
-                  +47 12 34 56 78
+                  + 47 484 60 886
                 </a>
               </div>
               <div className="flex items-center space-x-3">
