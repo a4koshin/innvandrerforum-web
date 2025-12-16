@@ -23,10 +23,10 @@ This site is a **showcase and informational website** deployed on Vercel that hi
 
 ## 🛠️ Tech Stack
 
-- **Frontend:** React / Next.js (if used)
-- **Styling:** Tailwind CSS (assumed; update if different)
-- **Deployment:** Vercel  
-  _(Edit this section based on your actual tech stack)_
+- **Frontend:**Next.js TypeScript.
+- **Backend:**Supabase(Soon I.Allah).
+- **Styling:** Tailwind CSS.
+- **Deployment:** Vercel
 
 ---
 
@@ -52,5 +52,67 @@ Check the deployed version here:
 
 1. **Clone the repo**
    ```bash
-   git clone https://github.com/your-username/innvandrerforum-web.git
+   git clone https://github.com/a4koshin/innvandrerforum-web.git
    ```
+
+cd innvandrerforum-web
+
+npm install
+
+# or
+
+yarn install
+
+http://localhost:3000
+
+## 📁 Folder Structure
+
+📦 INNVANDRERFORUM
+├─ 📂 app
+│ ├─ 📂 arrangementer
+│ │ └─ page.tsx
+│ ├─ 📂 fritidsaktiviteter
+│ │ └─ page.tsx
+│ ├─ 📂 kontakt
+│ │ └─ page.tsx
+│ ├─ 📂 omoss
+│ │ └─ page.tsx
+│ ├─ globals.css
+│ ├─ layout.tsx
+│ └─ page.tsx
+│
+├─ 📂 components
+│ └─ 📂 ui
+│ ├─ button.tsx
+│ ├─ ActivityCard.tsx
+│ ├─ Card.tsx
+│ ├─ EventCard.tsx
+│ ├─ Footer.tsx
+│ ├─ HeroActivityCard.tsx
+│ └─ Navbar.tsx
+│
+├─ 📂 constants
+│ ├─ activities.ts
+│ ├─ data.ts
+│ ├─ event.ts
+│ └─ HeroActivities.ts
+│
+├─ 📂 lib
+│ └─ utils.ts
+│
+├─ 📂 public
+├─ node_modules
+├─ .gitignore
+├─ components.json
+├─ eslint.config.mjs
+├─ next-env.d.ts
+├─ next.config.ts
+├─ package.json
+├─ package-lock.json
+├─ postcss.config.mjs
+├─ tsconfig.json
+└─ README.md
+
+types/
+├─ activity.ts
+├─ event.ts
