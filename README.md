@@ -65,6 +65,7 @@ yarn install
 
 http://localhost:3000
 
+<!--
 ## 📁 Folder Structure
 
 📦 INNVANDRERFORUM
@@ -115,4 +116,54 @@ http://localhost:3000
 
 types/
 ├─ activity.ts
-├─ event.ts
+├─ event.ts -->
+
+## 📁 Folder Structure
+
+```text
+📦 INNVANDRERFORUM
+├─ 📂 app
+│  ├─ 📂 arrangementer
+│  │  └─ page.tsx
+│  ├─ 📂 fritidsaktiviteter
+│  │  └─ page.tsx
+│  ├─ 📂 kontakt
+│  │  └─ page.tsx
+│  ├─ 📂 omoss
+│  │  └─ page.tsx
+│  ├─ globals.css
+│  ├─ layout.tsx
+│  └─ page.tsx
+│
+├─ 📂 components
+│  └─ 📂 ui
+│     ├─ button.tsx
+│     ├─ ActivityCard.tsx
+│     ├─ Card.tsx
+│     ├─ EventCard.tsx
+│     ├─ Footer.tsx
+│     ├─ HeroActivityCard.tsx
+│     └─ Navbar.tsx
+│
+├─ 📂 constants
+│  ├─ activities.ts
+│  ├─ data.ts
+│  ├─ event.ts
+│  └─ HeroActivities.ts
+│
+├─ 📂 lib
+│  └─ utils.ts
+│
+├─ 📂 public
+├─ node_modules
+├─ .gitignore
+├─ components.json
+├─ eslint.config.mjs
+├─ next-env.d.ts
+├─ next.config.ts
+├─ package.json
+├─ package-lock.json
+├─ postcss.config.mjs
+├─ tsconfig.json
+└─ README.md
+```
