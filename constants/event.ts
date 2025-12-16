@@ -11,21 +11,21 @@ export const events: Event[] = [
     id: 1,
     title: "Fotballturnering",
     description:
-      "Bli med på vårt årlige 5-manns knockout-mesterskap. Trofeer venter på vinnerlaget! Perfekt",
+      "En årlig fotballturnering som samler ungdom, familier og frivillige til en sosial og inkluderende dag.",
     image: "/fotbal1.JPG",
   },
   {
     id: 2,
     title: "Bowlingmesterskap",
     description:
-      "Vennlig lagbowling med kosmiske lys og musikk. Premier for høyeste poengsum og flest",
+      "Årlig bowlingkveld for ungdom og familier, med fokus på sosialt samvær og fellesskap.",
     image: "/bowling.jpeg",
   },
   {
     id: 3,
     title: "Hytteomvisning",
     description:
-      "Utforsk naturskjønne fjellhytter med guidede turer i naturen. Opplev ro og fantastisk utsikt i villmarken.",
+      "Årlige turer med overnatting i naturen, hvor deltakerne får oppleve friluftsliv, mestring og fellesskap.",
     image: "/cabin.jpg",
   },
 
@@ -33,7 +33,7 @@ export const events: Event[] = [
     id: 4,
     title: "Kinokveld",
     description:
-      "Eksklusiv privatvisning av en storfilmpremiere. Nyt gourmetpopcorn, drikke og luksuriøse sitteplasser.",
+      "Årlig film- eller kinokveld som gir barn, ungdom og familier en felles sosial opplevelse.",
     image: "/cinema.jpeg",
   },
 ];
