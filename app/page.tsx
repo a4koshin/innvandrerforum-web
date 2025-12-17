@@ -285,15 +285,20 @@ export default function Home() {
 
                   <div className="pt-2">
                     <h2 className="font-semibold text-lg text-gray-900 dark:text-white mb-1">
-                      Opening Hours
+                      Åpningstider
                     </h2>
 
                     <p className="font-medium">
-                      Tuesday & Wednesday: 18:00 – 22:30
+                      Tirsdag og onsdag:{" "}
+                      <span className="font-semibold">18:00 – 22:30</span>
                     </p>
-                    <p className="font-medium">Friday: 17:00 – 21:00</p>
                     <p className="font-medium">
-                      Saturday & Sunday: 15:00 – 23:00
+                      Fredag:{" "}
+                      <span className="font-semibold">17:00 – 21:00</span>
+                    </p>
+                    <p className="font-medium">
+                      Lørdag og søndag:{" "}
+                      <span className="font-semibold">15:00 – 23:00</span>
                     </p>
                   </div>
                 </div>
