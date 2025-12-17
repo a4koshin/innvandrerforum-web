@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import EventCard from "@/components/EventCard";
 import { events } from "@/constants/event";
 import ActivityCard from "@/components/ActivityCard";
+import { Status } from "@/constants/status";
 // import { weeklyActivities, monthlyActivities } from "@/constants/activities";
 import {
   weeklyActivities,
@@ -68,44 +69,31 @@ export default function Home() {
           </div>
         </div>
       </div>
+      {/* Stats Section - Social Proof with Visual Context */}
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+        {/* Section header */}
+        <div className="text-center mb-10 lg:mb-14">
+          <p className="text-sm font-medium uppercase tracking-widest text-gray-500 dark:text-gray-400">
+            AS FEATURED IN
+          </p>
+        </div>
 
-      {/* Stats Section - Optimized spacing */}
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
-        {/* Stats grid - compact layout */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 md:gap-8">
-          {[
-            {
-              value: "2,000+",
-              label: "Antall mennesker hjulpet årlig",
-              color: "text-blue-900 dark:text-blue-400",
-            },
-            {
-              value: "15+",
-              label: "Språk som snakkes",
-              color: "text-green-500 dark:text-emerald-400",
-            },
-            {
-              value: "10+",
-              label: "Års erfaring",
-              color: "text-red-500 dark:text-red-400",
-            },
-          ].map((stat, index) => (
+        {/* Logos grid - minimalist style */}
+        <div className="flex flex-wrap justify-between items-center gap-x-8 gap-y-6">
+          {Status.map((stat) => (
             <div
-              key={index}
-              className="relative bg-white dark:bg-gray-800/50 rounded-xl p-6  hover:bg-gray-50 transition-shadow duration-300"
+              key={stat.id}
+              className="relative h-8 md:h-10 flex items-center opacity-60 hover:opacity-100 transition-opacity duration-300"
+              style={{ width: (stat as any).width || "auto" }} // cast to any to avoid TS error when width isn't on the Image type
             >
-              <div className="flex flex-col items-center">
-                <div
-                  className={`flex text-2xl md:text-4xl font-bold mb-3 ${stat.color} leading-tight`}
-                >
-                  {stat.value}
-                </div>
-
-                {/* Label */}
-                <p className="text-sm font-semibold text-gray-900 dark:text-white text-center">
-                  {stat.label}
-                </p>
-              </div>
+              <Image
+                src={stat.image}
+                alt="logo"
+                width={80}
+                height={80}
+                className="object-contain h-full w-auto"
+                loading="lazy"
+              />
             </div>
           ))}
         </div>
