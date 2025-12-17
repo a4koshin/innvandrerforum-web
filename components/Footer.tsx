@@ -43,33 +43,33 @@ const Footer = () => {
             </p>
             <div className="flex space-x-4 pt-4">
               <a
-                href="#"
+                href="https://www.facebook.com/InnvandreriOstfold"
                 className="p-2 bg-blue-800 rounded-lg hover:bg-blue-700 transition-colors"
                 aria-label="Facebook"
               >
                 <FaFacebook className="w-5 h-5" />
               </a>
-              <a
+              {/* <a
                 href="#"
                 className="p-2 bg-blue-800 rounded-lg hover:bg-blue-700 transition-colors"
                 aria-label="Twitter"
               >
                 <FaTwitter className="w-5 h-5" />
-              </a>
+              </a> */}
               <a
-                href="#"
+                href="https://www.instagram.com/innvandrerforumostfold/"
                 className="p-2 bg-blue-800 rounded-lg hover:bg-blue-700 transition-colors"
                 aria-label="Instagram"
               >
                 <FaInstagram className="w-5 h-5" />
               </a>
-              <a
+              {/* <a
                 href="#"
                 className="p-2 bg-blue-800 rounded-lg hover:bg-blue-700 transition-colors"
                 aria-label="LinkedIn"
               >
                 <FaLinkedin className="w-5 h-5" />
-              </a>
+              </a> */}
             </div>
           </div>
 
