@@ -64,7 +64,37 @@ export const volunteers: Boards[] = [
   {
     id: 0,
     name: "Ayan Adan",
-    title: "Daglig leder",
+    title: "Ressursperson – familiekontakt",
+    img: "/User.jpg",
+  },
+  {
+    id: 1,
+    name: "Mahmud Abdulahi",
+    title: "Ressursperson – ungdomshus og arrangementer",
+    img: "/User.jpg",
+  },
+  {
+    id: 2,
+    name: "Said Ali",
+    title: "Ressursperson – ungdomshus",
+    img: "/User.jpg",
+  },
+  {
+    id: 3,
+    name: "Nafiso Farah",
+    title: "Ressursperson – kvinnegruppe",
+    img: "/User.jpg",
+  },
+  {
+    id: 4,
+    name: "Paul Stronegger",
+    title: "Frivillig – språkkafé / ungdomskafé",
+    img: "/User.jpg",
+  },
+  {
+    id: 5,
+    name: "Simon Martin",
+    title: "Frivillig – språkkafé og aktiviteter",
     img: "/User.jpg",
   },
 ];
