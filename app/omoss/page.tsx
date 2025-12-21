@@ -196,7 +196,6 @@ const OmossPage = () => {
 
             <div className="px-4 sm:px-6 lg:px-8 flex justify-center items-center">
               {/* Administrators Section */}
-              {/* Administrators Section */}
               <div className="min-h-screen flex items-center justify-center">
                 <div className="w-full max-w-7xl px-4">
                   {/* Title */}
