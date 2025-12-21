@@ -59,3 +59,12 @@ export const administration: Boards[] = [
     img: "/User.jpg",
   },
 ];
+
+export const volunteers: Boards[] = [
+  {
+    id: 0,
+    name: "Ayan Adan",
+    title: "Daglig leder",
+    img: "/User.jpg",
+  },
+];
