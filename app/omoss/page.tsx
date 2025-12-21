@@ -194,18 +194,15 @@ const OmossPage = () => {
               </div>
             </div>
 
-            <div className="px-4 sm:px-6 lg:px-8 flex justify-center items-center">
+            <div className="px-4 sm:px-6 lg:px-8">
               {/* Administrators Section */}
-              <div className="min-h-screen flex items-center justify-center">
-                <div className="w-full max-w-7xl px-4">
-                  {/* Title */}
+              <div className="flex justify-center items-center">
+                <div className="w-full max-w-7xl">
                   <div className="mb-10 text-center">
                     <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-blue-900 dark:text-white mb-3 tracking-tight">
                       Administrasjon
                     </h1>
                   </div>
-
-                  {/* Grid */}
                   <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6 lg:gap-8 justify-items-center">
                     {administration.map((item) => (
                       <div
@@ -223,7 +220,6 @@ const OmossPage = () => {
                   </div>
                 </div>
               </div>
-
               {/* Board Members Section */}
               <div className="flex flex-col items-center justify-center min-h-[280px] mb-16 mt-12">
                 <div className="w-full max-w-7xl">
@@ -249,7 +245,6 @@ const OmossPage = () => {
                   </div>
                 </div>
               </div>
-
               {/* Volunteers Section */}
               <div className="flex flex-col items-center justify-center min-h-[280px] mb-16">
                 <div className="w-full max-w-7xl">
