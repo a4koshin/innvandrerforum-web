@@ -201,10 +201,6 @@ const OmossPage = () => {
                     <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-blue-900 dark:text-white mb-3 tracking-tight">
                       Styret
                     </h1>
-                    <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto text-base sm:text-lg">
-                      Leadership team guiding our organization's vision and
-                      strategy
-                    </p>
                   </div>
                   <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6 lg:gap-8">
                     {boards.map((item) => (
