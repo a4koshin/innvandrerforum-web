@@ -1,14 +1,7 @@
 import Image from "next/image";
-import {
-  Users,
-  Target,
-  Eye,
-  Heart,
-  Globe,
-  Shield,
-  HandHeart,
-} from "lucide-react";
-import { boards } from "@/constants/boards";
+import { Users, Target, Eye, Heart, Globe, Shield } from "lucide-react";
+import { administration } from "@/constants/boards";
+import BoardCard from "@/components/Board";
 const OmossPage = () => {
   return (
     <div className="min-h-screen">
@@ -202,62 +195,19 @@ const OmossPage = () => {
             </div>
 
             {/* Board Members Grid - Enhanced Design */}
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6 lg:gap-8">
-              {boards.map((item, index) => (
-                <div
-                  key={item.id}
-                  className="group relative"
-                  data-aos="fade-up"
-                  data-aos-delay={index * 100}
-                >
-                  {/* Card container with hover effects */}
-                  <div
-                    className="relative bg-white rounded-2xl border border-gray-200 
-          p-4 lg:p-5 transition-all duration-500 ease-out 
-          group-hover:shadow-xl group-hover:shadow-blue-100/30
-          group-hover:border-blue-200
-          group-hover:translate-y-[-4px] h-full"
-                  >
-                    {/* Profile image container */}
-                    <div className="relative mb-5">
-                      <div className="relative w-20 h-20 lg:w-24 lg:h-24 mx-auto">
-                        {/* Image with border animation */}
-                        <div
-                          className="relative w-full h-full rounded-full overflow-hidden 
-                border-2 border-gray-300/50
-                group-hover:border-transparent
-                transition-all duration-500"
-                        >
-                          <Image
-                            src={item.img}
-                            alt={item.name}
-                            fill
-                            sizes="(max-width: 640px) 80px, 96px"
-                            className="object-cover object-center 
-                    group-hover:scale-110 transition-transform duration-700 ease-out"
-                            loading={index < 6 ? "eager" : "lazy"}
-                          />
-                        </div>
-                      </div>
-                    </div>
-                    {/* Content section */}
-                    <div className="text-center">
-                      {/* Name with hover effect */}
-                      <h4
-                        className="text-base lg:text-lg font-bold text-gray-900 
-              group-hover:text-blue-800 transition-colors duration-300"
-                      >
-                        {item.name}
-                      </h4>
-
-                      {/* Title/Position */}
-                      <p className="text-sm text-gray-600 mb-2 line-clamp-2">
-                        {item.title}
-                      </p>
-                    </div>
+            <div className="flex flex-col items-center justify-center min-h-[200px]">
+              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6 lg:gap-8">
+                {administration.map((item) => (
+                  <div key={item.id} className="flex justify-center">
+                    <BoardCard
+                      id={item.id}
+                      img={item.img}
+                      name={item.name}
+                      title={item.title}
+                    />
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
         </div>
