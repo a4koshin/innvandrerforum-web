@@ -225,7 +225,7 @@ const OmossPage = () => {
               </div>
 
               {/* Board Members Section */}
-              {/* <div className="flex flex-col items-center justify-center min-h-[280px] mb-16 mt-12">
+              <div className="flex flex-col items-center justify-center min-h-[280px] mb-16 mt-12">
                 <div className="w-full max-w-7xl">
                   <div className="mb-10 text-center">
                     <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-blue-900 dark:text-white mb-3 tracking-tight">
@@ -248,7 +248,7 @@ const OmossPage = () => {
                     ))}
                   </div>
                 </div>
-              </div> */}
+              </div>
 
               {/* Volunteers Section */}
               {/* <div className="flex flex-col items-center justify-center min-h-[280px] mb-16">
