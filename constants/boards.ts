@@ -31,6 +31,12 @@ export const boards: Boards[] = [
     title: "Styremedlem",
     img: "/User.jpg",
   },
+  {
+    id: 4,
+    name: "Ahmed Warsame",
+    title: "Daglig leder",
+    img: "/Ahmed.jpeg",
+  },
 ];
 
 export const administration: Boards[] = [
