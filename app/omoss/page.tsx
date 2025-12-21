@@ -8,7 +8,7 @@ import {
   Shield,
   HandHeart,
 } from "lucide-react";
-
+import { boards } from "@/constants/boards";
 const OmossPage = () => {
   return (
     <div className="min-h-screen">
@@ -184,6 +184,80 @@ const OmossPage = () => {
                 <h4 className="text-xl font-bold mb-2">Åpenhet</h4>
                 <p className="text-blue-100">For alle kulturer og bakgrunner</p>
               </div>
+            </div>
+          </div>
+
+          {/* Boards */}
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mt-24">
+            {/* Header  */}
+            {/* Section header - compact */}
+            <div className="text-center mb-12">
+              <div className="inline-flex items-center gap-2 text-blue-600 dark:text-blue-400 mb-4">
+                <div className="w-8 h-0.5 bg-blue-600 dark:bg-blue-400"></div>
+                <span className="text-sm font-semibold uppercase tracking-wider">
+                  Organisasjon – Styre og administrasjon
+                </span>
+                <div className="w-8 h-0.5 bg-blue-600 dark:bg-blue-400"></div>
+              </div>
+            </div>
+
+            {/* Board Members Grid - Enhanced Design */}
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6 lg:gap-8">
+              {boards.map((item, index) => (
+                <div
+                  key={item.id}
+                  className="group relative"
+                  data-aos="fade-up"
+                  data-aos-delay={index * 100}
+                >
+                  {/* Card container with hover effects */}
+                  <div
+                    className="relative bg-white rounded-2xl border border-gray-200 
+          p-4 lg:p-5 transition-all duration-500 ease-out 
+          group-hover:shadow-xl group-hover:shadow-blue-100/30
+          group-hover:border-blue-200
+          group-hover:translate-y-[-4px] h-full"
+                  >
+                    {/* Profile image container */}
+                    <div className="relative mb-5">
+                      <div className="relative w-20 h-20 lg:w-24 lg:h-24 mx-auto">
+                        {/* Image with border animation */}
+                        <div
+                          className="relative w-full h-full rounded-full overflow-hidden 
+                border-2 border-gray-300/50 dark:border-gray-600/50
+                group-hover:border-transparent
+                transition-all duration-500"
+                        >
+                          <Image
+                            src={item.img}
+                            alt={item.name}
+                            fill
+                            sizes="(max-width: 640px) 80px, 96px"
+                            className="object-cover object-center 
+                    group-hover:scale-110 transition-transform duration-700 ease-out"
+                            loading={index < 6 ? "eager" : "lazy"}
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    {/* Content section */}
+                    <div className="text-center">
+                      {/* Name with hover effect */}
+                      <h4
+                        className="text-base lg:text-lg font-bold text-gray-900 dark:text-white mb-1 
+              group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300"
+                      >
+                        {item.name}
+                      </h4>
+
+                      {/* Title/Position */}
+                      <p className="text-sm text-gray-600 dark:text-gray-400 mb-2 line-clamp-2">
+                        {item.title}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
