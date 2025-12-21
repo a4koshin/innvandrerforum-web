@@ -193,6 +193,32 @@ const OmossPage = () => {
                 <div className="w-8 h-0.5 bg-blue-600 dark:bg-blue-400"></div>
               </div>
             </div>
+
+            {/* Administrators Section */}
+            <div className="flex flex-col items-center justify-center min-h-[280px] mb-16">
+              <div className="w-full max-w-7xl">
+                <div className="mb-10 text-center">
+                  <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-blue-900 dark:text-white mb-3 tracking-tight">
+                    Administrasjon
+                  </h1>
+                </div>
+                <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6 lg:gap-8 justify-items-center">
+                  {administration.map((item) => (
+                    <div
+                      key={item.id}
+                      className="flex justify-center transform transition-all duration-300 hover:scale-[1.02]"
+                    >
+                      <BoardCard
+                        id={item.id}
+                        img={item.img}
+                        name={item.name}
+                        title={item.title}
+                      />
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
             <div className="px-4 sm:px-6 lg:px-8">
               {/* Board Members Section */}
               <div className="flex flex-col items-center justify-center min-h-[280px] mb-16 mt-12">
@@ -204,32 +230,6 @@ const OmossPage = () => {
                   </div>
                   <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6 lg:gap-8">
                     {boards.map((item) => (
-                      <div
-                        key={item.id}
-                        className="flex justify-center transform transition-all duration-300 hover:scale-[1.02]"
-                      >
-                        <BoardCard
-                          id={item.id}
-                          img={item.img}
-                          name={item.name}
-                          title={item.title}
-                        />
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-
-              {/* Administrators Section */}
-              <div className="flex flex-col items-center justify-center min-h-[280px] mb-16">
-                <div className="w-full max-w-7xl">
-                  <div className="mb-10 text-center">
-                    <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-blue-900 dark:text-white mb-3 tracking-tight">
-                      Administrasjon
-                    </h1>
-                  </div>
-                  <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6 lg:gap-8 justify-items-center">
-                    {administration.map((item) => (
                       <div
                         key={item.id}
                         className="flex justify-center transform transition-all duration-300 hover:scale-[1.02]"
