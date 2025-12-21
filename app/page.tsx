@@ -87,9 +87,6 @@ export default function Home() {
 
         {/* Enhanced logos grid with hover effects */}
         <div className="relative">
-          {/* Background gradient for visual depth
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-gray-50/30 to-transparent dark:via-gray-900/10 rounded-3xl"></div> */}
-
           <div className="relative mx-auto max-w-7xl grid grid-cols-2 md:grid-cols-3 lg:grid-cols-9 gap-8 lg:gap-8">
             {Status.map((stat, index) => (
               <div
@@ -120,7 +117,7 @@ export default function Home() {
                       alt={`"Partner"} logo`}
                       fill
                       sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 200px"
-                      className={`object-contain opacity-100 group-hover:opacity-100 
+                      className={`object-contain group-hover:opacity-100 
                   transition-all duration-500 ease-out
                   group-hover:scale-110`}
                       loading="lazy"
