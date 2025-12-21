@@ -224,7 +224,7 @@ const OmossPage = () => {
                         {/* Image with border animation */}
                         <div
                           className="relative w-full h-full rounded-full overflow-hidden 
-                border-2 border-gray-300/50 dark:border-gray-600/50
+                border-2 border-gray-300/50
                 group-hover:border-transparent
                 transition-all duration-500"
                         >
@@ -244,14 +244,14 @@ const OmossPage = () => {
                     <div className="text-center">
                       {/* Name with hover effect */}
                       <h4
-                        className="text-base lg:text-lg font-bold text-gray-900 dark:text-white mb-1 
-              group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300"
+                        className="text-base lg:text-lg font-bold text-gray-900 
+              group-hover:text-blue-800 transition-colors duration-300"
                       >
                         {item.name}
                       </h4>
 
                       {/* Title/Position */}
-                      <p className="text-sm text-gray-600 dark:text-gray-400 mb-2 line-clamp-2">
+                      <p className="text-sm text-gray-600 mb-2 line-clamp-2">
                         {item.title}
                       </p>
                     </div>
