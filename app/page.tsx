@@ -90,9 +90,9 @@ export default function Home() {
         {/* Enhanced logos grid with hover effects */}
         <div className="relative">
           {/* Background gradient for visual depth */}
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-gray-50/30 to-transparent  rounded-3xl"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-gray-50/30 to-transparent dark:via-gray-900/10 rounded-3xl"></div>
 
-          <div className="relative mx-auto max-w-7xl grid grid-cols-2 md:grid-cols-3 lg:grid-cols-8 gap-8 lg:gap-2">
+          <div className="relative mx-auto max-w-7xl grid grid-cols-2 md:grid-cols-3 lg:grid-cols-9 gap-8 lg:gap-8">
             {Status.map((stat, index) => (
               <div
                 key={stat.id}
