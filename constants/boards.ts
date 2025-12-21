@@ -20,7 +20,7 @@ export const boards: Boards[] = [
   },
   {
     id: 2,
-    name: "Roble Shine",
+    name: "Rooble Shine",
     title: "Styremedlem",
     img: "/Roble.jpeg",
   },
