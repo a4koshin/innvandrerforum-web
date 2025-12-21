@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { Users, Target, Eye, Heart, Globe, Shield } from "lucide-react";
-import { administration } from "@/constants/boards";
+import { administration, boards } from "@/constants/boards";
 import BoardCard from "@/components/Board";
 const OmossPage = () => {
   return (
@@ -195,9 +195,26 @@ const OmossPage = () => {
             </div>
 
             {/* Board Members Grid - Enhanced Design */}
-            <div className="flex flex-col items-center justify-center min-h-[200px]">
+            <div className="flex flex-col items-center justify-center min-h-[200px] mb-12">
+              <h1>Administators</h1>
               <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6 lg:gap-8">
                 {administration.map((item) => (
+                  <div key={item.id} className="flex justify-center">
+                    <BoardCard
+                      id={item.id}
+                      img={item.img}
+                      name={item.name}
+                      title={item.title}
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="flex flex-col items-center justify-center min-h-[200px] mb-12 mt-12">
+              <h1>Boards</h1>
+              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6 lg:gap-8">
+                {boards.map((item) => (
                   <div key={item.id} className="flex justify-center">
                     <BoardCard
                       id={item.id}
