@@ -73,8 +73,6 @@ export default function Home() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
         {/* Section header with decorative elements */}
         <div className="text-center mb-16 lg:mb-20 relative">
-          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-gradient-to-r from-blue-100/50 to-purple-100/50 dark:from-blue-900/20 dark:to-purple-900/20 rounded-full blur-3xl"></div>
-
           {/* Section header - compact */}
           <div className="text-center mb-12">
             <div className="inline-flex items-center gap-2 text-blue-600 dark:text-blue-400 mb-4">
