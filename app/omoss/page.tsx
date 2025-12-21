@@ -193,52 +193,95 @@ const OmossPage = () => {
                 <div className="w-8 h-0.5 bg-blue-600 dark:bg-blue-400"></div>
               </div>
             </div>
+            <div className="px-4 sm:px-6 lg:px-8">
+              {/* Board Members Section */}
+              <div className="flex flex-col items-center justify-center min-h-[280px] mb-16 mt-12">
+                <div className="w-full max-w-7xl">
+                  <div className="mb-10 text-center">
+                    <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-3 tracking-tight">
+                      Boards
+                    </h1>
+                    <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto text-base sm:text-lg">
+                      Leadership team guiding our organization's vision and
+                      strategy
+                    </p>
+                  </div>
+                  <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6 lg:gap-8">
+                    {boards.map((item) => (
+                      <div
+                        key={item.id}
+                        className="flex justify-center transform transition-all duration-300 hover:scale-[1.02]"
+                      >
+                        <BoardCard
+                          id={item.id}
+                          img={item.img}
+                          name={item.name}
+                          title={item.title}
+                        />
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
 
-            <div className="flex flex-col items-center justify-center min-h-[200px] mb-12 mt-12">
-              <h1>Boards</h1>
-              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6 lg:gap-8">
-                {boards.map((item) => (
-                  <div key={item.id} className="flex justify-center">
-                    <BoardCard
-                      id={item.id}
-                      img={item.img}
-                      name={item.name}
-                      title={item.title}
-                    />
+              {/* Administrators Section */}
+              <div className="flex flex-col items-center justify-center min-h-[280px] mb-16">
+                <div className="w-full max-w-7xl">
+                  <div className="mb-10 text-center">
+                    <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-3 tracking-tight">
+                      Administrators
+                    </h1>
+                    <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto text-base sm:text-lg">
+                      Operational leaders managing day-to-day activities and
+                      execution
+                    </p>
                   </div>
-                ))}
+                  <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6 lg:gap-8">
+                    {administration.map((item) => (
+                      <div
+                        key={item.id}
+                        className="flex justify-center transform transition-all duration-300 hover:scale-[1.02]"
+                      >
+                        <BoardCard
+                          id={item.id}
+                          img={item.img}
+                          name={item.name}
+                          title={item.title}
+                        />
+                      </div>
+                    ))}
+                  </div>
+                </div>
               </div>
-            </div>
-            {/* Board Members Grid - Enhanced Design */}
-            <div className="flex flex-col items-center justify-center min-h-[200px] mb-12">
-              <h1>Administators</h1>
-              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6 lg:gap-8">
-                {administration.map((item) => (
-                  <div key={item.id} className="flex justify-center">
-                    <BoardCard
-                      id={item.id}
-                      img={item.img}
-                      name={item.name}
-                      title={item.title}
-                    />
+
+              {/* Volunteers Section */}
+              <div className="flex flex-col items-center justify-center min-h-[280px] mb-16">
+                <div className="w-full max-w-7xl">
+                  <div className="mb-10 text-center">
+                    <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-3 tracking-tight">
+                      Ressurspersoner og frivillige
+                    </h1>
+                    <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto text-base sm:text-lg">
+                      Dedicated individuals contributing their time and
+                      expertise
+                    </p>
                   </div>
-                ))}
-              </div>
-            </div>
-            {/* Board Members Grid - Enhanced Design */}
-            <div className="flex flex-col items-center justify-center min-h-[200px] mb-12">
-              <h1>Ressurspersoner og frivillige</h1>
-              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6 lg:gap-8">
-                {volunteers.map((item) => (
-                  <div key={item.id} className="flex justify-center">
-                    <BoardCard
-                      id={item.id}
-                      img={item.img}
-                      name={item.name}
-                      title={item.title}
-                    />
+                  <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6 lg:gap-8">
+                    {volunteers.map((item) => (
+                      <div
+                        key={item.id}
+                        className="flex justify-center transform transition-all duration-300 hover:scale-[1.02]"
+                      >
+                        <BoardCard
+                          id={item.id}
+                          img={item.img}
+                          name={item.name}
+                          title={item.title}
+                        />
+                      </div>
+                    ))}
                   </div>
-                ))}
+                </div>
               </div>
             </div>
           </div>
