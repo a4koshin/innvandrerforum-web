@@ -229,7 +229,7 @@ const OmossPage = () => {
                 <div className="w-full max-w-7xl">
                   <div className="mb-10 text-center">
                     <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-blue-900 dark:text-white mb-3 tracking-tight">
-                      Administrators
+                      Administrasjon
                     </h1>
                     <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto text-base sm:text-lg">
                       Operational leaders managing day-to-day activities and
