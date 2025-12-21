@@ -69,7 +69,6 @@ export default function Home() {
           </div>
         </div>
       </div>
-      {/* Stats Section - Social Proof with Visual Context */}
       {/* Enhanced Stats Section - Social Proof with Visual Context */}
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
         {/* Section header with decorative elements */}
@@ -91,9 +90,9 @@ export default function Home() {
         {/* Enhanced logos grid with hover effects */}
         <div className="relative">
           {/* Background gradient for visual depth */}
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-gray-50/30 to-transparent dark:via-gray-900/10 rounded-3xl"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-gray-50/30 to-transparent  rounded-3xl"></div>
 
-          <div className="relative mx-auto max-w-6xl grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 lg:gap-12">
+          <div className="relative mx-auto max-w-7xl grid grid-cols-2 md:grid-cols-3 lg:grid-cols-8 gap-8 lg:gap-2">
             {Status.map((stat, index) => (
               <div
                 key={stat.id}
