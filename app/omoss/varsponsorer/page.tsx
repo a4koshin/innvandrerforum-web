@@ -8,35 +8,10 @@ const SponsorsPage = () => {
       {/* Enhanced Stats Section - Social Proof with Visual Context */}
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
         {/* Section header with enhanced decorative elements */}
-        {/* <div className="text-center mb-20 lg:mb-24 relative">
+        <div className="text-center mb-20 lg:mb-24 relative">
           {/* Animated background element */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-blue-500/5 dark:bg-blue-500/3 rounded-full blur-3xl -z-10"></div>
-
-          {/* Decorative top border */}
-          <div className="flex justify-center mb-8">
-            <div className="w-24 h-1 bg-gradient-to-r from-transparent via-blue-500 to-transparent rounded-full"></div>
-          </div>
-
-          {/* Section header content */}
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-gray-800 to-gray-600 dark:from-white dark:to-gray-300">
-            Våre sponsorer
-          </h2>
-
-          <p className="text-lg md:text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto leading-relaxed">
-            Samarbeid med anerkjente selskaper som deler vårt engasjement for
-            innovasjon og kvalitet
-          </p>
-
-          {/* Animated counter */}
-          <div className="mt-10 inline-flex items-center gap-3 px-6 py-3 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-full shadow-lg">
-            <span className="flex items-center gap-2">
-              <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
-              <span className="text-sm font-semibold text-gray-700 dark:text-gray-300">
-                {Status.length}+ partnere
-              </span>
-            </span>
-          </div>
-        </div> 
+        </div>
 
         {/* Enhanced logos grid with sophisticated hover effects */}
         <div className="relative">
@@ -50,9 +25,6 @@ const SponsorsPage = () => {
                 className="group relative"
                 style={{ animationDelay: `${index * 50}ms` }}
               >
-                {/* Animated gradient border */}
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-20 blur-[2px]"></div>
-
                 {/* Enhanced card with glass morphism */}
                 <div
                   className="relative h-28 sm:h-32 md:h-36 p-5 md:p-6 
@@ -96,13 +68,13 @@ const SponsorsPage = () => {
                   {/* Hover indicator */}
                   <div
                     className="absolute bottom-3 left-1/2 -translate-x-1/2 
-                    w-0 group-hover:w-8 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500
+                    w-0 group-hover:w-8 h-0.5 bg-gradient-to-r from-blue-900 to-red-500
                     transition-all duration-500 rounded-full"
                   ></div>
                 </div>
 
                 {/* Company name on hover */}
-                <div
+                {/* <div
                   className="absolute -bottom-8 left-1/2 -translate-x-1/2
                   opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0
                   transition-all duration-300 pointer-events-none"
@@ -113,7 +85,7 @@ const SponsorsPage = () => {
                   >
                     {stat.name || "Partner"}
                   </span>
-                </div>
+                </div> */}
               </div>
             ))}
           </div>
