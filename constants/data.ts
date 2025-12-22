@@ -1,3 +1,5 @@
+import { Children } from "react";
+
 export const Navigations = [
   {
     id: 0,
@@ -8,25 +10,28 @@ export const Navigations = [
     id: 2,
     name: "Om Oss",
     href: "/omoss",
+    Children: [
+      {
+        id: 21,
+        name: "Våre sponsorer",
+        href: "/varsponsorer",
+      },
+    ],
   },
+
   {
     id: 3,
-    name: "Våre sponsorer",
-    href: "/varsponsorer",
-  },
-  {
-    id: 4,
     name: "Arrangementer",
     href: "/arrangementer",
   },
   {
-    id: 5,
+    id: 4,
     name: "Fritidsaktiviteter",
     href: "/fritidsaktiviteter",
   },
 
   {
-    id: 6,
+    id: 5,
     name: "Kontakt",
     href: "/kontakt",
   },
