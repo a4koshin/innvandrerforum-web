@@ -135,16 +135,6 @@ export default function Home() {
                     >
                       {stat.name}
                     </h3>
-
-                    {/* Optional: Add subtle description or tagline if available */}
-                    {stat.description && (
-                      <p
-                        className="text-xs text-gray-500 dark:text-gray-400 mt-1 
-                opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                      >
-                        {stat.description}
-                      </p>
-                    )}
                   </div>
                 </div>
               </div>
