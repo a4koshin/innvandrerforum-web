@@ -12,7 +12,7 @@ export const Navigations = [
       {
         id: 21,
         name: "Våre sponsorer",
-        href: "/varsponsorer",
+        href: "/omoss/varsponsorer",
       },
     ],
   },
