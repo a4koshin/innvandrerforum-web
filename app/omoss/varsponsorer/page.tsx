@@ -113,7 +113,7 @@ const SponsorsPage = () => {
               ))}
             </div>
 
-            {/* Call to action section */}
+            {/* Call to action section
             <div className="mt-20 text-center">
               <div
                 className="inline-flex flex-col sm:flex-row items-center gap-6 p-8 
@@ -140,7 +140,7 @@ const SponsorsPage = () => {
                   Kontakt oss
                 </button>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
