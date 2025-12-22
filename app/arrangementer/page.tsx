@@ -25,6 +25,8 @@ const ArrangementerPage = () => {
       </div>
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mt-24">
+        {/* Summer Time event */}
+
         {/* First section - Fotballturnering */}
         <div className="flex flex-col lg:flex-row items-center gap-12 mb-24">
           <div className="lg:w-1/2 order-2 lg:order-none">
