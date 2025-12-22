@@ -164,7 +164,7 @@ export default function Home() {
               <div className="relative">
                 <div className="overflow-hidden rounded-xl shadow-lg">
                   <Image
-                    src="/infoimg.png"
+                    src="/arbied.jpeg"
                     width={600}
                     height={600}
                     alt="Information work helping immigrant communities in Østfold"
@@ -195,17 +195,21 @@ export default function Home() {
                 <div className="space-y-3 text-gray-600 dark:text-gray-300">
                   <p className="leading-rqelaxed">
                     <span className="font-semibold text-gray-900 dark:text-white">
-                      Immigrant Forum in Østfold
+                      Innvandrerforum i Østfold
                     </span>{" "}
-                    tilbyr kontinuerlig informasjon og veiledning til
-                    innvandrergrupper i regionen.
+                    styrker mangfoldige fellesskap gjennom tydelig informasjon
+                    og veiledning. Vi jobber for inkludering, likestilling og
+                    forebygging blant barn og ungdom, i samarbeid med
+                    offentlige, private og frivillige aktører. Gjennom møter og
+                    aktiviteter bidrar vi til økt deltakelse, trygghet og
+                    tilhørighet i lokalsamfunnet.
                   </p>
 
-                  <p className="leading-relaxed">
+                  {/* <p className="leading-relaxed">
                     Vi arbeider for å sikre tilgang til rett informasjon om
                     helse, juridiske, arbeid, utdanning og integrering i det
                     norske samfunnet.
-                  </p>
+                  </p> */}
                 </div>
               </div>
               {/* CTA - compact */}

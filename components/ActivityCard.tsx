@@ -27,7 +27,6 @@ const ActivityCard = ({
   day,
   buttonText,
   accent,
-
   icon: Icon,
 }: ActivityCardProps) => {
   const router = useRouter();
@@ -39,21 +38,22 @@ const ActivityCard = ({
   return (
     <div className="w-full max-w-[600px] sm:max-w-[700px] lg:max-w-[900px] bg-white rounded-2xl shadow-xl transition-all duration-300 overflow-hidden border border-gray-100">
       <div className="md:flex">
-        {/* Image Section - ONLY CHANGED THIS PART */}
+        {/* IMAGE SECTION (FIXED) */}
         <div className="group md:w-3/5 relative overflow-hidden">
-          <div className="aspect-square md:aspect-auto md:h-full relative">
+          <div className="relative w-full h-72 md:h-full">
             <Image
               src={image}
               alt={title}
-              width={400}
-              height={400}
-              className="w-full h-full object-cover  group-hover:scale-105 transition-transform duration-500"
+              fill
+              sizes="(max-width: 768px) 100vw, 60vw"
+              className="object-cover group-hover:scale-105 transition-transform duration-500"
+              priority={false}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
           </div>
         </div>
 
-        {/* Content Section - NO CHANGES HERE */}
+        {/* CONTENT SECTION */}
         <div className="md:w-3/5 p-6">
           <div className="mb-4">
             <div className="flex items-center gap-2 mb-2">
@@ -80,7 +80,7 @@ const ActivityCard = ({
               </div>
             </div>
 
-            {/* Day (weekly only) */}
+            {/* Day */}
             {day && (
               <div className="flex items-center gap-3">
                 <Calendar className={`w-5 h-5 ${accentIcon}`} />
@@ -95,7 +95,7 @@ const ActivityCard = ({
             <div className="pt-4 border-t border-gray-100">
               <Button
                 onClick={() => router.push("/kontakt")}
-                className={`w-full py-2.5 bg-gradient-to-r ${accentButton} text-white rounded-lg font-medium hover:opacity-90 transition-opacity duration-300 cursor-pointer`}
+                className={`w-full py-2.5 bg-gradient-to-r ${accentButton} text-white rounded-lg font-medium hover:opacity-90 transition-opacity duration-300`}
               >
                 {buttonText}
               </Button>

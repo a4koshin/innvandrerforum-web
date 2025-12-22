@@ -163,7 +163,7 @@ export const monthlyActivities: MonthlyActivity[] = [
       "Vi arrangerer sosiale kvelder på ungdomshuset én gang i måneden. Dette er et trygt, åpent og rusfritt møtested for ungdom.",
     schedule: "En gang i måneden",
     icon: Film,
-    image: "/social.jpeg",
+    image: "/workshop.jpeg",
     location: "Ungdomshuset",
     registration: "Åpen for alle",
   },
