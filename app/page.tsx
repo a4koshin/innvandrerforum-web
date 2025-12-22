@@ -261,7 +261,7 @@ export default function Home() {
           </div>
 
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Inspirerende årlige begivenheter
+            Våre aktiviteter og arrangementer.
           </h2>
 
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
