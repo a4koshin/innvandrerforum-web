@@ -8,7 +8,7 @@ interface Boards {
 export const boards: Boards[] = [
   {
     id: 0,
-    name: "Hassan Mude",
+    name: "Rooble Shiine",
     title: "Styreleder",
     img: "/Roble.jpeg",
   },
@@ -34,8 +34,14 @@ export const boards: Boards[] = [
   {
     id: 4,
     name: "Ahmed Warsame",
-    title: "Daglig leder",
+    title: "Styremedlem",
     img: "/Ahmed.jpeg",
+  },
+  {
+    id: 5,
+    name: "Hassan Muuda",
+    title: "Styreleder",
+    img: "/muda.jpeg",
   },
 ];
 

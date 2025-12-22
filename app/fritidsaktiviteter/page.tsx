@@ -12,7 +12,7 @@ const ActivityPage = () => {
         <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-900/10 rounded-full blur-3xl -translate-y-48" />
         <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-red-600/10 rounded-full blur-3xl translate-y-48" />
 
-        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="relative mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
               Vårt{" "}
@@ -103,7 +103,7 @@ const ActivityPage = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
             {monthlyActivities.map((activity) => (
               <ActivityCard
                 key={activity.id}

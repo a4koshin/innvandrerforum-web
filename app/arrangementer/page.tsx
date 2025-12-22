@@ -26,6 +26,49 @@ const ArrangementerPage = () => {
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mt-24">
         {/* Summer Time event */}
+        {/* Fourth section - Kino */}
+        <div className="flex flex-col lg:flex-row items-center gap-12 mb-24">
+          <div className="lg:w-1/2 order-1 lg:order-none group">
+            <div className="relative overflow-hidden rounded-3xl shadow-2xl shadow-amber-900/10 hover:shadow-amber-900/20 transition-all duration-500">
+              <div className="relative aspect-[4/3] min-h-[300px] sm:min-h-[260px] md:min-h-0">
+                <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <Image
+                  src="/summer.jpeg"
+                  alt="Kino"
+                  fill
+                  priority
+                  className="object-cover transition-transform duration-700 group-hover:scale-110"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-tr from-blue-900/20 to-blue-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-20"></div>
+              </div>
+            </div>
+          </div>
+          <div className="lg:w-1/2 order-2 lg:order-none">
+            <div className="relative">
+              <h2 className="text-4xl font-bold text-gray-900 mb-6 relative inline-block">
+                <span className="relative z-10 bg-gradient-to-r from-blue-900 to-blue-600 bg-clip-text text-transparent">
+                  Sommeraktiviteter
+                </span>
+                <span className="absolute -bottom-2 left-0 w-1/3 h-1 bg-gradient-to-r from-blue-600 to-blue-500 rounded-full"></span>
+              </h2>
+            </div>
+            <div className="space-y-4 text-gray-700 text-lg">
+              <p>
+                I sommerperioden arrangerer vi varierte aktiviteter for barn,
+                ungdom og familier. Aktivitetene kan bestå av utflukter,
+                friluftsliv og andre lavterskeltilbud som gir meningsfulle og
+                inkluderende ferieopplevelser.
+              </p>
+              <p>
+                Sommeraktivitetene er spesielt viktige for familier som ellers
+                har begrensede muligheter til å delta i organiserte
+                fritidstilbud. Målet er å skape gode minner, styrke fellesskap
+                og sikre at alle får en aktiv og sosial sommer.
+              </p>
+            </div>
+          </div>
+        </div>
 
         {/* First section - Fotballturnering */}
         <div className="flex flex-col lg:flex-row items-center gap-12 mb-24">
@@ -40,16 +83,16 @@ const ArrangementerPage = () => {
             </div>
             <div className="space-y-4 text-gray-700 text-lg">
               <p>
-                Fotballturneringen er et årlig arrangement som samler ungdom og
-                familier i Østfold fylke. Gjennom idrett ønsker vi å skape
-                engasjement, fellesskap og inkludering, med særlig fokus på
-                samarbeid, fair play og sosial tilhørighet.
+                Innvandrerforum i Østfold arrangerer fotballturneringer for
+                barn, ungdom og familier med mål om å skape inkludering,
+                fellesskap og idrettsglede. Turneringene er åpne for alle,
+                uavhengig av ferdighetsnivå, og legger stor vekt på samarbeid,
+                respekt og fair play.
               </p>
               <p>
-                Turneringen fungerer som en møteplass der mennesker fra ulike
-                kulturer kan møtes, bygge relasjoner og styrke integrering,
-                samtidig som den bidrar til aktiv deltakelse og positivt
-                samspill i lokalsamfunnet.
+                Fotball fungerer som en viktig møteplass der deltakerne kan bli
+                kjent på tvers av bakgrunn, alder og kultur. Aktiviteten bidrar
+                til fysisk aktivitet, mestring og positive sosiale relasjoner.
               </p>
             </div>
           </div>
@@ -100,16 +143,15 @@ const ArrangementerPage = () => {
             </div>
             <div className="space-y-4 text-gray-700 text-lg">
               <p>
-                Bowlingkvelden er et sosialt arrangement som samler ungdom og
-                familier i Østfold fylke. Gjennom lek og vennlig konkurranse
-                ønsker vi å skape glede, fellesskap og inkludering, med særlig
-                fokus på samvær, mestring og sosial tilhørighet.
+                Bowlingkvelder og bowlingmesterskap er sosiale og lavterskel
+                aktiviteter som passer for både ungdom og familier. Her er
+                fokuset på fellesskap og gode opplevelser, ikke på prestasjon.
               </p>
               <p>
-                Aktiviteten fungerer som en møteplass der mennesker fra ulike
-                kulturer kan møtes, bygge relasjoner og styrke integrering,
-                samtidig som den bidrar til aktiv deltakelse og positive
-                opplevelser i lokalsamfunnet.
+                Aktiviteten gir deltakerne en felles arena for samvær, latter og
+                uformelle samtaler. Bowlingkveldene bidrar til inkludering,
+                styrker relasjoner og gir deltakerne trygge og hyggelige
+                opplevelser sammen.
               </p>
             </div>
           </div>
@@ -128,15 +170,17 @@ const ArrangementerPage = () => {
             </div>
             <div className="space-y-4 text-gray-700 text-lg">
               <p>
-                Hytteturen er et sosialt arrangement som samler ungdom og
-                familier i Østfold fylke. Gjennom felles opplevelser i naturen
-                ønsker vi å skape trygghet, fellesskap og inkludering, med
-                særlig fokus på samhold, ro og sosial tilhørighet.
+                Vi arrangerer hytteturer og friluftslivsaktiviteter for barn,
+                ungdom og familier, med særlig fokus på deltakere som har lite
+                eller ingen erfaring med friluftsliv. Aktivitetene inkluderer
+                overnatting, enkel matlaging ute og felles opplevelser i
+                naturen.
               </p>
               <p>
-                Turen gir deltakerne mulighet til å møtes på tvers av kulturer,
-                bygge relasjoner og styrke integrering, samtidig som den bidrar
-                til aktiv deltakelse og positive opplevelser i fellesskapet.
+                Gjennom friluftsliv ønsker vi å skape mestring, trygghet og
+                fellesskap. Tiltaket bidrar også til økt forståelse for norsk
+                friluftskultur og gir deltakerne positive opplevelser i
+                inkluderende og trygge rammer.
               </p>
             </div>
           </div>
@@ -165,7 +209,7 @@ const ArrangementerPage = () => {
               <div className="relative aspect-[4/3] min-h-[300px] sm:min-h-[260px] md:min-h-0">
                 <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <Image
-                  src="/cinema.jpeg"
+                  src="/kino.jpeg"
                   alt="Kino"
                   fill
                   priority
@@ -198,6 +242,49 @@ const ArrangementerPage = () => {
                 samtidig som den bidrar til aktiv deltakelse og positive
                 øyeblikk i lokalsamfunnet.
               </p>
+            </div>
+          </div>
+        </div>
+        {/* First section - Fotballturnering */}
+        <div className="flex flex-col lg:flex-row items-center gap-12 mb-24">
+          <div className="lg:w-1/2 order-2 lg:order-none">
+            <div className="relative">
+              <h2 className="text-4xl font-bold text-gray-900 mb-6 relative inline-block">
+                <span className="relative z-10 bg-gradient-to-r from-blue-900 to-red-600 bg-clip-text text-transparent">
+                  Dialogkvelder
+                </span>
+                <span className="absolute -bottom-2 left-0 w-1/3 h-1 bg-gradient-to-r from-blue-600 to-red-500 rounded-full"></span>
+              </h2>
+            </div>
+            <div className="space-y-4 text-gray-700 text-lg">
+              <p>
+                Dialogkvelder er en sentral del av vårt arbeid for inkludering
+                og fellesskap. Her legger vi til rette for åpne og respektfulle
+                samtaler om temaer som integrering, identitet, likestilling,
+                oppvekst og hverdagsutfordringer.
+              </p>
+              <p>
+                Gjennom dialog og erfaringsdeling får deltakerne mulighet til å
+                dele egne perspektiver, lytte til andre og bygge forståelse på
+                tvers av ulik bakgrunn. Dialogkveldene bidrar til økt tillit,
+                styrket fellesskap og aktiv deltakelse i lokalsamfunnet.
+              </p>
+            </div>
+          </div>
+          <div className="lg:w-1/2 order-1 lg:order-none group">
+            <div className="relative overflow-hidden rounded-3xl shadow-2xl shadow-blue-900/10 hover:shadow-blue-900/20 transition-all duration-500">
+              <div className="relative aspect-[4/3] min-h-[300px] sm:min-h-[260px] md:min-h-0">
+                <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <Image
+                  src="/dailog.jpeg"
+                  alt="Kino"
+                  fill
+                  priority
+                  className="object-cover transition-transform duration-700 group-hover:scale-110"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-tr from-emerald-900/20 to-emerald-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-20"></div>
+              </div>
             </div>
           </div>
         </div>

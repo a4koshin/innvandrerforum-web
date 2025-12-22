@@ -291,7 +291,7 @@ export default function Home() {
             </div>
 
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Et knutepunkt for tilknytning og inkludering
+              Fredrikstad Flerkulturelt Ungdomshus (FFU)
             </h2>
 
             {/* <p className="text-lg text-gray-600 max-w-3xl mx-auto">
@@ -310,19 +310,26 @@ export default function Home() {
 
                 <div className="space-y-4 text-gray-600 dark:text-gray-300">
                   <p className="leading-relaxed">
-                    <span className="font-semibold text-gray-900 dark:text-white">
-                      Immigrant Forum in Østfold
-                    </span>{" "}
-                    operates an open, welcoming, and accessible office where
-                    members of the immigrant community can receive guidance,
-                    support, and reliable information.
+                    Fredrikstad Flerkulturelt Ungdomshus (FFU) er
+                    Innvandrerforum i Østfold sin sentrale, ungdomsstyrte
+                    møteplass for ungdom og unge voksne i Østfold. Ungdomshuset
+                    er en åpen, inkluderende og rusfri arena der unge kan møtes
+                    på tvers av bakgrunn, interesser og erfaringer.
                   </p>
 
                   <p className="leading-relaxed">
-                    The office serves as a physical meeting point for
-                    consultations, dialogue, and community activities,
-                    contributing to stronger inclusion, meaningful engagement,
-                    and active participation in society.
+                    I lokalen arrangeres faste aktiviteter gjennom hele året.
+                    Ungdom kan delta i spill- og aktivitetskvelder, gaming og
+                    e-sport, biljard, bordtennis, brettspill og kortspill,
+                    musikk- og kreative aktiviteter, samt sosiale samlinger og
+                    samtaler. Det arrangeres også fotballvisning på storskjerm,
+                    som fungerer som en viktig sosial møteplass.
+                  </p>
+                  <p className="leading-relaxed">
+                    Ungdommene er selv med på å forme innholdet og aktivitetene
+                    på møteplassen. Målet er å styrke medvirkning, tilhørighet
+                    og ansvar, og bidra til trivsel, mestring og forebygging av
+                    utenforskap. FFU drives av Innvandrerforum i Østfold.
                   </p>
 
                   <div className="pt-2">

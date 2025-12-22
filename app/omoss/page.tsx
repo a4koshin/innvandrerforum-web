@@ -43,15 +43,29 @@ const OmossPage = () => {
               <div className="space-y-4 text-gray-700 text-lg">
                 <p>
                   Innvandrerforum i Østfold er en frivillig organisasjon som
-                  representerer innvandrermiljøet i Østfold fylke. Vi jobber for
-                  å støtte og inkludere minoritetsungdom og familier, med særlig
-                  fokus på å motvirke sosial ekskludering, ensomhet og
-                  utenforskap.
+                  jobber for inkludering, likeverd og aktiv deltakelse i
+                  samfunnet. Vi er til stede for barn, ungdom, unge voksne og
+                  familier med minoritetsbakgrunn i Østfold, og særlig for dem
+                  som står i fare for å falle utenfor.
                 </p>
                 <p>
-                  Gjennom organisasjon og nettverksbygging ønsker vi å skape
-                  møteplasser på tvers av kulturer, fremme integrering, og bidra
-                  til aktiv deltagelse i lokalsamfunnet.
+                  Vi jobber med å skape trygge møteplasser, meningsfulle
+                  aktiviteter og arenaer der mennesker kan møtes på tvers av
+                  bakgrunn, kultur og erfaringer. Gjennom informasjonsarbeid,
+                  dialog, fritidsaktiviteter og forebyggende ungdomsarbeid
+                  bidrar vi til mestring, tilhørighet og fellesskap.
+                </p>
+                <p>
+                  Vår målgruppe er barn og ungdom, unge voksne og familier – med
+                  særlig fokus på ungdom med minoritetsbakgrunn og ungdom som
+                  opplever utenforskap, ensomhet eller manglende tilhørighet.
+                </p>
+                <p>
+                  Det vi brenner for er å gi mennesker mulighet til å bli sett,
+                  hørt og delta aktivt i lokalsamfunnet. Vi tror på fellesskap,
+                  mangfold, likestilling og ungdomsmedvirkning, og jobber hver
+                  dag for å skape positive møteplasser som styrker både
+                  enkeltmennesker og samfunnet som helhet.
                 </p>
               </div>
             </div>
