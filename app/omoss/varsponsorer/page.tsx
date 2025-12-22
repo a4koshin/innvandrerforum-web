@@ -8,7 +8,7 @@ const SponsorsPage = () => {
       {/* Enhanced Stats Section - Social Proof with Visual Context */}
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
         {/* Section header with enhanced decorative elements */}
-        <div className="text-center mb-20 lg:mb-24 relative">
+        {/* <div className="text-center mb-20 lg:mb-24 relative">
           {/* Animated background element */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-blue-500/5 dark:bg-blue-500/3 rounded-full blur-3xl -z-10"></div>
 
@@ -36,7 +36,7 @@ const SponsorsPage = () => {
               </span>
             </span>
           </div>
-        </div>
+        </div> 
 
         {/* Enhanced logos grid with sophisticated hover effects */}
         <div className="relative">
