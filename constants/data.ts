@@ -11,8 +11,8 @@ export const Navigations = [
     children: [
       {
         id: 21,
-        name: "Våre sponsorer",
-        href: "/omoss/varsponsorer",
+        name: "Våre samarbeidspartnere",
+        href: "/omoss/varsamarbeidspartnere",
       },
     ],
   },
