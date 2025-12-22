@@ -116,7 +116,7 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* ===== MOBILE NAV ===== */}
+      {/* ===== MOBILE NAV (FIXED) ===== */}
       <div
         className={`lg:hidden overflow-hidden transition-all duration-300 ${
           isOpen ? "max-h-[600px] opacity-100" : "max-h-0 opacity-0"
@@ -129,20 +129,30 @@ const Navbar = () => {
             return (
               <div key={item.id}>
                 {item.children ? (
-                  // Item WITH children
-                  <button
-                    onClick={() => setOpenSub(isSubOpen ? null : item.id)}
-                    className="w-full flex items-center justify-between px-4 py-3 rounded-lg text-blue-900 hover:bg-red-50"
-                  >
-                    {item.name}
-                    <RiArrowDownSLine
-                      className={`transition-transform ${
-                        isSubOpen ? "rotate-180" : ""
-                      }`}
-                    />
-                  </button>
+                  <div className="flex items-center justify-between px-4 py-3 rounded-lg hover:bg-red-50">
+                    {/* ✅ Parent link */}
+                    <Link
+                      href={item.href}
+                      onClick={() => setIsOpen(false)}
+                      className="text-blue-900 font-medium"
+                    >
+                      {item.name}
+                    </Link>
+
+                    {/* ✅ Submenu toggle */}
+                    <button
+                      onClick={() => setOpenSub(isSubOpen ? null : item.id)}
+                      className="p-1"
+                      aria-label="Toggle submenu"
+                    >
+                      <RiArrowDownSLine
+                        className={`transition-transform ${
+                          isSubOpen ? "rotate-180" : ""
+                        }`}
+                      />
+                    </button>
+                  </div>
                 ) : (
-                  // Item WITHOUT children
                   <Link
                     href={item.href}
                     onClick={() => setIsOpen(false)}
@@ -152,7 +162,7 @@ const Navbar = () => {
                   </Link>
                 )}
 
-                {/* Sub menu */}
+                {/* Submenu */}
                 {item.children && isSubOpen && (
                   <div className="ml-6 mt-1 space-y-1">
                     {item.children.map((child) => (
