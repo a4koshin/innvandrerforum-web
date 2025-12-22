@@ -220,6 +220,7 @@ const OmossPage = () => {
                   </div>
                 </div>
               </div>
+
               {/* Board Members Section */}
               <div className="flex flex-col items-center justify-center min-h-[280px] mb-16 mt-12">
                 <div className="w-full max-w-7xl">
