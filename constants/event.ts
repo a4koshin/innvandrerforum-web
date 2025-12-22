@@ -11,29 +11,27 @@ export const events: Event[] = [
     id: 1,
     title: "Fotballturnering",
     description:
-      "En årlig fotballturnering som samler ungdom, familier og frivillige til en sosial og inkluderende dag.",
+      "Turnering for barn, ungdom og familier med fokus på inkludering og fair play.",
     image: "/fotbal1.JPG",
   },
   {
     id: 2,
     title: "Bowlingmesterskap",
-    description:
-      "Årlig bowlingkveld for ungdom og familier, med fokus på sosialt samvær og fellesskap.",
+    description: "Sosial aktivitet for ungdom og familier.",
     image: "/bowling.jpeg",
   },
   {
     id: 3,
-    title: "Hytteomvisning",
+    title: "Hyttetur og friluftslivsaktiviteter",
     description:
-      "Årlige turer med overnatting i naturen, hvor deltakerne får oppleve friluftsliv, mestring og fellesskap.",
+      "Turer med overnatting, matlaging ute og naturaktiviteter for barn, ungdom og familier.",
     image: "/cabin.jpg",
   },
 
   {
     id: 4,
     title: "Kinokveld",
-    description:
-      "Årlig film- eller kinokveld som gir barn, ungdom og familier en felles sosial opplevelse.",
-    image: "/cinema.jpeg",
+    description: "Felles filmkvelder for barn, ungdom og familie",
+    image: "/kino.jpeg",
   },
 ];
