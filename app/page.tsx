@@ -78,43 +78,44 @@ export default function Home() {
             <div className="inline-flex items-center gap-2 text-blue-600 dark:text-blue-400 mb-4">
               <div className="w-8 h-0.5 bg-blue-600 dark:bg-blue-400"></div>
               <span className="text-sm font-semibold uppercase tracking-wider">
-                Våre sponsorer
+                Våre samarbeidspartnere og støttespiller
               </span>
               <div className="w-8 h-0.5 bg-blue-600 dark:bg-blue-400"></div>
             </div>
           </div>
         </div>
 
-        {/* Enhanced logos grid with hover effects */}
+        {/* Enhanced logos grid with hover effects and improved name display */}
         <div className="relative">
-          <div className="relative mx-auto max-w-7xl grid grid-cols-2 md:grid-cols-3 lg:grid-cols-9 gap-8 lg:gap-8">
+          <div className="relative mx-auto max-w-7xl grid grid-cols-2 md:grid-cols-3 lg:grid-cols-9 gap-6 lg:gap-4">
             {Status.map((stat, index) => (
               <div
                 key={stat.id}
-                className="group relative"
+                className="group relative flex flex-col items-center"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
-                {/* Animated background card */}
+                {/* Animated background card - Now includes name area */}
                 <div
                   className="absolute inset-0 bg-white dark:bg-gray-800 rounded-2xl shadow-lg 
             shadow-gray-200/50 dark:shadow-gray-900/20 
             group-hover:shadow-xl group-hover:shadow-blue-200/30 dark:group-hover:shadow-blue-900/20
-            group-hover:scale-105 transition-all duration-500 ease-out
+            group-hover:scale-[1.02] transition-all duration-500 ease-out
             opacity-0 group-hover:opacity-100 -z-10"
                 ></div>
 
-                {/* Logo container with gradient border */}
+                {/* Logo container with integrated name display */}
                 <div
-                  className="relative h-20 md:h-24 p-4 md:p-6 
+                  className="relative w-full p-4 md:p-5 
             rounded-xl border border-gray-100 dark:border-gray-800
             group-hover:border-transparent
-            transition-all duration-500"
+            transition-all duration-500
+            flex flex-col items-center gap-6"
                 >
                   {/* Logo with enhanced hover effects */}
-                  <div className="relative h-full w-full">
+                  <div className="relative h-16 w-full md:h-20">
                     <Image
                       src={stat.image}
-                      alt={`"Partner"} logo`}
+                      alt={`"${stat.name}" logo`}
                       fill
                       sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 200px"
                       className={`object-contain group-hover:opacity-100 
@@ -122,6 +123,28 @@ export default function Home() {
                   group-hover:scale-110`}
                       loading="lazy"
                     />
+                  </div>
+
+                  {/* Enhanced name display with better typography and positioning */}
+                  <div className="w-full text-center">
+                    <h3
+                      className="font-semibold text-gray-900 dark:text-gray-100 text-sm md:text-base 
+              transition-all duration-300
+              group-hover:text-blue-600 dark:group-hover:text-blue-400
+              line-clamp-2"
+                    >
+                      {stat.name}
+                    </h3>
+
+                    {/* Optional: Add subtle description or tagline if available */}
+                    {stat.description && (
+                      <p
+                        className="text-xs text-gray-500 dark:text-gray-400 mt-1 
+                opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                      >
+                        {stat.description}
+                      </p>
+                    )}
                   </div>
                 </div>
               </div>
