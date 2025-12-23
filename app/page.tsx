@@ -189,7 +189,8 @@ export default function Home() {
             <div className="lg:w-7/12 space-y-6">
               <div>
                 <h3 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-4 leading-snug">
-                  Styrking av innvandrerfellesskap gjennom viktig informasjon
+                  Kunnskap, inkludering, integrering, likestilling og
+                  forebyggende arbeid
                 </h3>
 
                 <div className="space-y-3 text-gray-600 dark:text-gray-300">
