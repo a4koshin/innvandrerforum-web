@@ -9,16 +9,17 @@ export interface Event {
 export const events: Event[] = [
   {
     id: 1,
-    title: "Fotballturnering",
+    title: "Forebyggende",
     description:
-      "Turnering for barn, ungdom og familier med fokus på inkludering og fair play.",
-    image: "/fotbal1.JPG",
+      "Forebyggende ungdomsarbeid er en sentral del av Innvandrerforum i Østfold sitt arbeid. Vi jobber aktivt for å forebygge utenforskap, ensomhet og negative påvirkninger ved å tilby trygge møteplasser og meningsfulle aktiviteter for ungdom.",
+    image: "/wacyi.jpeg",
   },
   {
     id: 2,
-    title: "Bowlingmesterskap",
-    description: "Sosial aktivitet for ungdom og familier.",
-    image: "/bowling.jpeg",
+    title: "Dialogkvelder",
+    description:
+      "Dialogkvelder er en sentral del av vårt arbeid for inkludering og fellesskap. Her legger vi til rette for åpne og respektfulle samtaler om temaer som integrering, identitet, likestilling, oppvekst og hverdagsutfordringer.",
+    image: "/dailog.jpeg",
   },
   {
     id: 3,

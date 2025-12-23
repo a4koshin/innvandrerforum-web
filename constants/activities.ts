@@ -101,19 +101,8 @@ export const monthlyActivities: MonthlyActivity[] = [
     location: "Ungdomshuset",
     registration: "Åpen for alle",
   },
-  // {
-  //   id: 3,
-  //   name: "Dialogkvelder",
-  //   description:
-  //     "Samtaler om aktuelle temaer som integrering, likestilling og hverdagsutfordringer.",
-  //   schedule: "En gang i måneden",
-  //   icon: Film,
-  //   image: "/dailog.jpeg",
-  //   location: "Ungdomshuset",
-  //   registration: "Åpen for alle",
-  // },
   {
-    id: 4,
+    id: 3,
     name: "Temakvelder og informasjonsmøter",
     description:
       "Vi arrangerer månedlige temakvelder og workshops om inkludering, psykisk helse, rasisme og kunnskap om det norske systemet. Målet er å styrke kunnskap, trygghet og mestring.",
@@ -123,19 +112,9 @@ export const monthlyActivities: MonthlyActivity[] = [
     location: "Ungdomshuset",
     registration: "Åpen for alle",
   },
-  // {
-  //   id: 5,
-  //   name: "Forebyggende ungdomsarbeid",
-  //   description:
-  //     "Forebyggende ungdomsarbeid er en sentral del av Innvandrerforum i Østfold sitt arbeid. Vi jobber aktivt for å forebygge utenforskap, ensomhet og negative påvirkninger ved å tilby trygge møteplasser og meningsfulle aktiviteter for ungdom.",
-  //   schedule: "En gang i måneden",
-  //   icon: Film,
-  //   image: "/wacyi.jpeg",
-  //   location: "Ungdomshuset",
-  //   registration: "Åpen for alle",
-  // },
+
   {
-    id: 6,
+    id: 4,
     name: "Friluftsturer i nærområdet",
     description:
       "Én gang i måneden arrangerer vi lavterskel friluftsturer i nærområdet. Turene er tilpasset deltakere med lite eller ingen erfaring og har fokus på mestring, trivsel og fellesskap.",
@@ -145,19 +124,9 @@ export const monthlyActivities: MonthlyActivity[] = [
     location: "Ungdomshuset",
     registration: "Åpen for alle",
   },
-  // {
-  //   id: 7,
-  //   name: "Sosiale kvelder på ungdomshuset",
-  //   description:
-  //     "Vi arrangerer sosiale kvelder på ungdomshuset én gang i måneden. Dette er et trygt og rusfritt møtested der ungdom kan delta i aktiviteter, bygge vennskap og oppleve tilhørighet.",
-  //   schedule: "En gang i måneden",
-  //   icon: Film,
-  //   image: "/social.jpeg",
-  //   location: "Ungdomshuset",
-  //   registration: "Åpen for alle",
-  // },
+
   {
-    id: 8,
+    id: 5,
     name: " Kompetanseheving – temakvelder og workshops",
     description:
       "Vi arrangerer sosiale kvelder på ungdomshuset én gang i måneden. Dette er et trygt, åpent og rusfritt møtested for ungdom.",
