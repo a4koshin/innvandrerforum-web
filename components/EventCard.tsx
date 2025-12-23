@@ -14,7 +14,7 @@ const EventCard: React.FC<EventCardProps> = ({ event }) => {
   const router = useRouter();
 
   return (
-    <div className="flex flex-col rounded-xl overflow-hidden w-72 bg-white shadow-lg border border-gray-100">
+    <div className="flex flex-col rounded-xl overflow-hidden w-88 h-[30rem] lg:w-72 bg-white shadow-lg border border-gray-100">
       {/* Image */}
       <div className="relative h-48 w-full">
         <Image
