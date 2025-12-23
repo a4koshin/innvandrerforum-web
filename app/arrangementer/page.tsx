@@ -288,6 +288,92 @@ const ArrangementerPage = () => {
             </div>
           </div>
         </div>
+        {/* Fourth section - forbegnde */}
+        <div className="flex flex-col lg:flex-row items-center gap-12 mb-24">
+          <div className="lg:w-1/2 order-1 lg:order-none group">
+            <div className="relative overflow-hidden rounded-3xl shadow-2xl shadow-amber-900/10 hover:shadow-amber-900/20 transition-all duration-500">
+              <div className="relative aspect-[4/3] min-h-[300px] sm:min-h-[260px] md:min-h-0">
+                <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <Image
+                  src="/wacyi.jpeg"
+                  alt="Kino"
+                  fill
+                  priority
+                  className="object-cover transition-transform duration-700 group-hover:scale-110"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-tr from-amber-900/20 to-orange-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-20"></div>
+              </div>
+            </div>
+          </div>
+          <div className="lg:w-1/2 order-2 lg:order-none">
+            <div className="relative">
+              <h2 className="text-4xl font-bold text-gray-900 mb-6 relative inline-block">
+                <span className="relative z-10 bg-gradient-to-r from-amber-900 to-orange-600 bg-clip-text text-transparent">
+                  Forebyggende ungdomsarbeid
+                </span>
+                <span className="absolute -bottom-2 left-0 w-1/3 h-1 bg-gradient-to-r from-amber-600 to-orange-500 rounded-full"></span>
+              </h2>
+            </div>
+            <div className="space-y-4 text-gray-700 text-lg">
+              <p>
+                Forebyggende ungdomsarbeid er en sentral del av Innvandrerforum
+                i Østfold sitt arbeid. Vi jobber aktivt for å forebygge
+                utenforskap, ensomhet og negative påvirkninger ved å tilby
+                trygge møteplasser og meningsfulle aktiviteter for ungdom.
+              </p>
+              <p>
+                Gjennom faste møteplasser, aktiviteter, dialog og veiledning gir
+                vi ungdom støtte, tilhørighet og positive rollemodeller. Målet
+                er å styrke ungdommens mestring, selvfølelse og evne til å ta
+                gode valg, samt bidra til økt deltakelse i skole, fritid og
+                lokalsamfunn.
+              </p>
+            </div>
+          </div>
+        </div>
+        {/* First section - socialle  */}
+        <div className="flex flex-col lg:flex-row items-center gap-12 mb-24">
+          <div className="lg:w-1/2 order-2 lg:order-none">
+            <div className="relative">
+              <h2 className="text-4xl font-bold text-gray-900 mb-6 relative inline-block">
+                <span className="relative z-10 bg-gradient-to-r from-blue-900 to-red-600 bg-clip-text text-transparent">
+                  Sosiale kvelder på ungdomshuset
+                </span>
+                <span className="absolute -bottom-2 left-0 w-1/3 h-1 bg-gradient-to-r from-blue-600 to-red-500 rounded-full"></span>
+              </h2>
+            </div>
+            <div className="space-y-4 text-gray-700 text-lg">
+              <p>
+                Vi arrangerer sosiale kvelder på ungdomshuset én gang i måneden.
+                Dette er et trygt og rusfritt møtested der ungdom kan delta i
+                aktiviteter, bygge vennskap og oppleve tilhørighet.
+              </p>
+              <p>
+                Her kan ungdom delta i ulike aktiviteter, møte jevnaldrende,
+                bygge vennskap og oppleve tilhørighet. Tiltaket bidrar til
+                forebygging av ensomhet og utenforskap, og gir ungdom et
+                positivt fritidstilbud.
+              </p>
+            </div>
+          </div>
+          <div className="lg:w-1/2 order-1 lg:order-none group">
+            <div className="relative overflow-hidden rounded-3xl shadow-2xl shadow-blue-900/10 hover:shadow-blue-900/20 transition-all duration-500">
+              <div className="relative aspect-[4/3] min-h-[300px] sm:min-h-[260px] md:min-h-0">
+                <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <Image
+                  src="/social.jpeg"
+                  alt="Kino"
+                  fill
+                  priority
+                  className="object-cover transition-transform duration-700 group-hover:scale-110"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-tr from-emerald-900/20 to-emerald-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-20"></div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
       <style jsx global>{`
