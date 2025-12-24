@@ -265,7 +265,7 @@ export default function Home() {
         </div>
 
         {/* Event Cards Grid */}
-        <div className="grid grid-cols-1 place-items-center sm:place-items-stretch sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-2">
+        <div className="grid grid-cols-1 place-items-center sm:place-items-center sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
           {events.map((event) => (
             <EventCard key={event.id} event={event} />
           ))}
