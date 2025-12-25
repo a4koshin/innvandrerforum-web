@@ -300,7 +300,7 @@ export default function Home() {
             <div className="lg:w-7/12 space-y-6">
               <div>
                 <h3 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-4 leading-snug">
-                  Et tilgjengelig møtested for innvandrermiljøet
+                  Et Tilgjengelig møteplass for ungdom
                 </h3>
 
                 <div className="space-y-4 text-gray-600 dark:text-gray-300">
