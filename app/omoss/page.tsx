@@ -212,8 +212,8 @@ const OmossPage = () => {
 
             <div className="px-4 sm:px-6 lg:px-8">
               {/* Administrators Section */}
-              <div className="flex justify-center items-center">
-                <div className="w-full max-w-7xl">
+              {/* <div className="flex justify-center items-center">
+                <div className="w-80 max-w-7xl">
                   <div className="mb-10 text-center">
                     <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-blue-900 dark:text-white mb-3 tracking-tight">
                       Administrasjon
@@ -233,6 +233,28 @@ const OmossPage = () => {
                         />
                       </div>
                     ))}
+                  </div>
+                </div>
+              </div> */}
+              <div>
+                <div className="w-full max-w-7xl mx-auto">
+                  <div className="mb-10 text-center">
+                    <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-blue-900 dark:text-white mb-3 tracking-tight">
+                      Administrasjon
+                    </h1>
+                  </div>
+                  <div className="flex justify-center">
+                    <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 lg:gap-8">
+                      {administration.map((item) => (
+                        <BoardCard
+                          key={item.id}
+                          id={item.id}
+                          img={item.img}
+                          name={item.name}
+                          title={item.title}
+                        />
+                      ))}
+                    </div>
                   </div>
                 </div>
               </div>
