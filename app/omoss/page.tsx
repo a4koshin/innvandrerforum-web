@@ -105,11 +105,12 @@ const OmossPage = () => {
                 <h3 className="text-2xl font-bold text-gray-900">Vår misjon</h3>
               </div>
               <p className="text-gray-700 text-lg leading-relaxed">
-                Vår misjon er å fremme inkludering, fellesskap og tilhørighet
-                for innvandrere — spesielt ungdom og familier — i Østfold. Vi
-                ønsker å bygge bro mellom kulturer, motvirke utenforskap, og gi
-                alle mulighet til sosial integrering, deltakelse og et aktivt
-                liv.
+                Vår misjon er å styrke inkludering, fellesskap og tilhørighet
+                blant barn, unge og familier fra minoritetsmiljøer i Østfold.
+                Gjennom møteplasser, aktiviteter og samarbeid ønsker vi å bygge
+                broer mellom mennesker og kulturer, forebygge utenforskap og
+                bidra til at alle får mulighet til sosial deltakelse, mestring
+                og et aktivt liv.
               </p>
               <div className="mt-8 pt-6 border-t border-blue-200">
                 <div className="flex flex-wrap gap-3">
@@ -134,10 +135,11 @@ const OmossPage = () => {
                 <h3 className="text-2xl font-bold text-gray-900">Vår visjon</h3>
               </div>
               <p className="text-gray-700 text-lg leading-relaxed">
-                Vår visjon er et samfunn hvor innvandrermiljøer er en naturlig
-                del av det lokale fellesskapet, med like rettigheter, muligheter
-                og verdighet for alle. Vi drømmer om et Østfold hvor hver enkelt
-                føler seg sett, hørt og verdsatt.
+                Vår visjon er et mangfoldig og inkluderende Østfold, der
+                minoritetsmiljøer er en naturlig og verdsatt del av
+                lokalsamfunnet. Vi ser for oss et samfunn preget av likeverd,
+                respekt og like muligheter, hvor alle mennesker blir sett, hørt
+                og får rom til å delta og utvikle seg.
               </p>
               <div className="mt-8 pt-6 border-t border-blue-200">
                 <div className="flex flex-wrap gap-3">
