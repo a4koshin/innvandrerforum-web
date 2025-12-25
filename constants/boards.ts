@@ -9,7 +9,7 @@ export const boards: Boards[] = [
   {
     id: 0,
     name: "Rooble Shiine",
-    title: "Styreleder",
+    title: "Styremedlem",
     img: "/Roble.jpeg",
   },
 
@@ -25,12 +25,12 @@ export const boards: Boards[] = [
     title: "Styremedlem",
     img: "/Nura.jpeg",
   },
-  {
-    id: 3,
-    name: "Roble Shine",
-    title: "Styremedlem",
-    img: "/User.jpg",
-  },
+  // {
+  //   id: 3,
+  //   name: "Roble Shine",
+  //   title: "Styremedlem",
+  //   img: "/User.jpg",
+  // },
   {
     id: 4,
     name: "Ahmed Warsame",
@@ -39,7 +39,7 @@ export const boards: Boards[] = [
   },
   {
     id: 5,
-    name: "Hassan Muuda",
+    name: "Hassan Muda",
     title: "Styreleder",
     img: "/muda.jpeg",
   },
