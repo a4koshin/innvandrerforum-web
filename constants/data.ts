@@ -23,6 +23,11 @@ export const Navigations = [
   },
   {
     id: 4,
+    name: "Nyhetsbrev",
+    href: "/nyhetsbrev",
+  },
+  {
+    id: 4,
     name: "Fritidsaktiviteter",
     href: "/fritidsaktiviteter",
   },
