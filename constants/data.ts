@@ -27,7 +27,7 @@ export const Navigations = [
     href: "/nyhetsbrev",
   },
   {
-    id: 4,
+    id: 6,
     name: "Fritidsaktiviteter",
     href: "/fritidsaktiviteter",
   },
