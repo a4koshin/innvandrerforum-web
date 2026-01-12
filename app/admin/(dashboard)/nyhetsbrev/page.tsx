@@ -7,6 +7,8 @@ import { Button } from "@/components/ui/button";
 import CreateNewsletterDialog from "@/components/admin/CreateNewsletterDialog";
 import Image from "next/image";
 import toast from "react-hot-toast";
+import EditNewsletterDialog from "@/components/admin/EditNewsletterDialog";
+import DeleteNewsletterDialog from "@/components/admin/DeleteNewsletterDialog";
 type Newsletter = {
   id: string;
   title: string;
@@ -85,26 +87,15 @@ export default function NyhetsbrevPage() {
               </div>
 
               <div className="flex gap-2">
-                <Button variant="outline">Edit</Button>
-                <Button
-                  variant="destructive"
-                  onClick={async () => {
-                    if (!confirm("Delete this newsletter?")) return;
+                <EditNewsletterDialog
+                  newsletter={n}
+                  onUpdated={fetchNewsletters}
+                />
 
-                    const res = await fetch(`/api/newsletters/${n.id}`, {
-                      method: "DELETE",
-                    });
-
-                    if (res.ok) {
-                      toast.success("Deleted");
-                      fetchNewsletters();
-                    } else {
-                      toast.error("Delete failed");
-                    }
-                  }}
-                >
-                  Delete
-                </Button>
+                <DeleteNewsletterDialog
+                  newsletterId={n.id}
+                  onDeleted={fetchNewsletters}
+                />
               </div>
             </div>
           ))}
