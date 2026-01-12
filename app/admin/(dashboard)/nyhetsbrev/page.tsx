@@ -6,7 +6,7 @@ import { jwtDecode } from "jwt-decode";
 import { Button } from "@/components/ui/button";
 import CreateNewsletterDialog from "@/components/admin/CreateNewsletterDialog";
 import Image from "next/image";
-
+import toast from "react-hot-toast";
 type Newsletter = {
   id: string;
   title: string;
@@ -74,7 +74,7 @@ export default function NyhetsbrevPage() {
                 alt={n.title}
                 width={320}
                 height={200}
-                className="w-32 h-20 object-cover rounded"
+                className="object-cover rounded"
               />
 
               <div className="flex-1">
@@ -86,7 +86,25 @@ export default function NyhetsbrevPage() {
 
               <div className="flex gap-2">
                 <Button variant="outline">Edit</Button>
-                <Button variant="destructive">Delete</Button>
+                <Button
+                  variant="destructive"
+                  onClick={async () => {
+                    if (!confirm("Delete this newsletter?")) return;
+
+                    const res = await fetch(`/api/newsletters/${n.id}`, {
+                      method: "DELETE",
+                    });
+
+                    if (res.ok) {
+                      toast.success("Deleted");
+                      fetchNewsletters();
+                    } else {
+                      toast.error("Delete failed");
+                    }
+                  }}
+                >
+                  Delete
+                </Button>
               </div>
             </div>
           ))}
