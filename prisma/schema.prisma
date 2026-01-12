@@ -22,6 +22,7 @@ model Newsletter {
   title       String
   description String
   imageUrl    String
+  imageId     String   // 👈 Cloudinary public_id
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
 }
