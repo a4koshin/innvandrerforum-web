@@ -16,13 +16,12 @@ model User {
   createdAt DateTime @default(now())
 }
 
-
 model Newsletter {
   id          String   @id @default(auto()) @map("_id") @db.ObjectId
   title       String
   description String
   imageUrl    String
-  imageId     String   // 👈 Cloudinary public_id
+  imageId     String
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
 }
