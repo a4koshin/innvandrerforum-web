@@ -12,6 +12,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
+import toast from "react-hot-toast";
 
 type Props = {
   onCreated: () => void;
@@ -21,34 +22,55 @@ export default function CreateNewsletterDialog({ onCreated }: Props) {
   const [loading, setLoading] = useState(false);
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
-  const [imageUrl, setImageUrl] = useState("");
+  const [image, setImage] = useState<File | null>(null);
+  const [open, setOpen] = useState(false);
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
+
+    if (!image) {
+      toast.error("Please select an image");
+      return;
+    }
+
     setLoading(true);
 
     try {
+      const formData = new FormData();
+      formData.append("title", title);
+      formData.append("description", description);
+      formData.append("image", image);
+
       const res = await fetch("/api/newsletters", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ title, description, imageUrl }),
+        body: formData,
       });
 
-      if (!res.ok) throw new Error();
+      if (!res.ok) {
+        const data = await res.json();
+        throw new Error(data.message || "Failed to create newsletter");
+      }
 
+      // ✅ SUCCESS
+      toast.success("Newsletter created successfully");
+      setOpen(false);
+      // Reset form
       setTitle("");
       setDescription("");
-      setImageUrl("");
+      setImage(null);
+
+      // Refresh list
       onCreated();
-    } catch {
-      alert("Something went wrong");
+    } catch (error: any) {
+      // ❌ ERROR
+      toast.error(error.message || "Something went wrong");
     } finally {
       setLoading(false);
     }
   }
 
   return (
-    <Dialog>
+    <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
         <Button>Add Newsletter</Button>
       </DialogTrigger>
@@ -80,8 +102,9 @@ export default function CreateNewsletterDialog({ onCreated }: Props) {
           <div>
             <Label>Image URL</Label>
             <Input
-              value={imageUrl}
-              onChange={(e) => setImageUrl(e.target.value)}
+              type="file"
+              accept="image/*"
+              onChange={(e) => setImage(e.target.files?.[0] || null)}
               required
             />
           </div>
