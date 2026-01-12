@@ -1,15 +1,16 @@
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 
 /* UPDATE */
 export async function PUT(
-  req: Request,
-  { params }: { params: { id: string } }
+  request: NextRequest,
+  context: { params: Promise<{ id: string }> }
 ) {
-  const { title, description, imageUrl } = await req.json();
+  const { id } = await context.params;
+  const { title, description, imageUrl } = await request.json();
 
   const updated = await prisma.newsletter.update({
-    where: { id: params.id },
+    where: { id },
     data: { title, description, imageUrl },
   });
 
@@ -18,11 +19,13 @@ export async function PUT(
 
 /* DELETE */
 export async function DELETE(
-  _: Request,
-  { params }: { params: { id: string } }
+  request: NextRequest,
+  context: { params: Promise<{ id: string }> }
 ) {
+  const { id } = await context.params;
+
   await prisma.newsletter.delete({
-    where: { id: params.id },
+    where: { id },
   });
 
   return NextResponse.json({ message: "Deleted successfully" });
