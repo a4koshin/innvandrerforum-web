@@ -21,7 +21,7 @@ model Newsletter {
   title       String
   description String
   imageUrl    String
-  imageId     String
+  imageId     String?   // ✅ REQUIRED
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
 }
