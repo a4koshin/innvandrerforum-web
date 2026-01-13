@@ -1,9 +1,19 @@
+// helper/fetchError.ts
 export async function getErrorMessage(res: Response): Promise<string> {
   try {
-    const data = await res.json();
-    console.log(data.message, "from helper");
+    const text = await res.text(); // ✅ SAFE
 
-    return data?.message || "Something went wrong";
+    if (!text) {
+      return "Something went wrong";
+    }
+
+    try {
+      const data = JSON.parse(text);
+      return data?.message || "Something went wrong";
+    } catch {
+      // Not JSON (HTML / empty / text)
+      return text;
+    }
   } catch {
     return "Something went wrong";
   }
