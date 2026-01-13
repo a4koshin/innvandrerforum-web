@@ -24,7 +24,6 @@ export async function POST(req: Request) {
     }
 
     const isValid = await bcrypt.compare(password, user.password);
-
     if (!isValid) {
       return NextResponse.json(
         { message: "Invalid email or password" },
@@ -37,18 +36,20 @@ export async function POST(req: Request) {
       role: user.role,
     });
 
-    if (!token) {
-      return NextResponse.json(
-        { message: "Authentication service unavailable" },
-        { status: 500 }
-      );
-    }
-
-    return NextResponse.json({
-      token,
-      role: user.role,
-      message: "Successfully logged in",
+    const res = NextResponse.json({
+      message: "Login successful",
     });
+
+    // ✅ FIXED COOKIE SETTINGS
+    res.cookies.set("access_token", token, {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === "production",
+      sameSite: "lax", // 🔥 REQUIRED FOR PRODUCTION
+      path: "/",
+      maxAge: 60 * 60 * 24, // 1 day
+    });
+
+    return res;
   } catch (error) {
     console.error("LOGIN ERROR:", error);
     return NextResponse.json(

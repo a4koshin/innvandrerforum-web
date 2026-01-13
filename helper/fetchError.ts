@@ -2,7 +2,7 @@
 export async function getErrorMessage(res: Response): Promise<string> {
   try {
     const text = await res.text(); // ✅ SAFE
-
+    console.log(text);
     if (!text) {
       return "Something went wrong";
     }

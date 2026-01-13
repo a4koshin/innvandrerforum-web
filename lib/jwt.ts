@@ -1,30 +1,19 @@
 import jwt from "jsonwebtoken";
 
-export function signToken(payload: object) {
+function getJwtSecret() {
   const secret = process.env.JWT_SECRET;
-
   if (!secret) {
-    // ❌ DO NOT THROW
-    console.error("JWT_SECRET is missing");
-    return null;
+    throw new Error("JWT_SECRET is not defined");
   }
+  return secret;
+}
 
-  return jwt.sign(payload, secret, {
+export function signToken(payload: object) {
+  return jwt.sign(payload, getJwtSecret(), {
     expiresIn: "1d",
   });
 }
 
 export function verifyToken(token: string) {
-  const secret = process.env.JWT_SECRET;
-
-  if (!secret) {
-    console.error("JWT_SECRET is missing");
-    return null;
-  }
-
-  try {
-    return jwt.verify(token, secret);
-  } catch {
-    return null;
-  }
+  return jwt.verify(token, getJwtSecret());
 }

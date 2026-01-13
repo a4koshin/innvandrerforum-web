@@ -16,13 +16,16 @@ import { LayoutDashboard, Mail, Users, LogOut } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 export default function AdminSidebar() {
   const pathname = usePathname();
 
-  const handleLogout = () => {
-    sessionStorage.removeItem("token");
-    window.location.href = "/admin";
+  const router = useRouter();
+
+  const handleLogout = async () => {
+    await fetch("/api/auth/logout", { method: "POST" });
+    router.replace("/admin");
   };
 
   return (
