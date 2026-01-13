@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Navigations } from "@/frontend/constants/data";
+import { Navigations } from "@/constants/data";
 import { RiMenuFill, RiArrowDownSLine } from "react-icons/ri";
 import { IoMdClose } from "react-icons/io";
 

@@ -1,18 +1,18 @@
 "use client";
 import React, { act, useState } from "react";
 import Image from "next/image";
-import { Button } from "@/frontend/components/ui/button";
+import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
-import EventCard from "@/frontend/components/EventCard";
-import { events } from "@/frontend/constants/event";
-import ActivityCard from "@/frontend/components/ActivityCard";
-import { Status } from "@/frontend/constants/status";
+import EventCard from "@/components/EventCard";
+import { events } from "@/constants/event";
+import ActivityCard from "@/components/ActivityCard";
+import { Status } from "@/constants/status";
 // import { weeklyActivities, monthlyActivities } from "@/constants/activities";
 import {
   weeklyActivities,
   monthlyActivities,
-} from "@/frontend/constants/HeroActivities";
-import HeroActivityCard from "@/frontend/components/HeroActivityCard";
+} from "@/constants/HeroActivities";
+import HeroActivityCard from "@/components/HeroActivityCard";
 
 export default function Home() {
   const [emailMessage, setEmailMessage] = useState<string>("");

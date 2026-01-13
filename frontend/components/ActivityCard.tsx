@@ -4,7 +4,7 @@ import Image from "next/image";
 import { Calendar, Clock, MapPin } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import { useRouter } from "next/navigation";
-import { Button } from "@/frontend/components/ui/button";
+import { Button } from "@/components/ui/button";
 
 type ActivityCardProps = {
   image: string;

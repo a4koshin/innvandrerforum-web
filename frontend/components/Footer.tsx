@@ -9,7 +9,7 @@ import {
   FaMapMarkerAlt,
   FaArrowRight,
 } from "react-icons/fa";
-import { Navigations } from "@/frontend/constants/data";
+import { Navigations } from "@/constants/data";
 import Image from "next/image";
 
 const Footer = () => {

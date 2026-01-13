@@ -1,6 +1,6 @@
-import Navbar from "@/frontend/components/Navbar";
-import Footer from "@/frontend/components/Footer";
-import ToastProvider from "@/frontend/components/ToastProvider";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import ToastProvider from "@/components/ToastProvider";
 
 export default function PublicLayout({
   children,
