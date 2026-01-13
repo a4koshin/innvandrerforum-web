@@ -16,7 +16,6 @@
     "@radix-ui/react-slot": "^1.2.4",
     "@radix-ui/react-tooltip": "^1.2.8",
     "@types/jsonwebtoken": "^9.0.10",
-    "bcrypt": "^6.0.0",
     "class-variance-authority": "^0.7.1",
     "cloudinary": "^2.8.0",
     "clsx": "^2.1.1",
