@@ -3,12 +3,12 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { jwtDecode } from "jwt-decode";
-import { Button } from "@/components/ui/button";
 import CreateNewsletterDialog from "@/components/admin/CreateNewsletterDialog";
-import Image from "next/image";
-import toast from "react-hot-toast";
 import EditNewsletterDialog from "@/components/admin/EditNewsletterDialog";
 import DeleteNewsletterDialog from "@/components/admin/DeleteNewsletterDialog";
+import Image from "next/image";
+import toast from "react-hot-toast";
+
 type Newsletter = {
   id: string;
   title: string;
@@ -21,33 +21,42 @@ export default function NyhetsbrevPage() {
   const [newsletters, setNewsletters] = useState<Newsletter[]>([]);
   const [loading, setLoading] = useState(true);
 
-  // ✅ Single source of truth
+  // ✅ SAFE FETCH
   const fetchNewsletters = async () => {
-    const res = await fetch("/api/newsletters");
-    const data = await res.json();
-    setNewsletters(data);
+    try {
+      const res = await fetch("/api/newsletters");
+
+      if (!res.ok) {
+        throw new Error("Failed to fetch newsletters");
+      }
+
+      const data = await res.json();
+      setNewsletters(data);
+    } catch (error) {
+      console.error(error);
+      toast.error("Failed to load newsletters");
+    }
   };
 
   useEffect(() => {
     const token = sessionStorage.getItem("token");
 
     if (!token) {
-      router.push("/admin");
+      router.replace("/admin");
       return;
     }
 
     try {
       const decoded: any = jwtDecode(token);
       if (decoded.role !== "ADMIN") {
-        router.push("/admin");
+        router.replace("/admin");
         return;
       }
     } catch {
-      router.push("/admin");
+      router.replace("/admin");
       return;
     }
 
-    // ✅ Fetch only once, after auth
     fetchNewsletters().finally(() => setLoading(false));
   }, [router]);
 
@@ -69,14 +78,14 @@ export default function NyhetsbrevPage() {
           {newsletters.map((n) => (
             <div
               key={n.id}
-              className="bg-white rounded-lg shadow p-4 flex gap-4"
+              className="bg-white rounded-lg shadow p-4 flex gap-4 items-center"
             >
               <Image
-                src={n.imageUrl}
+                src={n.imageUrl || "/placeholder.jpg"}
                 alt={n.title}
                 width={320}
                 height={200}
-                className="object-cover rounded"
+                className="w-32 h-20 object-cover rounded"
               />
 
               <div className="flex-1">
