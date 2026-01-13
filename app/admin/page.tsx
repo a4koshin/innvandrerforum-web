@@ -47,7 +47,8 @@ const AdminPage = () => {
 
       const data = await res.json();
 
-      sessionStorage.setItem("token", data.token);
+      // sessionStorage.setItem("token", data.token);
+      localStorage.setItem("token", data.token);
       toast.success(data.message || "Login successful");
       router.push("/admin/nyhetsbrev");
     } catch (err) {
