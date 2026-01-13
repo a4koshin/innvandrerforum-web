@@ -24,6 +24,7 @@ export async function POST(req: Request) {
     }
 
     const isValid = await bcrypt.compare(password, user.password);
+
     if (!isValid) {
       return NextResponse.json(
         { message: "Invalid email or password" },
@@ -31,16 +32,22 @@ export async function POST(req: Request) {
       );
     }
 
-    // ✅ SIGN JWT
     const token = signToken({
       userId: user.id,
       role: user.role,
     });
 
+    if (!token) {
+      return NextResponse.json(
+        { message: "Authentication service unavailable" },
+        { status: 500 }
+      );
+    }
+
     return NextResponse.json({
       token,
       role: user.role,
-      message: "Successfully Logged in",
+      message: "Successfully logged in",
     });
   } catch (error) {
     console.error("LOGIN ERROR:", error);
