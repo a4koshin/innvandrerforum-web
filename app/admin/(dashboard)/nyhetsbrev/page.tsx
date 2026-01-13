@@ -38,8 +38,9 @@ export default function NyhetsbrevPage() {
     }
   };
 
+  // ✅ PRODUCTION-SAFE AUTH GUARD
   useEffect(() => {
-    const token = sessionStorage.getItem("token");
+    const token = localStorage.getItem("token");
 
     if (!token) {
       router.replace("/admin");
@@ -48,6 +49,7 @@ export default function NyhetsbrevPage() {
 
     try {
       const decoded: any = jwtDecode(token);
+
       if (decoded.role !== "ADMIN") {
         router.replace("/admin");
         return;
