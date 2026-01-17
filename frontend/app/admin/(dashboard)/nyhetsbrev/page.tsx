@@ -3,9 +3,9 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { jwtDecode } from "jwt-decode";
-import CreateNewsletterDialog from "@/frontend/components/admin/CreateNewsletterDialog";
-import EditNewsletterDialog from "@/frontend/components/admin/EditNewsletterDialog";
-import DeleteNewsletterDialog from "@/frontend/components/admin/DeleteNewsletterDialog";
+import CreateNewsletterDialog from "@/components/admin/CreateNewsletterDialog";
+import EditNewsletterDialog from "@/components/admin/EditNewsletterDialog";
+import DeleteNewsletterDialog from "@/components/admin/DeleteNewsletterDialog";
 import Image from "next/image";
 import toast from "react-hot-toast";
 
