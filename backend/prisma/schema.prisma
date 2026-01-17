@@ -22,3 +22,19 @@ model User {
   status    UserStatus @default(ACTIVE) 
   createdAt DateTime   @default(now())
 }
+
+
+
+enum NewsletterStatus {
+  ACTIVE
+  DELETED
+}
+
+model Newsletter {
+  id          String           @id @default(auto()) @map("_id") @db.ObjectId
+  name        String
+  description String
+  image       String           // Cloudinary URL
+  status      NewsletterStatus @default(ACTIVE)
+  createdAt   DateTime         @default(now())
+}
