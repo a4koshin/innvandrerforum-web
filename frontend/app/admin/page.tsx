@@ -35,8 +35,8 @@ export default function AdminPage() {
       });
 
       if (!res.ok) {
-        const message = await getErrorMessage(res);
-        toast.error(message);
+        const message = await res;
+        console.log(message);
         return;
       }
 
