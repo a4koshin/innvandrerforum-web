@@ -1,9 +1,9 @@
 import {
   SidebarProvider,
   SidebarInset,
-} from "@/frontend/components/ui/sidebar";
-import AdminSidebar from "@/frontend/components/admin/Sidebar";
-import ToastProvider from "@/frontend/components/ToastProvider";
+} from "@/components/ui/sidebar";
+import AdminSidebar from "@/components/admin/Sidebar";
+import ToastProvider from "@/components/ToastProvider";
 export default function DashboardLayout({
   children,
 }: {
