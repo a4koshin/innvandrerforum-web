@@ -14,7 +14,7 @@ const userRouter = express.Router();
 userRouter.use(protect); // 🔐 all routes require login
 
 // Only ADMIN can access these routes
-userRouter.get("/", authorize("ADMIN"), getAllUsers);
+userRouter.get("/",  getAllUsers);
 userRouter.get("/:id", authorize("ADMIN"), getUserById);
 userRouter.post("/", authorize("ADMIN"), createUser);
 userRouter.put("/:id", authorize("ADMIN"), updateUser);

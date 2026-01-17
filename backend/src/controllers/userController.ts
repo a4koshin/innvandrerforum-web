@@ -6,10 +6,6 @@ import bcrypt from "bcryptjs";
 // Get all active users (ADMIN only)
 export const getAllUsers = async (req: any, res: Response) => {
   try {
-    if (req.user.role !== "ADMIN") {
-      return res.status(403).json({ success: false, message: "Access denied" });
-    }
-
     const users = await prisma.user.findMany({
       where: { status: UserStatus.ACTIVE },
       select: { id: true, name: true, email: true, role: true, status: true },
