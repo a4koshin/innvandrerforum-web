@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Event } from "@/frontend/constants/event";
+import { Event } from "@/constants/event";
 import Image from "next/image";
 import { Button } from "./ui/button";
 import { useRouter } from "next/navigation";
