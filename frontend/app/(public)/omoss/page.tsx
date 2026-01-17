@@ -4,8 +4,8 @@ import {
   administration,
   boards,
   volunteers,
-} from "@/frontend/constants/boards";
-import BoardCard from "@/frontend/components/Board";
+} from "@/constants/boards";
+import BoardCard from "@/components/Board";
 const OmossPage = () => {
   return (
     <div className="min-h-screen">

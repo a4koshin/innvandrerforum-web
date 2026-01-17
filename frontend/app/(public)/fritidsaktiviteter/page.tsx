@@ -1,11 +1,11 @@
 "use client";
 
 import { Calendar } from "lucide-react";
-import ActivityCard from "@/frontend/components/ActivityCard";
+import ActivityCard from "@/components/ActivityCard";
 import {
   weeklyActivities,
   monthlyActivities,
-} from "@/frontend/constants/activities";
+} from "@/constants/activities";
 
 const ActivityPage = () => {
   return (

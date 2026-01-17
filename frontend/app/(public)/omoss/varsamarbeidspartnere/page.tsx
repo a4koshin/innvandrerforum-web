@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import { Status } from "@/frontend/constants/status";
+import { Status } from "@/constants/status";
 
 const SponsorsPage = () => {
   return (

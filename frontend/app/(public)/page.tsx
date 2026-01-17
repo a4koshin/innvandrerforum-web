@@ -5,7 +5,6 @@ import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
 import EventCard from "@/components/EventCard";
 import { events } from "@/constants/event";
-import ActivityCard from "@/components/ActivityCard";
 import { Status } from "@/constants/status";
 // import { weeklyActivities, monthlyActivities } from "@/constants/activities";
 import {
