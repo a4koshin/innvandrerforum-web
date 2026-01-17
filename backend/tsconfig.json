@@ -46,7 +46,7 @@
 {
   "compilerOptions": {
     "target": "ES2020",
-    "module": "CommonJS",
+    "module": "CommonJS",       // <-- important
     "rootDir": "src",
     "outDir": "dist",
     "strict": true,
@@ -54,3 +54,4 @@
     "skipLibCheck": true
   }
 }
+
