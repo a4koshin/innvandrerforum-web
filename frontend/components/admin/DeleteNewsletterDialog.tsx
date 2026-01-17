@@ -7,8 +7,8 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/frontend/components/ui/dialog";
-import { Button } from "@/frontend/components/ui/button";
+} from "@/components/ui/dialog";
+import { Button } from "@/components/ui/button";
 import { toast } from "react-hot-toast";
 
 type Props = {

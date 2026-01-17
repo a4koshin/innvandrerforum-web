@@ -11,7 +11,7 @@ import {
   SidebarMenu,
   SidebarMenuItem,
   SidebarMenuButton,
-} from "@/frontend/components/ui/sidebar";
+} from "@/components/ui/sidebar";
 import { LayoutDashboard, Mail, Users, LogOut } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";

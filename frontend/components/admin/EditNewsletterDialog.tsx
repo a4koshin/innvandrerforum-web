@@ -7,11 +7,11 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/frontend/components/ui/dialog";
-import { Button } from "@/frontend/components/ui/button";
-import { Input } from "@/frontend/components/ui/input";
-import { Textarea } from "@/frontend/components/ui/textarea";
-import { Label } from "@/frontend/components/ui/label";
+} from "@/components/ui/dialog";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Label } from "@/components/ui/label";
 import { toast } from "react-hot-toast";
 
 export default function EditNewsletterDialog({ newsletter, onUpdated }: any) {
